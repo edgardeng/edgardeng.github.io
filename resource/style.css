@@ -1,3 +1,49 @@
+.article-list {
+    width: 80%;
+    margin: 10px auto;
+}
 .article {
-    border-top: solid 1px gray;
+    border-top: solid 1px lightgray;
+    padding: 20px 10px;
+}
+.article .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.article .about {
+    color: #d0d0d0;
+    margin-bottom: 10px;
+}
+
+.article .more {
+    color: cornflowerblue;
+    margin-top: 20px;
+}
+
+.article .time {
+    position: relative;
+    right: 10px;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    color: gray;
+}
+
+
+
+.logo-innner {
+
+    width: 100%;
+}
+.logo-content {
+    margin: 30px 0;
+    width: 100%;
+    text-align: center;
+}
+.logoImage {
+    width: 180px;
+    height: 180px;
+    border-radius: 91px;
+    border: solid 2px orange;
 }

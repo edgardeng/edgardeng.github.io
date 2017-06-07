@@ -10,23 +10,22 @@
 
 </head>
 <body>
-<div class="logoInner">
-    <a class="link u-baseColor--link" href="https://medium.com/the-vue-point">
-        <img class="collectionHeader-logoImage js-collectionHeaderLogoImage"
-             src="https://cdn-images-1.medium.com/max/140/1*6QYzbfSAvFDWAt3XCY7Tyw@2x.png"
+<div class="logo-innner">
+    <div class="logo-content" href="">
+        <img class="logoImage"
+             src="https://b-ssl.duitang.com/uploads/item/201401/22/20140122095618_XN3yz.jpeg"
              data-image-id="1*6QYzbfSAvFDWAt3XCY7Tyw@2x.png" alt="The Vue Point" data-width="2440"
              data-height="2440"/>
-        <h3>
-            Edgar Deng Blog
-        </h3>
-    </a>
+        <h3>  Edgar Deng Blog </h3>
+    </div>
 </div>
 <div id="app">
     <div class="article-list">
-        <div class="article" v-for="item in articleList">
+        <div class="article" v-for="item in articleList" @click="handleClick(item)">
             <div class="title">{{item.name}}</div>
+            <div class="time">{{item.datetime}} </div>
             <div class="about">{{item.about}} </div>
-            <a class="more">more </a>
+            <a class="more"> more </a>
         </div>
     </div>
 </div>
@@ -38,7 +37,12 @@
       data: {
         message: 'Hello Vue!',
         articleList: []
+      },
+    methods: {
+      handleClick (item) {
+        window.href= "./page.html?" + item.page
       }
+    }
   })
 
   $.get("./asset/menu.json",function(data){
