@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/pagedown/1.0/Markdown.Converter.js"></script>
+    <title>文章</title>
+</head>
+<body>
+<div id="content"> </div>
+</body>
+<script lang="javascript">
+  function getUrlParam(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    let r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r !== null) {
+      return unescape(r[2]);
+    }
+    return null; //返回参数值
+  }
+
+  let page = getUrlParam('article');
+  if (page === null) {
+    page = "ME.md"
+  }
+    $.get("./article/" + page, function(text) {
+      // console.log(text)
+      let converter = new Markdown.Converter();
+      let htm = converter.makeHtml(text);
+      // markdownit().render(text)
+      $('#content').html(htm);
+      // document.write(htm);
+    });
+
+</script>
+
+</html>

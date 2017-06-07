@@ -2,11 +2,47 @@
 <html lang=zh>
 <head>
     <meta charset="utf-8">
-    
     <title> Edgar Deng Blog</title>
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./resource/style.css">
+
 </head>
 <body>
-Edgar Deng Blog
+<div class="logoInner">
+    <a class="link u-baseColor--link" href="https://medium.com/the-vue-point">
+        <img class="collectionHeader-logoImage js-collectionHeaderLogoImage"
+             src="https://cdn-images-1.medium.com/max/140/1*6QYzbfSAvFDWAt3XCY7Tyw@2x.png"
+             data-image-id="1*6QYzbfSAvFDWAt3XCY7Tyw@2x.png" alt="The Vue Point" data-width="2440"
+             data-height="2440"/>
+        <h3>
+            Edgar Deng Blog
+        </h3>
+    </a>
+</div>
+<div id="app">
+    <div class="article-list">
+        <div class="article" v-for="item in articleList">
+            <div class="title">{{item.name}}</div>
+            <div class="about">{{item.about}} </div>
+            <a class="more">more </a>
+        </div>
+    </div>
+</div>
 </body>
 
-</hmtl>
+<script lang="javascript">
+  var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        articleList: []
+      }
+  })
+
+  $.get("./asset/menu.json",function(data){
+    app.$data.articleList = data
+  })
+</script>
+</html>
