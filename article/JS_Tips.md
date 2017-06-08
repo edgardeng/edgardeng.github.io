@@ -5,11 +5,8 @@
 ### 1. 你有没有尝试给一组数字排序？
 
 Javascript 的sort()函数在默认情况下使用字母数字（字符串Unicode码点）排序。
-
 所以[1,2,5,10].sort() 会输出 [1, 10, 2, 5].
-
 要正确的排序一个数组, 你可以用 [1,2,5,10].sort((a, b) => a — b)
-
 很简单的解决方案, 前提是你得知道有这么个坑
 
 ### 2. new Date() 很棒
@@ -24,7 +21,7 @@ new Date(2016, 1, 1) 不会给1900年加上2016。它仅代表2016年。
 
 ### 3. Replace 并不“替代”
 
-```
+```javascript
 let s = "bob"
 const replaced = s.replace('b', 'l')
 replaced === "lob"
@@ -46,7 +43,7 @@ s === "bob"
 
 ### 4. 比较的时候要注意
 
-```
+```javascript
 // These are ok
 'abc' === 'abc' // true
 1 === 1         // true
@@ -67,7 +64,7 @@ s === "bob"
 
 ### 5. 数组不是原始数据类型
 
-```
+```md
 typeof {} === 'object'  // true
 typeof 'a' === 'string' // true
 typeof 1 === number     // true

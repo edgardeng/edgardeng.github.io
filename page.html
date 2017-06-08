@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/pagedown/1.0/Markdown.Converter.js"></script>
+    <!--<script src="https://cdn.bootcss.com/pagedown/1.0/Markdown.Converter.js"></script>-->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
+    <!--<script src="./resource/js/highlight.pack.js"></script>-->
+    <link rel="stylesheet" href="resource/css/default.css">
     <title>文章</title>
 </head>
-<body>
-<div class="part-head" style="width: 50px;height: 50px;">
+<body style="background:#f0f0f0">
+<div class="part-head" style="height: 100px;background: #fafbfc;margin-bottom: 8px;">
 </div>
-<div class="part-article" style="margin-left: 5%;width: 90%;">
-    <div id="content"> </div>
+<div class="part-article" style="margin-left:9%;width: 80%;padding:10px 1%;background:white">
+    <!--<pre>-->
+        <!--<code class="html">-->
+        <!--</code>-->
+    <!--</pre>-->
+
+    <div id="content" > </div>
 </div>
 
 </body>
 <script lang="javascript">
+
   function getUrlParam(name) {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
     let r = window.location.search.substr(1).match(reg); //匹配目标参数
@@ -30,13 +39,11 @@
   }
     $.get("./article/" + page, function(text) {
       // console.log(text)
-      let converter = new Markdown.Converter();
-      let htm = converter.makeHtml(text);
-      // markdownit().render(text)
-      $('#content').html(htm);
-      // document.write(htm);
+      let converter = new showdown.Converter();
+      let html      = converter.makeHtml(text);
+      $('#content').html(html);
     });
-
+  hljs.initHighlightingOnLoad();
 </script>
 
 </html>
