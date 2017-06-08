@@ -5,7 +5,8 @@
     <title> Edgar Deng Blog</title>
 
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+    <link rel="stylesheet" href="resource/css/font-awesome.min.css">
     <link rel="stylesheet" href="./resource/style.css">
 
 </head>
@@ -18,16 +19,29 @@
              data-height="2440"/>
         <h3>  Edgar Deng Blog </h3>
     </div>
+    <div class="social-account">
+        <a href="https://weibo.com/edgardeng"> <i class="fa fa-weibo fa-lg"></i></a>
+        <a href="https://github.com/edgardeng"> <i class="fa fa-github fa-lg"></i></a>
+    </div>
 </div>
+
 <div id="app">
     <div class="article-list">
-        <div class="article" v-for="item in articleList" @click="handleClick(item)">
+        <div class="article" v-for="item in articleList" >
             <div class="title">{{item.name}}</div>
             <div class="time">{{item.datetime}} </div>
             <div class="about">{{item.about}} </div>
-            <a class="more"> more </a>
+            <div class="more" style="text-align: right">
+                <button style="width: 60px;height: 30px;background: none;border: none;color: dodgerblue;"
+                        v-on:click="handleClick(item)">more</button>
+            </div>
+
         </div>
     </div>
+</div>
+
+<div class="foot">
+    <i class="fa fa-copyright fa-lg"> edgardeng v1</i>
 </div>
 </body>
 
@@ -39,8 +53,9 @@
         articleList: []
       },
     methods: {
-      handleClick (item) {
-        window.href= "./page.html?" + item.page
+      handleClick: function (item) {
+        console.log('item')
+        window.location.href= "./page.html?article=" + item.page
       }
     }
   })

@@ -1,14 +1,14 @@
 [
   {
-    "name": "浏览器数据库",
-    "page": "WEB_DATABASE",
-    "datetime": "2017-06-07 12:00",
-    "about": "浏览器的本地数据存储方式有：1.本地存储localstorage;2.本地存储localstorage"
+    "name": "Javascript 技巧与陷阱",
+    "page": "JS_Tips.md",
+    "datetime": "2017-06-08 12:00",
+    "about": "javascript也只不过是一种编程语言。怎么可能，不会出错嘛?实用的过程中几个小问题总结至此"
   },
   {
     "name": "浏览器数据库",
     "datetime": "2017-06-07 12:00",
-    "page": "WEB_DATABASE",
+    "page": "WEB_DATABASE.md",
     "about": "浏览器的本地数据存储方式有：1.本地存储localstorage;2.本地存储localstorage"
   }
 ]
