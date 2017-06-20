@@ -29,6 +29,8 @@ body {
     background: #f0f0f0;
     padding: 20px;
     color: #606060;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 
