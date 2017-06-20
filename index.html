@@ -7,32 +7,35 @@
     <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
     <link rel="stylesheet" href="resource/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./resource/style.css">
+    <link rel="stylesheet" href="resource/css/style.css">
 
 </head>
+
 <body>
+
 <div class="logo-innner">
     <div class="logo-content" href="">
         <img class="logoImage"
-             src="https://b-ssl.duitang.com/uploads/item/201401/22/20140122095618_XN3yz.jpeg"
-             data-image-id="1*6QYzbfSAvFDWAt3XCY7Tyw@2x.png" alt="The Vue Point" data-width="2440"
-             data-height="2440"/>
+             src="resource/image/favicon.jpg"
+             alt=""/>
         <h3>  Edgar Deng Blog </h3>
     </div>
     <div class="social-account">
-        <a href="https://weibo.com/edgardeng"> <i class="fa fa-weibo fa-lg"></i></a>
-        <a href="https://github.com/edgardeng"> <i class="fa fa-github fa-lg"></i></a>
+        <a href="https://weibo.com/edgardeng"> <i class="fa fa-weibo fa-2x"></i></a>
+        <a href="https://github.com/edgardeng"> <i class="fa fa-github fa-2x"></i></a>
     </div>
+
+
 </div>
 
 <div id="app">
     <div class="article-list">
         <div class="article" v-for="item in articleList" >
             <div class="title">{{item.name}}</div>
-            <div class="time">{{item.datetime}} </div>
             <div class="about">{{item.about}} </div>
+            <div class="time">{{item.datetime}} </div>
             <div class="more" style="text-align: right">
-                <button style="width: 60px;height: 30px;background: none;border: none;color: dodgerblue;"
+                <button style="width: 60px;height: 30px;background: none;border: none;color:deepskyblue;font-size: 18px;"
                         v-on:click="handleClick(item)">more</button>
             </div>
 
@@ -40,9 +43,11 @@
     </div>
 </div>
 
+
 <div class="foot">
-    <i class="fa fa-copyright fa-lg"> edgardeng v1</i>
+    <i class="fa fa-copyright fa-lg"> edgardeng</i>
 </div>
+
 </body>
 
 <script lang="javascript">
@@ -50,12 +55,16 @@
       el: '#app',
       data: {
         message: 'Hello Vue!',
-        articleList: []
+        articleList: [],
+        isShowing: false
       },
     methods: {
       handleClick: function (item) {
         console.log('item')
         window.location.href= "./page.html?article=" + item.page
+      },
+      toggleShow() {
+        this.isShowing = !this.isShowing;
       }
     }
   })

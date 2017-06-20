@@ -20,6 +20,7 @@
 .article .more {
     color: cornflowerblue;
     margin-top: 20px;
+    font-size: 16px;
 }
 
 .article .time {
@@ -45,16 +46,16 @@
 .logoImage {
     width: 180px;
     height: 180px;
+    min-width: 180px;
+    min-height: 180px;
     border-radius: 91px;
     border: solid 2px orange;
 }
 .social-account {
-
     text-align: right;
 }
 .social-account a {
-    margin: 10px 5px;
-
+    margin: 20px 10px;
 }
 
 .foot {
@@ -66,4 +67,48 @@
     padding: 30px;
     font-size: 14px;
     color: gray;
+}
+
+
+
+/*#app {*/
+    /*text-align: center;*/
+    /*margin: 60px;*/
+    /*max-width: 370px;*/
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    /*flex-direction: column;*/
+/*}*/
+/** example */
+
+button {
+    font-family: 'Roboto Mono';
+    border: 2px solid black;
+    background: white;
+    padding: 10px 15px;
+    margin: 0 10px;
+    outline: 0;
+    width: 60%;
+    cursor: pointer;
+}
+
+h4 {
+    margin: 0 0 15px;
+}
+
+.modal {
+    background: cyan;
+    color: black;
+    padding: 20px;
+    width: 200px;
+    position: absolute;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.25s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }
