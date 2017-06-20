@@ -25,16 +25,16 @@
 <script lang="javascript">
 
   function getUrlParam(name) {
-    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    let r = window.location.search.substr(1).match(reg); //匹配目标参数
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
     if (r !== null) {
-      return unescape(r[2]);
+      return decodeURI(r[2]);
     }
     return null; //返回参数值
   }
 
-  let page = getUrlParam('article');
-  if (page === null) {
+  var page = getUrlParam('article');
+  if (!page) {
     page = "ME.md"
   }
     $.get("./article/" + page, function(text) {
