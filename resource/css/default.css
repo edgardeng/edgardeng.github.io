@@ -4,18 +4,33 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 */
 body {
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 16px;
+    font:normal 100% Helvetica,Arial,sans-serif;
 }
-.part-article pre {
-    padding: 16px;
+.part-head {
+    background: #fafbfc;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.part-article {
+    margin:0 auto;
+    width: 96%;
+    max-width: 1000px;
+    padding:10px 1%;
+    background:white;
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
     border-radius: 3px;
 }
+
+.part-article pre {
+    background: #f0f0f0;
+    padding: 20px;
+    color: #606060;
+}
+
+
 .part-article blockquote p {
     color: #cdcdcd;
     border-left: solid 5px #bcbcbc;
