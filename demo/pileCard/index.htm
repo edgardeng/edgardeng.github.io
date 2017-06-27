@@ -10,16 +10,13 @@
 
     <link rel="stylesheet" type="text/css" href="./asset/default.css">
     <link rel="stylesheet" type="text/css" href="./asset/component.css">
-    <!--<script src="./asset/hm.js"></script>-->
 
-    <script src="./asset/modernizr-custom.js"></script>
     <script src="./asset/ie.js"></script>  <!--  判断浏览器是否支持-->
     <script src="./asset/classie.js"></script>
-    <!--<script src="./asset/dynamics.min.js"></script>-->
-
+    <!-- Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser -->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <!-- Dynamics.js is a JavaScript library to create physics-based animations -->
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/dynamics.js/1.1.5/dynamics.min.js"></script>
-
     <script src="./asset/main.js"></script>
 </head>
 <body>
@@ -435,6 +432,7 @@
         }
       };
 
+    // 每个按钮 添加 事件监听
     [].slice.call(document.querySelectorAll('.button--sonar')).forEach(function (el) {
       el.addEventListener(clickeventtype, function (ev) {
         if (el.getAttribute('data-state') !== 'locked') {
