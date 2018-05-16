@@ -2,10 +2,14 @@
 
 ### pileCard 堆叠式卡片
 
-[demo演示](https://edagrdeng.github.io/pileCard/index.htm)
+[demo演示](https://edagrdeng.github.io/demo/pileCard/index.htm)
 
 
 ### SlipPage 向上滑的单页面应用
+[demo1](https://edagrdeng.github.io/demo/h5/slippage/index.htm)
+
+[demo2](https://edagrdeng.github.io/demo/h5/slipTop/index.htm)
+
 
 
 ### 相关资源
