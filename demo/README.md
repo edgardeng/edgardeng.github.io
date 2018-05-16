@@ -4,16 +4,16 @@
 
 [demo演示](https://edagrdeng.github.io/pileCard/index.htm)
 
-[demo演示2](http://www.zzfriend.com/demo/bbs/qiehuan/)
+
+### SlipPage 向上滑的单页面应用
+
+
+### 相关资源
 
 [蚂蚁HTML5社区](http://www.zzfriend.com/)
 
-[Click Effect](https://tympanus.net/Development/ClickEffects/)
+[Dynamic](https://github.com/michaelvillar/dynamics.js) 物理引擎动画
 
-[Dynamic](https://github.com/michaelvillar/dynamics.js)
-
-### slipTop 向上
-
-滑动式 页面切换
+[Click Effect](https://tympanus.net/Development/ClickEffects/) 点击效果动画
 
 

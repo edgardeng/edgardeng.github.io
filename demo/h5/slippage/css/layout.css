@@ -1,0 +1,31 @@
+body{
+	overflow:hidden;
+    font-family: "Open Sans",Arial,"Hiragino Sans GB","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif;
+    font-size: 14px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.page{
+	width:100%;
+	height:100%;
+	position:absolute;
+	text-align:center;
+}
+
+.page-current{
+	z-index:1;
+}
+
+.hide{ display:none;}
+
+.arrow-up{
+	height:auto;
+	width:25px;
+	position:absolute;
+	left:50%;
+	top:92%;
+	margin-left:-12px;
+	z-index:99;
+}
+

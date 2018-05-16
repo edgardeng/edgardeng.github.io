@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type">
+    <meta content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <title>SlipPage</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/animations.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+</head>
+<body>
+<img src="img/icon_up.png" alt="" class="arrow-up pt-page-moveIconUp"> </div>
+<div id="page-content">
+    <div class="page page-1 page-current">
+        <img class="pic" src="../../../resource/image/1.jpg">
+        <div class="pic-desc">
+            <p class="title1">我很想回家</p>
+            <p class="title2">我非常十分想回家<span>想念父母</span></p>
+        </div>
+    </div>
+    <div class="page page-2 hide">
+        <img class="pic" src="../../../resource/image/2.jpg">
+        <div class="pic-desc">
+            <p class="title1">我很想回家</p>
+            <p class="title2">我非常十分想回家<span>想念父母</span></p>
+        </div>
+    </div>
+    <div class="page page-3 hide">
+        <img class="pic" src="../../../resource/image/3.jpg">
+        <div class="pic-desc">
+            <p class="title1">我很想回家</p>
+            <p class="title2">我非常十分想回家<span>想念父母</span></p>
+        </div>
+    </div>
+    <div class="page page-4 hide">
+        <img class="pic" src="../../../resource/image/4.jpg">
+        <div class="pic-desc">
+            <p class="title1">我很想回家</p>
+            <p class="title2">我非常十分想回家<span>想念父母</span></p>
+        </div>
+    </div>
+</div>
+
+<div class="audio-box" style="display: none">
+    <audio id="myaudio" src="audio/home.mp3" loop="loop" autoplay="autoplay" controls="controls">
+        你的浏览器不支持HTML5
+    </audio>
+    <input type="button" onClick="document.getElementById('myaudio').play()" value='播放' id="play-btn"/>
+    <input type="button" onClick="document.getElementById('myaudio').pause()" value='停止' id="stop-btn"/>
+</div>
+
+<a class="music-icon music-trigger play" href="javascript:;"></a>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function () {
+    $('.page-1 .pic').animate({
+      width: "120%",
+      marginLeft: "-20%"
+    }, 5000);
+    $('.page-1 .title1').fadeIn(2000);
+    setTimeout(function () {
+      $('.page-1 .title2').fadeIn(2000);
+    }, 2000)
+    $(".music-trigger").click(function (document) {
+      if ($(this).hasClass("play")) {
+        $('#stop-btn').click();
+        $(this).removeClass("play").addClass("stop");
+      }
+      else {
+        $('#play-btn').click();
+        $(this).removeClass("stop").addClass("play");
+      }
+    })
+  });
+</script>
+</body>
+</html>
