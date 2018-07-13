@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/dark.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/agate.min.css" rel="stylesheet">-->
+    <!--<link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">-->
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="resource/css/font-awesome.min.css">
     <link rel="stylesheet" href="resource/css/default.css">
     <title>文章</title>
 </head>
-<body style="background:#f0f0f0">
+<body >
 <div class="part-head" >
     <img style="width: 60px;height: 60px;border-radius: 30px;margin: 10px; margin-left:5%;"
          src="resource/image/favicon.jpg"
@@ -33,14 +38,43 @@
     return null; //返回参数值
   }
 
-  var page = getUrlParam('article');
+  let page = getUrlParam('article');
   if (!page) {
     page = "ME.md"
   }
+  let converter = new showdown.Converter({extensions: function() {
+    function htmlunencode(text) {
+      return (
+        text
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+      );
+    }
+    return [
+      {
+        type: 'output',
+        filter: function (text, converter, options) {
+          // use new shodown's regexp engine to conditionally parse codeblocks
+          var left  = '<pre><code\\b[^>]*>',
+            right = '</code></pre>',
+            flags = 'g',
+            replacement = function (wholeMatch, match, left, right) {
+              // unescape match to prevent double escaping
+              match = htmlunencode(match);
+              return left + hljs.highlightAuto(match).value + right;
+            };
+          return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
+        }
+      }
+    ];
+  }()});
+
+
     $.get("./article/" + page, function(text) {
       // console.log(text)
-      var converter = new showdown.Converter();
-      var html      = converter.makeHtml(text);
+      // let converter = new showdown.Converter();
+      let html      = converter.makeHtml(text);
       $('#content').html(html);
     });
   hljs.initHighlightingOnLoad();

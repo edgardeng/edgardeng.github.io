@@ -1,14 +1,25 @@
-##个人简介
+# About Me
 
-### name
-Edgar Deng
+> a FE developer in Web, Android, iOS
 
-### email
+## Profile
 
-edgardengsh@gmail.com
+**Name:** Edgar Deng  
+ 
+**Birth:** 12/1990
+ 
+**Gender:** Male
+ 
+**Email:** edgardengsh@gmail.com
 
-### social
+**Location:** Shanghai,China
 
-[github](https://github.com/edgardeng)
 
-[weibo](https://weibo.com/edgardeng)
+****
+
+
+
+## Social
+
+[Github](https://github.com/edgardeng) 
+[Weibo](https://weibo.com/edgardeng)

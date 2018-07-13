@@ -1,4 +1,4 @@
-## Javasript Tips
+#Javascript 技巧与陷阱
 
 > javascript也只不过是一种编程语言。怎么可能，不会出错嘛?实用的过程中几个小问题总结至此
 

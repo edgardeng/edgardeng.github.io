@@ -4,138 +4,56 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 */
 body {
-    font:normal 100% Helvetica,Arial,sans-serif;
+  font: normal 100% Helvetica, Arial, sans-serif;
+  margin: 0;
 }
+
 .part-head {
-    position: fixed;
-    top: 0;
-    width: 98%;
-    background: #fafbfc;
-    display: flex;
-    display: -webkit-flex;
-    margin-bottom: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fafbfc;
+  display: flex;
+  display: -webkit-flex;
+  margin-bottom: 10px;
 }
 
 .part-article {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    width: 92%;
-    max-width: 1000px;
-    padding:10px 3%;
-    background:white;
-    overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
-    border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  width: 90%;
+  max-width: 1000px;
+  padding: 10px 4%;
+  background: white;
+  overflow: auto;
+  /*font-size: 85%;*/
+  line-height: 2em;
+  border-radius: 3px;
+}
+
+p {
+  font-size: 16px;
+  font-family: Source Sans Pro, sans-serif;
+
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  line-height: 1.6em;
 }
 
 .part-article pre {
-    background: #f0f0f0;
-    padding: 20px;
-    color: #606060;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  background: #f6f8fa;
+  padding: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 4px;
 }
-
 
 .part-article blockquote p {
-    color: #cdcdcd;
-    border-left: solid 5px #bcbcbc;
-    padding-left: 20px;
+  color: #cdcdcd;
+  border-left: solid 5px #bcbcbc;
+  padding-left: 20px;
 }
 
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #F0F0F0;
-}
-
-
-/* Base color: saturation 0; */
-
-.hljs,
-.hljs-subst {
-  color: #444;
-}
-
-.hljs-comment {
-  color: #888888;
-}
-
-.hljs-keyword,
-.hljs-attribute,
-.hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
-  font-weight: bold;
-}
-
-
-/* User color: hue: 0 */
-
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000;
-}
-
-.hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #BC6060;
-}
-
-
-/* Language color: hue: 90; */
-
-.hljs-literal {
-  color: #78A960;
-}
-
-.hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
-}
-
-
-/* Meta color: hue: 200 */
-
-.hljs-meta {
-  color: #1f7199;
-}
-
-.hljs-meta-string {
-  color: #4d99bf;
-}
-
-
-/* Misc effects */
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
