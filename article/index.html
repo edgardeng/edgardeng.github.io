@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"> </script>
+    <script src=" https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"> </script>
+    <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../resource/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../resource/css/article.css">
+    <title>文章</title>
+</head>
+<body >
+<div class="part-head" >
+    <img style="width: 60px;height: 60px;border-radius: 30px;margin: 10px; margin-left:5%;"
+         src="../resource/image/favicon.jpg"
+         alt=""/>
+    <span style="margin:30px;line-height:20px;">  Edgar Deng Blog </span>
+    <a href="index.html" style="color: orange;position: absolute;margin:10px;right:5%;top:20px;"> <i class="fa fa-home fa-lg" ></i></a>
+</div>
+<div class="article">
+    <div id="content" class="article-wrapper"> </div>
+</div>
+
+</body>
+<script lang="javascript">
+
+  function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r !== null) {
+      return decodeURI(r[2]);
+    }
+    return null; //返回参数值
+  }
+
+  let page = getUrlParam('article');
+  console.log(page)
+  if (!page) {
+    page = "ME"
+  }
+  let converter = new showdown.Converter({extensions: function() {
+    function htmlunencode(text) {
+      return (
+        text
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+      );
+    }
+    return [
+      {
+        type: 'output',
+        filter: function (text, converter, options) {
+          // use new shodown's regexp engine to conditionally parse codeblocks
+          var left  = '<pre><code\\b[^>]*>',
+            right = '</code></pre>',
+            flags = 'g',
+            replacement = function (wholeMatch, match, left, right) {
+              // unescape match to prevent double escaping
+              match = htmlunencode(match);
+              return left + hljs.highlightAuto(match).value + right;
+            };
+          return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
+        }
+      }
+    ];
+  }()});
+
+
+    $.get(page + ".md" , function(text) {
+      // console.log(text)
+      // let converter = new showdown.Converter();
+      let html      = converter.makeHtml(text);
+      $('#content').html(html);
+    });
+  hljs.initHighlightingOnLoad();
+</script>
+
+</html>

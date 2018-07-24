@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
     <link rel="stylesheet" href="resource/css/font-awesome.min.css">
     <link rel="stylesheet" href="resource/css/style.css">
-
+    <link rel="stylesheet" href="resource/css/catalog.css">
 </head>
 
 <body>
@@ -20,24 +20,39 @@
              alt=""/>
         <h3>  Edgar Deng Blog </h3>
     </div>
+
     <div class="social-account">
-        <a href="https://weibo.com/edgardeng"> <i class="fa fa-weibo fa-2x"></i></a>
-        <a href="https://github.com/edgardeng"> <i class="fa fa-github fa-2x"></i></a>
+        <a href="https://weibo.com/edgardeng" target="_blank">
+            <i class="fa fa-weibo fa-2x" style="color:#EE5544;"></i> </a>
+        <a href="https://github.com/edgardeng" target="_blank">
+            <i class="fa fa-github fa-2x" style="color:#2b3137"></i> </a>
     </div>
 </div>
 
 <div id="app">
-    <div class="article-list">
-        <div class="article" v-for="item in articleList" >
-            <div class="title">{{item.name}}</div>
-            <div class="about">{{item.about}} </div>
-            <div class="time">{{item.datetime}} </div>
-            <div class="more" style="text-align: right">
-                <button style="width: 60px;height: 30px;background: none;border: none;color:deepskyblue;font-size: 18px;"
-                        v-on:click="handleClick(item)">more</button>
+
+    <div class="post">
+
+        <div class="post-wrapper row" v-for="item in articleList" v-on:click="handleClick(item)">
+
+            <div class="feature-content row">
+                <img src="./resource/image/c-1.jpg" alt="" class="img-responsive">
+            </div>
+            <div class="post-title">
+                {{item.name}}
             </div>
 
+            <div class="post-excerpt">
+                <div class="post-content row">
+                    <p>{{item.about}}</p>
+                </div>
+
+                <div class="post-date">
+                    {{item.datetime}}
+                </div>
+            </div>
         </div>
+
     </div>
 </div>
 
@@ -58,7 +73,7 @@
     methods: {
       handleClick: function (item) {
         console.log('item')
-        window.location.href= "./page.html?article=" + item.page
+        window.location.href= "./article/?article=" + item.page
       }
     }
   })
@@ -66,5 +81,6 @@
   $.get("./asset/menu.json",function(data){
     app.$data.articleList = data
   })
+
 </script>
 </html>
