@@ -1,126 +1,50 @@
-body{
-    font:normal 100% Helvetica,Arial,sans-serif;
-    margin: 0;
+body {
+  font: normal 100% Helvetica, Arial, sans-serif;
+  margin: 0;
 
   background: #f0f0f0;
 
 }
 
-.article-list {
-    width: 80%;
-    margin: 10px auto;
-}
-.article {
-    border-top: solid 1px lightgray;
-    padding: 10px 10px;
-}
-.article .title {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.article .about {
-    margin-left: 5px;
-    color: #d0d0d0;
-    margin-bottom: 10px;
-}
-
-.article .more {
-    color: cornflowerblue;
-    margin-top: 20px;
-    font-size: 16px;
-}
-
-.article .time {
-    margin-left: 5px;
-    font-size: 12px;
-    margin-top: -5px;
-    margin-bottom: 5px;
-    color: gray;
-}
-
-
-
 .logo-innner {
-    padding-top: 10px;
-    width: 100%;
-    /*background:#17baef;*/
+  padding-top: 10px;
+  width: 100%;
+  /*background:#17baef;*/
   /*ie*/
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#52A7FF', endColorstr='#8DCDFF', GradientType='0');
-  background:-webkit-gradient(linear, 0 0, 0 bottom, from(#52A7FF), to(#8DCDFF));
-  background:-moz-linear-gradient(top,rgba(82,167,255,1),rgba(142,199,255,1));
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#52A7FF), to(#8DCDFF));
+  background: -moz-linear-gradient(top, rgba(82, 167, 255, 1), rgba(142, 199, 255, 1));
 }
 
 .logo-content {
-    margin: 30px 0;
-    width: 100%;
-    text-align: center;
+  margin: 30px 0;
+  width: 100%;
+  text-align: center;
 }
+
 .logoImage {
-    width: 180px;
-    height: 180px;
-    min-width: 180px;
-    min-height: 180px;
-    border-radius: 91px;
-    border: solid 2px orange;
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  min-height: 180px;
+  border-radius: 91px;
+  border: solid 2px orange;
 }
+
 .social-account {
-    text-align: center;
+  text-align: center;
   padding-bottom: 20px;
 }
+
 .social-account a {
-    margin: 10px 10px;
+  margin: 10px 10px;
 }
 
 .foot {
-    margin-top: 30px;
-    border-top: solid 1px  #e0e0e0;
-    text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    color: gray;
-}
-
-
-
-/*#app {*/
-    /*text-align: center;*/
-    /*margin: 60px;*/
-    /*max-width: 370px;*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    /*flex-direction: column;*/
-/*}*/
-/** example */
-
-button {
-    font-family: 'Roboto Mono';
-    border: 2px solid black;
-    background: white;
-    padding: 10px 15px;
-    margin: 0 10px;
-    outline: 0;
-    width: 60%;
-    cursor: pointer;
-}
-
-h4 {
-    margin: 0 0 15px;
-}
-
-.modal {
-    background: cyan;
-    color: black;
-    padding: 20px;
-    width: 200px;
-    position: absolute;
-}
-
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.25s ease-out;
-}
-
-.fade-enter, .fade-leave-to {
-    opacity: 0;
+  margin-top: 30px;
+  border-top: solid 1px #e0e0e0;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  color: gray;
 }
