@@ -3,14 +3,27 @@
 Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 */
+
 body {
-  /*font: normal 100% Helvetica, Arial, sans-serif;*/
+  padding-top: 54px;
   margin: 0;
   background: #f0f0f0;
 }
 
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
 .article {
 
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 1.5rem!important;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
 .article .article-wrapper {
@@ -20,37 +33,49 @@ body {
   padding: 20px;
   max-width: 800px;
   margin: 100px auto 0 auto;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
-
-
-
-.part-head {
+.fix-card {
   position: fixed;
-  top: 0;
-  width: 100%;
-  background: #fafbfc;
-  display: flex;
-  display: -webkit-flex;
-  margin-bottom: 10px;
 }
 
-.part-article {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  width: 90%;
-  max-width: 1000px;
-  padding: 10px 4%;
-  background: white;
-  overflow: auto;
-  /*font-size: 85%;*/
-  line-height: 2em;
-  border-radius: 3px;
+
+@media screen and (max-width: 960px){
+  .fix-card {
+    position: inherit;
+  }
 }
+
+/**   */
+
+.author {
+
+}
+.author .favicon{
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  margin: 5px;
+}
+
+.social-account {
+  padding-top: 10px;
+}
+
+.social-account a{
+  margin: 5px;
+}
+
+.list-group-item:hover ,.list-group-item:focus{
+  color: #007bff;
+}
+
+.list-group-item i{
+  margin-right: 10px;
+}
+
+
+
 
 p {
   font-size: 16px;
@@ -63,7 +88,7 @@ code, kbd, pre, samp {
   line-height: 1.6em;
 }
 
-.part-article pre {
+.article pre {
   background: #f6f8fa;
   padding: 20px;
   white-space: pre-wrap;
@@ -71,7 +96,7 @@ code, kbd, pre, samp {
   border-radius: 4px;
 }
 
-.part-article blockquote p {
+.article blockquote p {
   color: #cdcdcd;
   border-left: solid 5px #bcbcbc;
   padding-left: 20px;
