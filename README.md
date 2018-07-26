@@ -1,9 +1,15 @@
 # edgardeng.github.io
+
 [Edgar Personal Blog](https://edgardeng.github.io )
 
-## 
+## Structure
+
+> Website for Personal Blog
+
 ```
   -- article
+    -- android
+    -- ...
   -- asset
    -- category.json 
   -- resource

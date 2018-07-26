@@ -1,8 +1,8 @@
-##浏览器数据存储
+## 浏览器数据存储
 
->浏览器的本地数据存储方式有：1.本地存储localstorage;2.本地存储localstorage
+> 浏览器的本地数据存储方式有：1.本地存储localstorage; 2.本地存储sessionstorage; 3.离线缓存
 
-1.本地存储localstorage
+#### 本地存储localstorage
 
 存储方式： 以键值对(Key-Value)的方式存储，永久存储，永不失效，除非手动删除。
 
@@ -10,11 +10,13 @@
 
 检测方法:
 
+```
 if(window.localStorage){
  alert('This browser supports localStorage');
 }else{
  alert('This browser does NOT support localStorage');
 }
+```
 相关API：
 
 getItem 取记录
@@ -29,15 +31,17 @@ clear 清除记录
 
 存储的内容： 数组，图片，json，样式，脚本。
 
-2.本地存储sessionstorage
+#### 本地存储sessionstorage
 
 HTML5 的本地存储 API 中的 localStorage 与 sessionStorage 在使用方法上是相同的，区别在于 sessionStorage 在关闭页面后即被清空，而 localStorage 则会一直保存。
 
-3.离线缓存（application cache）
+#### 离线缓存（application cache）
 
 本地缓存应用所需的文件
 
-使用方法： ①配置manifest文件
+使用方法： 
+
+① 配置manifest文件
 
 <!DOCTYPE HTML>
 <html manifest="demo.appcache">
@@ -55,13 +59,8 @@ manifest 文件可分为三个部分：
 
 完整demo：
 
-CACHE MANIFEST
-# 2016-07-24 v1.0.0
-/theme.css
-/main.js
  
-NETWORK:
-login.jsp
+NETWORK: login.jsp
  
 FALLBACK:
 /html/ /offline.html
@@ -115,6 +114,7 @@ Application Cache的三个优势：
 ③ 降低服务器压力
 
 注意事项：
+
 1. 浏览器对缓存数据的容量限制可能不太一样（某些浏览器设置的限制是每个站点 5MB）
 2. 如果manifest文件，或者内部列举的某一个文件不能正常下载，整个更新过程将视为失败，浏览器继续全部使用老的缓存
 3. 引用manifest的html必须与manifest文件同源，在同一个域下
@@ -124,6 +124,7 @@ Application Cache的三个优势：
 7. 更新完版本后，必须刷新一次才会启动新版本（会出现重刷一次页面的情况），需要添加监听版本事件。
 8. 站点中的其他页面即使没有设置manifest属性，请求的资源如果在缓存中也从缓存中访问
 9. 当manifest文件发生改变时，资源请求本身也会触发更新
+
 离线缓存与传统浏览器缓存区别：
 
 离线缓存是针对整个应用，浏览器缓存是单个文件
@@ -132,7 +133,7 @@ Application Cache的三个优势：
 
 离线缓存可以主动通知浏览器更新资源
 
-4. Web SQL
+#### Web SQL
 
 关系数据库，通过SQL语句访问 Web SQL 数据库 API 并不是 HTML5 规范的一部分，但是它是一个独立的规范，引入了一组使用 SQL 操作客户端数据库的 APIs。
 
@@ -147,7 +148,7 @@ Application Cache的三个优势：
 ③executeSql：这个方法用于执行实际的 SQL 查询。
 
 打开数据库：
-
+```
 var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024,fn);
 //openDatabase()
 方法对应的五个参数分别为：数据库名称、版本号、描述文本、数据库大小、创建回调 执行查询操作：
@@ -156,16 +157,18 @@ var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
 db.transaction(function (tx) { 
    tx.executeSql('CREATE TABLE IF NOT EXISTS WIN (id unique, name)');
 });
+```
 插入数据：
-
+```
 var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
 db.transaction(function (tx) {
    tx.executeSql('CREATE TABLE IF NOT EXISTS WIN (id unique, name)');
    tx.executeSql('INSERT INTO WIN (id, name) VALUES (1, "winty")');
    tx.executeSql('INSERT INTO WIN (id, name) VALUES (2, "LuckyWinty")');
 });
+```
 读取数据：
-
+```
 db.transaction(function (tx) {
    tx.executeSql('SELECT * FROM WIN', [], function (tx, results) {
       var len = results.rows.length, i;
@@ -178,11 +181,12 @@ db.transaction(function (tx) {
      
    }, null);
 });
+```
 由这些操作可以看出，基本上都是用SQL语句进行数据库的相关操作，如果你会MySQL的话，这个应该比较容易用。
 
 点我看更多教程！
 
-5.IndexedDB
+#### IndexedDB
 
 索引数据库 (IndexedDB) API（作为 HTML5 的一部分）对创建具有丰富本地存储数据的数据密集型的离线 HTML5 Web 应用程序很有用。同时它还有助于本地缓存数据，使传统在线 Web 应用程序（比如移动 Web 应用程序）能够更快地运行和响应。
 
@@ -204,6 +208,12 @@ indexedDB中没有表的概念，而是objectStore，一个数据库中可以包
 
 我们可以使用每条记录中的某个指定字段作为键值（keyPath），也可以使用自动生成的递增数字作为键值（keyGenerator），也可以不指定。选择键的类型不同，objectStore可以存储的数据结构也有差异。
 
-这个就有点复杂了。看这里的教程： 1.http://www.cnblogs.com/dolphinX/p/3415761.html
 
-2.http://www.cnblogs.com/dolphinX/p/3416889.html 详细API地址：http://www.ibm.com/developerworks/cn/web/wa-indexeddb/#ibm-pcon
+
+其他参考：
+
+1.http://www.cnblogs.com/dolphinX/p/3415761.html
+
+2.http://www.cnblogs.com/dolphinX/p/3416889.html 
+
+3.http://www.ibm.com/developerworks/cn/web/wa-indexeddb/#ibm-pcon

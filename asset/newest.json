@@ -1,14 +1,26 @@
 [
   {
+    "name": "Android 开发学习资料",
+    "page": "android/android_material",
+    "datetime": "2018-06-04 22:00",
+    "about": "关于Adnroid开发中的资料集锦，涉及基础学习，界面UI，框架，控件等"
+  },
+  {
+    "name": "Android 自定义视图之画图",
+    "datetime": "2018-06-20 12:00",
+    "page": "android/custom_view",
+    "about": "在Android开发中，自带的控件无法满足要求时，需要开发自定义视图。此处介绍通过Canvas和Paint完成简单的绘画视图"
+  },
+  {
     "name": "Javascript 技巧与陷阱",
-    "page": "JS_Tips",
+    "page": "web/js_tips",
     "datetime": "2017-06-08 12:00",
     "about": "javascript也只不过是一种编程语言。怎么可能，不会出错嘛?实用的过程中几个小问题总结至此"
   },
   {
     "name": "浏览器数据库",
     "datetime": "2017-06-07 12:00",
-    "page": "WEB_DATABASE",
-    "about": "浏览器的本地数据存储方式有：1.本地存储localstorage;2.本地存储localstorage"
+    "page": "web/web_database",
+    "about": "浏览器的本地数据存储方式有：1.本地存储localstorage; 2.本地存储sessionstorage; 3.离线缓存等"
   }
 ]

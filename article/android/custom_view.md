@@ -111,9 +111,11 @@ canvas.saveLayer(bounds, paint, saveFlags);
 
         canvas.save();
     }
+    
 ```     
 
 ### Paint
+
 绘制笔，绘制图形时的属性。基本用法如下
 
 ```
