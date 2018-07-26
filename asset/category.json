@@ -1,26 +1,38 @@
 [
   {
     "name": "Web",
+    "page": "web",
+    "ic": "fab fa-html5",
     "about": "Web develop "
   },
   {
     "name": "Android",
+    "page": "android",
+    "ic": "fab fa-android",
     "about": "android develop "
   },
   {
     "name": "iOS",
+    "page": "ios",
+    "ic": "fab fa-apple",
     "about": "ios develop "
   },
   {
     "name": "Python",
+    "page": "python",
+    "ic": "fab fa-python",
     "about": "python develop "
   },
   {
     "name": "PHP",
+    "page": "php",
+    "ic": "fab fa-php",
     "about": "php develop "
   },
   {
     "name": "Program",
+    "page": "program",
+    "ic": "fab fa-teamspeak",
     "about": "Programer improvement "
   }
 ]

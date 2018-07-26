@@ -1,7 +1,5 @@
 /*
 
-Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
-
 */
 
 body {
@@ -57,6 +55,9 @@ body {
   border-radius: 45px;
   margin: 5px;
 }
+.author i {
+  font-size: 1.5em;
+}
 
 .social-account {
   padding-top: 10px;
@@ -79,7 +80,8 @@ body {
 
 p {
   font-size: 16px;
-  font-family: Source Sans Pro, sans-serif;
+  font-family: -apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Arial,sans-serif;
+  line-height: 32px;
 
 }
 
@@ -96,9 +98,23 @@ code, kbd, pre, samp {
   border-radius: 4px;
 }
 
+.article blockquote {
+  color: #B6A4A6;
+  margin: 1.5rem 1rem ;
+  font-style: italic;
+}
+
 .article blockquote p {
-  color: #cdcdcd;
-  border-left: solid 5px #bcbcbc;
-  padding-left: 20px;
+  border-left: solid 5px #F78D40;
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+h1 ,h2 {
+  margin: 20px 0;
+}
+
+h3,h4 {
+  margin: 10px 0;
 }
 

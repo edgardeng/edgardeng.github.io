@@ -16,36 +16,50 @@ if (!page) {
   page = "ME"
 }
 
-let converter = new showdown.Converter({extensions: function() {
-  function htmlunencode(text) {
-    return (
-      text
-        .replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-    );
-  }
-  return [
-    {
-      type: 'output',
-      filter: function (text, converter, options) {
-        // use new shodown's regexp engine to conditionally parse codeblocks
-        var left  = '<pre><code\\b[^>]*>',
-          right = '</code></pre>',
-          flags = 'g',
-          replacement = function (wholeMatch, match, left, right) {
-            // unescape match to prevent double escaping
-            match = htmlunencode(match);
-            return left + hljs.highlightAuto(match).value + right;
-          };
-        return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
-      }
+let converter = new showdown.Converter({
+  extensions: function () {
+    function htmlunencode(text) {
+      return (
+        text
+          .replace(/&amp;/g, '&')
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+      );
     }
-  ];
-}()});
 
-$.get(page + ".md", function(text) {
-  let html      = converter.makeHtml(text);
+    return [
+      {
+        type: 'output',
+        filter: function (text, converter, options) {
+          // use new shodown's regexp engine to conditionally parse codeblocks
+          var left = '<pre><code\\b[^>]*>',
+            right = '</code></pre>',
+            flags = 'g',
+            replacement = function (wholeMatch, match, left, right) {
+              // unescape match to prevent double escaping
+              match = htmlunencode(match);
+              return left + hljs.highlightAuto(match).value + right;
+            };
+          return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
+        }
+      }
+    ];
+  }()
+});
+
+$.get(page + ".md", function (text) {
+  let html = converter.makeHtml(text);
   $('#content').html(html);
 });
 hljs.initHighlightingOnLoad();
+
+$(function(){
+  $('#comment').click(function(){
+    alert('暂时无效，待开发');
+  });
+})
+
+// $("#comment").click(function () {
+//   alert('我被点了')
+// });
+
