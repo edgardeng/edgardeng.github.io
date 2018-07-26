@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Android 开发学习资料",
+    "page": "web/android_material",
+    "datetime": "2018-06-04 22:00",
+    "about": "关于Adnroid开发中的资料集锦，涉及基础学习，界面UI，框架，控件等"
+  },
+  {
+    "name": "Android 自定义视图之画图",
+    "datetime": "2018-06-20 12:00",
+    "page": "web/custom_view",
+    "about": "在Android开发中，自带的控件无法满足要求时，需要开发自定义视图。此处介绍通过Canvas和Paint完成简单的绘画视图"
+  }
+]

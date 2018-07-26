@@ -3,13 +3,13 @@
     "name": "Web",
     "page": "web",
     "ic": "fab fa-html5",
-    "about": "Web develop "
+    "bg": "../resource/image/web.jpg"
   },
   {
     "name": "Android",
     "page": "android",
     "ic": "fab fa-android",
-    "about": "android develop "
+    "bg": "../resource/image/android.jpg"
   },
   {
     "name": "iOS",

@@ -4,84 +4,183 @@
     <meta charset="utf-8">
     <title> Edgar Deng Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
-    <link rel="stylesheet" href="resource/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resource/css/style.css">
-    <link rel="stylesheet" href="resource/css/catalog.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css"
+          integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css"
+          integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+    <link href="resource/css/aside.css" rel="stylesheet">
+    <link href="resource/css/category.css" rel="stylesheet">
+
 </head>
 
 <body>
-
-<div class="logo-innner">
-    <div class="logo-content" href="">
-        <img class="logoImage"
-             src="resource/image/favicon.jpg"
-             alt=""/>
-        <h3>  Edgar Deng Blog </h3>
-    </div>
-
-    <div class="social-account">
-        <a href="https://weibo.com/edgardeng" target="_blank">
-            <i class="fa fa-weibo fa-2x" style="color:#EE5544;"> </i>
-        </a>
-        <a href="https://github.com/edgardeng" target="_blank">
-            <i class="fa fa-github fa-2x" style="color:#2b3137"> </i>
-        </a>
-    </div>
-</div>
-
 <div id="app">
-
-    <div class="post">
-
-        <div class="post-wrapper row" v-for="item in articleList" v-on:click="handleClick(item)">
-
-            <div class="feature-content row">
-                <img src="./resource/image/c-1.jpg" alt="" class="img-responsive">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="">Edgar Deng Blog</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./article/?">About</a>
+                    </li>
+                </ul>
             </div>
-            <div class="post-title">
-                {{item.name}}
-            </div>
+        </div>
+    </nav>
 
-            <div class="post-excerpt">
-                <div class="post-content row">
-                    <p>{{item.about}}</p>
+    <!-- Page Header -->
+    <header class="masthead"
+            style="background-image: url(./resource/image/ablum2.jpg);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-9 mx-auto">
+                    <div class="page-heading">
+
+                        <h2>Edgar Deng Blog</h2>
+                        <!--<span class="subheading">This is what I do.</span>-->
+                        <!--<span class="subheading">Android Develop Study</span>-->
+                    </div>
                 </div>
 
-                <div class="post-date">
-                    {{item.datetime}}
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+                <div class="card" v-for="item in articleList">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.about}}</p>
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">{{item.datetime}}</small>
+                            <button class="btn btn-primary" v-on:click="handleArticleClick(item)">check</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <div class="">
+                    <!-- Author Widget -->
+                    <div class="card ">
+                        <h5 class="card-header">Author</h5>
+                        <div class="card-body text-center">
+                            <div class="author">
+                                <img class="favicon"
+                                     src="./resource/image/favicon.jpg"
+                                     alt=""/>
+                                <div> Edgar Deng</div>
+                                <div class="figure-caption"> FE Developer in Web, Android, iOS</div>
+                                <div class="social-account">
+                                    <a href="https://weibo.com/edgardeng" target="_blank">
+                                        <i class="fab fa-weibo fa-2x" style="color:#EE5544;"> </i>
+                                    </a>
+                                    <a href="https://github.com/edgardeng" target="_blank">
+                                        <i class="fab fa-github fa-2x" style="color:#2b3137"> </i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="card">
+                        <h5 class="card-header">Categories</h5>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <button type="button"
+                                        class="list-group-item list-group-item-action"
+                                        v-for="item in categories"
+                                        v-on:click="handleCateClick(item)">
+                                    <i :class="item.ic"> </i> {{item.name}}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p class="copyright text-center">Copyright © Edgar Deng 2018</p>
                 </div>
             </div>
         </div>
+    </footer>
 
-    </div>
-</div>
-
-
-<div class="foot">
-    <i class="fa fa-copyright fa-lg"> edgardeng</i>
 </div>
 
 </body>
 
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
+<script src=" https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" > </script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+
 <script lang="javascript">
-  var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!',
-        articleList: []
-      },
+
+  let app = new Vue({
+    el: '#app',
+    data: {
+      articleList: [],
+      category: {},
+      categories: []
+    },
+    mounted: function () {
+      let _self = this
+      $.get("./asset/newest.json",function(data){
+        _self.articleList = data
+      })
+
+      $.get("./asset/category.json", function (data) {
+        _self.categories = data
+      })
+    },
     methods: {
-      handleClick: function (item) {
-        console.log('item')
-        window.location.href= "./article/?article=" + item.page
+      handleArticleClick: function (item) {
+        let page = encodeURI(item.page)
+        window.location.href= "./article/?article=" + page
+      },
+      handleCateClick: function (item) {
+        window.location.href= "./article/category.html?cate=" + item.page
       }
     }
-  })
-
-  $.get("./asset/menu.json",function(data){
-    app.$data.articleList = data
   })
 
 </script>

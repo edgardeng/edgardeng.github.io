@@ -15,8 +15,7 @@
     <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
 
     <link href="../resource/css/article.css" rel="stylesheet">
-    <!--<link href="../resource/css/font-awesome.min.css" rel="stylesheet">-->
-
+    <link href="../resource/css/aside.css" rel="stylesheet">
 
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/regular.css" integrity="sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
@@ -26,49 +25,44 @@
 
 <body>
 
+<div id="app">
+
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container">
 
-        <a class="navbar-brand" href="#">Edgar Deng Blog</a>
+        <a class="navbar-brand" href="">Edgar Deng Blog</a>
 
-        <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
-            <!--<span class="navbar-toggler-icon"></span>-->
-        <!--</button>-->
-        <!--<div class="collapse navbar-collapse" id="navbarResponsive">-->
-            <!--<ul class="navbar-nav ml-auto">-->
-                <!--<li class="nav-item active">-->
-                    <!--<a class="nav-link" href="#">Home-->
-                        <!--<span class="sr-only">(current)</span>-->
-                    <!--</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="#">About</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="#">Services</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="#">Contact</a>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">About</a>
+                </li>
+            </ul>
+        </div>
 
     </div>
 </nav>
 
 <!-- Page Content -->
-<div class="container">
+    <div class="container">
 
     <div class="row">
 
         <!-- Post Content Column -->
         <div class="col-lg-9">
-
+            <!-- Article Content -->
             <div class="article">
                 <div id="content"> </div>
             </div>
-
             <!-- Comments Form -->
             <div class="card my-4">
                 <h5 class="card-header">Leave a Comment:</h5>
@@ -82,13 +76,10 @@
                 </div>
             </div>
 
-
-
         </div>
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-3">
-
             <div class="fix-card">
                 <!-- Author Widget -->
                 <div class="card my-4 ">
@@ -112,46 +103,22 @@
 
                     </div>
                 </div>
-
                 <!-- Categories Widget -->
                 <div class="card my-4 ">
                     <h5 class="card-header">Categories</h5>
                     <div class="card-body">
 
                         <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <i class="fab fa-html5" ></i>   Web
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <i class="fab fa-android"></i> Android
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <i class="fab fa-apple"></i> iOS
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <i class="fab fa-python"></i> Python</a>
-                            <a href="#" class="list-group-item list-group-item-action ">
-                                <i class="fab fa-php"></i> PHP</a>
-                            <a href="#" class="list-group-item list-group-item-action ">
-                                <i class="fab fa-teamspeak"></i> Program</a>
+                            <button type="button"
+                                    class="list-group-item list-group-item-action"
+                                    v-for="item in categories"
+                                    v-on:click="handleCateClick(item)">
+                                <i :class="item.ic" > </i> {{item.name}}
+                            </button>
                         </div>
                     </div>
 
                 <div>
-
-
-            <!-- Search Widget -->
-            <!--<div class="card my-4">-->
-                <!--<h5 class="card-header">Search</h5>-->
-                <!--<div class="card-body">-->
-                    <!--<div class="input-group">-->
-                        <!--<input type="text" class="form-control" placeholder="Search for...">-->
-                        <!--<span class="input-group-btn">-->
-                  <!--<button class="btn btn-secondary" type="button">Go!</button>-->
-                <!--</span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
 
 
 
@@ -159,7 +126,6 @@
 
     </div>
             </div>
-
         </div>
 </div>
 
@@ -170,16 +136,18 @@
     <!--</div>-->
 <!--</footer>-->
 
-<!-- ShowDown Highlight Bootstrap Jquery core JavaScript -->
+
+    </div>
+    <!-- ShowDown Highlight Bootstrap Jquery core JavaScript -->
+</div>
+
 
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/showdown/1.8.6/showdown.min.js"></script>
 <script src=" https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
 <script src=" https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" > </script>
 
-<!--<script src=" https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"  > </script>-->
-<!--<script src=" https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"  > </script>-->
-<!--<script src=" https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" > </script>-->
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
 
 <script lang="javascript" src="../resource/js/article.js"> </script>
 

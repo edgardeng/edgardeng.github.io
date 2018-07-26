@@ -5,295 +5,144 @@
     <title> Edgar Deng Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css"
+          integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css"
+          integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
 
-    <style>
+    <link href="../resource/css/aside.css" rel="stylesheet">
+    <link href="../resource/css/category.css" rel="stylesheet">
 
-        header.masthead {
-            margin-bottom: 50px;
-            background: no-repeat center center;
-            background-color: #868e96;
-            background-attachment: scroll;
-            position: relative;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover
-        }
-
-        header.masthead .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #212529;
-            opacity: .5
-        }
-
-        header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
-            padding: 200px 0 150px;
-            color: #fff
-        }
-
-        @media only screen and (min-width: 768px) {
-            header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
-                padding: 200px 0
-            }
-        }
-
-        header.masthead .page-heading, header.masthead .site-heading {
-            text-align: center
-        }
-
-        header.masthead .page-heading h1, header.masthead .site-heading h1 {
-            font-size: 50px;
-            margin-top: 0
-        }
-
-        header.masthead .page-heading .subheading, header.masthead .site-heading .subheading {
-            font-size: 24px;
-            font-weight: 300;
-            line-height: 1.1;
-            display: block;
-            margin: 10px 0 0;
-            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
-        }
-
-        @media only screen and (min-width: 768px) {
-            header.masthead .page-heading h1, header.masthead .site-heading h1 {
-                font-size: 80px
-            }
-        }
-
-        header.masthead .post-heading h1 {
-            font-size: 35px
-        }
-
-        header.masthead .post-heading .meta, header.masthead .post-heading .subheading {
-            line-height: 1.1;
-            display: block
-        }
-
-        header.masthead .post-heading .subheading {
-            font-size: 24px;
-            font-weight: 600;
-            margin: 10px 0 30px;
-            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
-        }
-
-        header.masthead .post-heading .meta {
-            font-size: 20px;
-            font-weight: 300;
-            font-style: italic;
-            font-family: Lora, 'Times New Roman', serif
-        }
-
-        header.masthead .post-heading .meta a {
-            color: #fff
-        }
-
-        @media only screen and (min-width: 768px) {
-            header.masthead .post-heading h1 {
-                font-size: 55px
-            }
-
-            header.masthead .post-heading .subheading {
-                font-size: 30px
-            }
-        }
-        .navbar .navbar-brand,.navbar .navbar-toggler , .navbar .navbar-nav .nav-link{
-            color:white;
-        }
-
-        .navbar .navbar-toggler {
-            border-color:white;
-        }
-
-        #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover, .navbar .navbar-nav .nav-link:hover{
-            color: rgba(250, 255, 250, .8)
-        }
-        .card {
-            margin-bottom: 20px;
-        }
-        .card .card-text{
-            color: #868e96;
-        }
-        .card .text-muted {
-            line-height: 38px;
-        }
-
-        .author {
-
-        }
-        .author .favicon{
-            width: 90px;
-            height: 90px;
-            border-radius: 45px;
-            margin: 5px;
-        }
-        .author i {
-            font-size: 1.5em;
-        }
-
-        </style>
 </head>
 
 <body>
 <div id="app">
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Edgar Deng Blog</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-            <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">About</a>
-                </li>
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="post.html">Sample Post</a>-->
-                <!--</li>-->
-                <!--<li class="nav-item">-->
-                    <!--<a class="nav-link" href="contact.html">Contact</a>-->
-                <!--</li>-->
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Page Header -->
-<header class="masthead"
-        style="background-image: url('../resource/image/andorid.jpg')">
-    <div class="overlay"> </div>
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-9 mx-auto">
-                <div class="page-heading">
-                    <h2>Android Develop Study</h2>
-                    <!--<span class="subheading">This is what I do.</span>-->
-                    <!--<span class="subheading">Android Develop Study</span>-->
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="">Edgar Deng Blog</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">About</a>
+                    </li>
+                </ul>
             </div>
-
         </div>
-    </div>
-</header>
+    </nav>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+    <!-- Page Header -->
+    <header class="masthead"
+            v-bind:style="{ backgroundImage: 'url(' + category.bg + ')' }">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
 
-            <div class="card" v-for="item in articleList">
-                <img class="card-img-top" src="..." alt="">
-                <div class="card-body">
-                    <h5 class="card-title">{{item.name}}</h5>
-                    <p class="card-text">{{item.about}}</p>
-                    <div class="d-flex justify-content-between">
-                        <small class="text-muted">{{item.datetime}}</small>
-                        <button class="btn btn-primary" v-on:click="handleClick(item)" >check</button>
+                <div class="col-lg-9 mx-auto">
+                    <div class="page-heading">
+                        <h2>{{category.name}} Develop Study</h2>
+                        <!--<span class="subheading">This is what I do.</span>-->
+                        <!--<span class="subheading">Android Develop Study</span>-->
                     </div>
                 </div>
+
             </div>
-
         </div>
+    </header>
 
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-            <div class="">
-                <!-- Author Widget -->
-                <div class="card ">
-                    <h5 class="card-header">Author</h5>
-                    <div class="card-body text-center">
-                        <div class="author">
-                            <img class="favicon"
-                                 src="../resource/image/favicon.jpg"
-                                 alt=""/>
-                            <div >   Edgar Deng </div>
-                            <div class="figure-caption"> FE Developer in Web, Android, iOS</div>
-                            <div class="social-account">
-                                <a href="https://weibo.com/edgardeng" target="_blank">
-                                    <i class="fab fa-weibo fa-2x" style="color:#EE5544;"> </i>
-                                </a>
-                                <a href="https://github.com/edgardeng" target="_blank">
-                                    <i class="fab fa-github fa-2x" style="color:#2b3137"> </i>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Categories Widget -->
-                <div class="card">
-                    <h5 class="card-header">Categories</h5>
-                    <div class="card-body">
-
-                        <div class="list-group">
-                            <button type="button"
-                                    class="list-group-item list-group-item-action"
-                                    v-for="item in categories"
-                                    v-on:click="handleCateClick(item)">
-                                <i :class="item.ic" > </i> {{item.name}}
-                            </button>
-
-
-                            <!--<a href="#" class="list-group-item list-group-item-action" v-for="item in categories">-->
-                                <!---->
-                            <!--</a>-->
-                        </div>
-                    </div>
-
-                    <div>
-
-
-                        <!-- Search Widget -->
-                        <!--<div class="card my-4">-->
-                        <!--<h5 class="card-header">Search</h5>-->
-                        <!--<div class="card-body">-->
-                        <!--<div class="input-group">-->
-                        <!--<input type="text" class="form-control" placeholder="Search for...">-->
-                        <!--<span class="input-group-btn">-->
-                        <!--<button class="btn btn-secondary" type="button">Go!</button>-->
-                        <!--</span>-->
-                        <!--</div>-->
-                        <!--</div>-->
-                        <!--</div>-->
-
-
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-<hr>
-
-<!-- Footer -->
-<footer>
+    <!-- Main Content -->
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-                <p class="copyright text-center">Copyright © Edgar Deng 2018</p>
+
+                <div class="card" v-for="item in articleList">
+                    <img class="card-img-top" src="..." alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.about}}</p>
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">{{item.datetime}}</small>
+                            <button class="btn btn-primary" v-on:click="handleClick(item)">check</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <div class="">
+                    <!-- Author Widget -->
+                    <div class="card ">
+                        <h5 class="card-header">Author</h5>
+                        <div class="card-body text-center">
+                            <div class="author">
+                                <img class="favicon"
+                                     src="../resource/image/favicon.jpg"
+                                     alt=""/>
+                                <div> Edgar Deng</div>
+                                <div class="figure-caption"> FE Developer in Web, Android, iOS</div>
+                                <div class="social-account">
+                                    <a href="https://weibo.com/edgardeng" target="_blank">
+                                        <i class="fab fa-weibo fa-2x" style="color:#EE5544;"> </i>
+                                    </a>
+                                    <a href="https://github.com/edgardeng" target="_blank">
+                                        <i class="fab fa-github fa-2x" style="color:#2b3137"> </i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="card">
+                        <h5 class="card-header">Categories</h5>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <button type="button"
+                                        class="list-group-item list-group-item-action"
+                                        v-for="item in categories"
+                                        v-on:click="handleCateClick(item)">
+                                    <i :class="item.ic"> </i> {{item.name}}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
-</footer>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p class="copyright text-center">Copyright © Edgar Deng 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </div>
 
@@ -305,23 +154,37 @@
 
 <script lang="javascript">
 
-  function getUrlParam(name) {
-    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    let r = window.location.search.substr(1).match(reg); //匹配目标参数
-    if (r !== null) {
-      return decodeURI(r[2]);
-    }
-    return null; //返回参数值
-  }
-
   let app = new Vue({
       el: '#app',
       data: {
         message: 'Hello Vue!',
         page: undefined,
         articleList: [],
+        category: {},
         categories: []
       },
+    mounted: function () {
+      var _self = this;
+
+      let page = _self.getUrlParam('cate');
+      if (!page) {
+        page = "android"
+      }
+      _self.page = page
+
+      $.get("../asset/" + page + ".json",function(data){
+        _self.articleList = data
+      })
+
+      $.get("../asset/category.json", function (data) {
+        for (index in data) {
+          if(_self.page === data[index].page) {
+            _self.category = data[index]
+          }
+        }
+        _self.categories = data
+      })
+    },
     methods: {
       handleClick: function (item) {
         console.log('item')
@@ -331,21 +194,16 @@
       handleCateClick: function (item) {
         window.location.href= "?cate=" + item.page
       },
+      getUrlParam: function (name) {
+        let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        let r = window.location.search.substr(1).match(reg); //匹配目标参数
+        if (r !== null) {
+          return decodeURI(r[2]);
+        }
+        return null; //返回参数值
+      }
+
     }
-  })
-
-  let page = getUrlParam('cate');
-  if (!page) {
-    page = "android"
-  }
-
-  app.$data.page = page
-
-  $.get("../asset/" + page + ".json",function(data){
-    app.$data.articleList = data
-  })
-  $.get("../asset/category.json",function(data){
-    app.$data.categories = data
   })
 
 </script>
