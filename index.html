@@ -47,10 +47,9 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-9 mx-auto">
+                <div class="col-lg mx-auto">
                     <div class="page-heading">
-
-                        <h2>Edgar Deng Blog</h2>
+                        <h2>{{motto.motto}}</h2>
                         <!--<span class="subheading">This is what I do.</span>-->
                         <!--<span class="subheading">Android Develop Study</span>-->
                     </div>
@@ -160,7 +159,8 @@
     data: {
       articleList: [],
       category: {},
-      categories: []
+      categories: [],
+      motto: {},
     },
     mounted: function () {
       let _self = this
@@ -170,6 +170,14 @@
 
       $.get("./asset/category.json", function (data) {
         _self.categories = data
+      })
+
+      $.get("./asset/motto.json", function (data) {
+        let time = new Date().getTime() / 1000; // second
+        let size = data.length
+        let hour = Math.round(time / 3600) % size // 100 以内
+        console.log("time:" + time + "size:" + size + "hour:" + hour )
+        _self.motto = data[hour]
       })
     },
     methods: {
