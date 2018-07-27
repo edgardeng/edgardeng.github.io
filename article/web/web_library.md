@@ -36,7 +36,8 @@
 1. [animate.css](https://github.com/daneden/animate.css)
 
 > A cross-browser library of CSS animations. As easy to use as an easy thing. http://daneden.github.io/animate.css
- 
+
+2. [Loading.css](https://projects.lukehaas.me/css-loaders/#load7) 
  
 其他相关：
 

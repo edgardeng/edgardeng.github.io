@@ -185,7 +185,6 @@
         _self.motto = data[hour]
         _self.removeLoading()
       })
-      setTimeout(this.removeLoading, 20000)
     },
     methods: {
       handleArticleClick: function (item) {
@@ -213,7 +212,12 @@
     navbarCollapse()
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse)
+    setTimeout(function () {
+      document.body.removeChild(document.getElementById('loading'))
+    }, 20000)
   })
+
+
 
 </script>
 </html>
