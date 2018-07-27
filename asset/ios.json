@@ -1,8 +1,8 @@
 [
   {
     "name": "iOS 开发学习资料",
-    "page": "ios/android_material",
+    "page": "ios/ios_material",
     "datetime": "2018-06-04 22:00",
-    "about": "关于Adnroid开发中的资料集锦，涉及基础学习，界面UI，框架，控件等"
+    "about": "关于iOS开发中的资料集锦，涉及基础学习，界面UI，框架，控件等"
   }
 ]
