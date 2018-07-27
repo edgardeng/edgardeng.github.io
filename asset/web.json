@@ -1,5 +1,11 @@
 [
   {
+    "name": "Web使用库（框架）集锦",
+    "page": "web/web_library",
+    "datetime": "2018-07-27 10:00",
+    "about": "整理收集一些值得学习或使用的框架和第三方库"
+  },
+  {
     "name": "Javascript 技巧与陷阱",
     "page": "web/js_tips",
     "datetime": "2017-06-08 12:00",

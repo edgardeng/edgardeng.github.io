@@ -14,10 +14,17 @@
 
     <link href="resource/css/aside.css" rel="stylesheet">
     <link href="resource/css/category.css" rel="stylesheet">
-
+    <link href="resource/css/loading.css" rel="stylesheet">
 </head>
 
 <body>
+
+<div id="loading" >
+    <div class="load-container">
+        <div class="loader">Loading...</div>
+    </div>
+</div>
+
 <div id="app">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
@@ -168,18 +175,17 @@
       $.get("./asset/newest.json",function(data){
         _self.articleList = data
       })
-
       $.get("./asset/category.json", function (data) {
         _self.categories = data
       })
-
       $.get("./asset/motto.json", function (data) {
         let time = new Date().getTime() / 1000; // second
         let size = data.length
         let hour = Math.round(time / 3600) % size // 100 以内
-        console.log("time:" + time + "size:" + size + "hour:" + hour )
         _self.motto = data[hour]
+        _self.removeLoading()
       })
+      setTimeout(this.removeLoading, 20000)
     },
     methods: {
       handleArticleClick: function (item) {
@@ -188,28 +194,26 @@
       },
       handleCateClick: function (item) {
         window.location.href= "./article/category.html?cate=" + item.page
+      },
+      removeLoading: function () {
+        document.body.removeChild(document.getElementById('loading'))
       }
     }
   })
 
-
   $(function() {
-
-    "use strict"; // Start of use strict
-    // Collapse Navbar
+    "use strict"
     let navbarCollapse = function() {
       if ($("#mainNav").offset().top > 400) {
-        $("#mainNav").addClass("bg-primary");
+        $("#mainNav").addClass("bg-primary")
       } else {
-        $("#mainNav").removeClass("bg-primary");
+        $("#mainNav").removeClass("bg-primary")
       }
-    };
-    // Collapse now if page is not at top
-    navbarCollapse();
+    }
+    navbarCollapse()
     // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
+    $(window).scroll(navbarCollapse)
   })
-
 
 </script>
 </html>
