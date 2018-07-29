@@ -3,36 +3,36 @@
     "name": "Web",
     "page": "web",
     "ic": "fab fa-html5",
-    "bg": "../resource/image/web.jpg"
+    "bg": "../resource/image/a1.svg"
   },
   {
     "name": "Android",
     "page": "android",
     "ic": "fab fa-android",
-    "bg": "../resource/image/android.jpg"
+    "bg": "../resource/image/a2.svg"
   },
   {
     "name": "iOS",
     "page": "ios",
     "ic": "fab fa-apple",
-    "about": "ios develop "
+    "bg": "../resource/image/a3.svg"
   },
   {
     "name": "Python",
     "page": "python",
     "ic": "fab fa-python",
-    "about": "python develop "
+    "bg": "../resource/image/a4.svg"
   },
   {
     "name": "PHP",
     "page": "php",
     "ic": "fab fa-php",
-    "about": "php develop "
+    "bg": "../resource/image/a5.svg"
   },
   {
     "name": "Program",
     "page": "program",
     "ic": "fab fa-teamspeak",
-    "about": "Programer improvement "
+    "bg": "../resource/image/a7.svg"
   }
 ]
