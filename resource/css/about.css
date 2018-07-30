@@ -1,0 +1,169 @@
+
+#canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+section {
+  height: 100vh;
+  text-align: center;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  padding: 60px 30px;
+}
+
+section:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+
+
+
+.section-content {
+  padding: 10px;
+  background: #23D6E7;
+  margin: 5em auto;
+  opacity: .8;
+  width: 70%;
+  box-shadow: 5px 5px 3px rgba(50, 50,50, .6);
+}
+
+.favicon {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: -75px;
+}
+
+.author-info {
+  margin: 2.5em 2em;
+  padding: 2em;
+  border: 4px double #fff
+}
+
+.author-info .address {
+  margin-top: 2em;
+  border-top: 1px solid #424242;
+  padding-top: 0.5em;
+}
+
+.address .address-text {
+  text-align: left;
+  max-width: 20em;
+  margin: auto;
+}
+
+.author-social i {
+  margin: .4em;
+  font-size: 1.6em;
+}
+.section-content h3 {
+  padding: 0.5em;
+  border-bottom: 4px double #23D6E7;
+  margin: auto;
+}
+
+.section-content .content-info {
+  margin-top: 3em;
+}
+.fp-right {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 20;
+}
+
+.fp-right ul {
+  text-align: right;
+  margin-right: 10px;
+  list-style: none;
+}
+
+.fp-right ul a {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 20px;
+  opacity: .6;
+  height: 28px;
+  text-align: center
+}
+
+.fp-right ul a:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(160, 160, 160, .5);
+  margin-left: -5px;
+  margin-top: -5px;
+  top: 50%;
+  left: 50%
+}
+
+.fp-right ul a.active:after {
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, .2);
+  border: 1px solid transparent
+}
+
+.author-info h6 {
+  margin-top: 1em;
+  color: #3d4444;
+}
+
+ul.address li {
+  display: block;
+}
+
+ul.address li ul.address-text li:nth-child(1) {
+  width: 28%;
+}
+
+ul.address li ul.address-text li {
+  display: inline-block;
+  color: #fff;
+  margin-top: 1em;
+  font-weight: 100;
+}
+
+ul.address li ul.address-text li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul.address li ul.address-text li a:hover {
+  color: #212121;
+}
+
+
+@media (max-width: 1080px){
+  .section-content {
+    padding: 10px;
+    margin: 2em auto;
+    width: 96%;
+    box-shadow: 5px 5px 3px rgba(50, 50,50, .6);
+
+  }
+  .author-info {
+    margin: .1em;
+  }
+  .address {
+    -webkit-padding-start: 0;
+  }
+  .address ul{
+    -webkit-padding-start: inherit;
+
+  }
+
+}
+

@@ -1,6 +1,6 @@
 # About Me
 
-> a FE developer in Web, Android, iOS
+> FE developer in Web, Android, iOS
 
 ## Profile
 
@@ -22,9 +22,5 @@
 ## Social
 
 [Github](https://github.com/edgardeng) 
+
 [Weibo](https://weibo.com/edgardeng)
-
-
-
-background-color: #330033;
-        background-image: url("

@@ -21,7 +21,7 @@ let app = new Vue({
   mounted: function () {
     let article = this.getUrlParam('article');
     if (!article) {
-      article = "ME"
+      window.location.href="https://edgardeng.github.io"
     }
     this.article = article
     this.renderArticle()
