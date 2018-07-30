@@ -162,7 +162,7 @@ ul.address li ul.address-text li a:hover {
   }
   .address ul{
     -webkit-padding-start: inherit;
-
+    font-size: 12px;
   }
 
 }
