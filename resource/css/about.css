@@ -35,6 +35,15 @@ section:after {
   box-shadow: 5px 5px 3px rgba(50, 50,50, .6);
 }
 
+.section-content h3 {
+  padding: 0.5em;
+  margin: auto;
+}
+.author-info h6 {
+  margin-top: 1em;
+  color: #605560;
+}
+
 .favicon {
   width: 120px;
   height: 120px;
@@ -54,7 +63,12 @@ section:after {
   padding-top: 0.5em;
 }
 
+
+.address, .address-text {
+  -webkit-padding-start: 0;
+}
 .address .address-text {
+
   text-align: left;
   max-width: 20em;
   margin: auto;
@@ -64,11 +78,9 @@ section:after {
   margin: .4em;
   font-size: 1.6em;
 }
-.section-content h3 {
-  padding: 0.5em;
-  border-bottom: 4px double #23D6E7;
-  margin: auto;
-}
+
+
+
 
 .section-content .content-info {
   margin-top: 3em;
@@ -80,9 +92,10 @@ section:after {
   z-index: 20;
 }
 
+
 .fp-right ul {
   text-align: right;
-  margin-right: 10px;
+  margin-right: 6px;
   list-style: none;
 }
 
@@ -116,10 +129,7 @@ section:after {
   border: 1px solid transparent
 }
 
-.author-info h6 {
-  margin-top: 1em;
-  color: #3d4444;
-}
+
 
 ul.address li {
   display: block;
@@ -152,17 +162,24 @@ ul.address li ul.address-text li a:hover {
     margin: 2em auto;
     width: 96%;
     box-shadow: 5px 5px 3px rgba(50, 50,50, .6);
+  }
+  .section-content h3 {
+    padding: 0;
+  }
 
-  }
   .author-info {
-    margin: .1em;
+    margin: 1em .1em;
+    padding: 1em;
   }
-  .address {
-    -webkit-padding-start: 0;
+  .favicon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: -55px;
   }
+
   .address ul{
-    -webkit-padding-start: inherit;
-    font-size: 12px;
+    font-size: 13px;
   }
 
 }
