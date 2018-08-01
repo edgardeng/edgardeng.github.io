@@ -938,7 +938,7 @@ var car2 = {
 					'background-position': 'center'
 				})
 
-				if(self.attr('data-image')=='no'){
+				if(self.attr('data-images')=='no'){
 					self.css({
 						'background-image'	: 'none'
 					})
@@ -1573,7 +1573,7 @@ var car2 = {
 		//var node = $('#j-mengban')[0],
 //			url = 'img/page_01_bg@2x.jpg',
 //			canvas_url = $('#r-cover').val(),
-//			type = 'image',
+//			type = 'images',
 //			w = 640,
 //			h = $(window).height(),
 //			callback = car2.start_callback;
