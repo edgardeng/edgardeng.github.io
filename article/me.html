@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css"
           integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="../resource/css/dasky.css"/>
 
 </head>
 
@@ -29,9 +30,7 @@
 <div id='wrap'>
 
     <section class="section" data-anchor="author">
-
         <div class="section-content">
-
             <div class="author">
                 <img class="favicon"
                      src="../resource/image/favicon.jpg"
@@ -89,17 +88,77 @@
 
             </div>
         </div>
-
-
     </section>
 
     <section class="section" data-anchor="about">
         <div class="section-content">
-            <h3>Abbout</h3>
+
             <div class="content-info">
-                Sed ac libero mattis, accumsan lacus nec, eleifend tortor. Etiam sodales consequat cursus. Quisque
-                venenatis mi at nulla pulvinar lobortis. Mauris vulputate odio sed dolor suscipit, a sollicitudin sapien
-                auctor. Nam aliquam tellus nibh, molestie dictum ipsum lobortis in.
+                <h3 class="double-line">Career</h3>
+
+                <div class="dsk-supported">
+                        <div class="dsk-wrapper ">
+                            <div class="wrap-line"> </div>
+                            <div class="step-group">
+
+                                <div class="step active" id="step-1">
+                                    <div class="dsk-circle"></div>
+                                    <h2 class="dsk-circle-title"> 1990 . 12</h2>
+                                    <div class="dsk-content">
+                                        <div class="dsk-info">
+                                            <h2>Born</h2>
+                                            <p> Born in a beautiful country  in China. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step " id="step-2">
+                                    <div class="dsk-circle"></div>
+                                    <h2 class="dsk-circle-title">2012.6</h2>
+                                    <div class="dsk-content">
+                                        <div class="dsk-info">
+                                            <h2>Bachelor Degree</h2>
+                                            <p> Graduated from *** University in China with a bachelor degress in control instrument in 2012.</p>
+                                            <!--<a href="#" class="dsk-link">Read More</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step " id="step-3">
+                                    <div class="dsk-circle"></div>
+                                    <h2 class="dsk-circle-title"> 2015.6</h2>
+                                    <div class="dsk-content">
+                                        <div class="dsk-info">
+                                            <h2>Master Degree</h2>
+                                            <p> Graduated from *** University in China with a master degress in electronic information in 2015.</p>
+                                            <!--<a href="#" class="dsk-link">Read More</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step" id="step-4">
+                                    <div class="dsk-circle"></div>
+                                    <h2 class="dsk-circle-title">2015.8</h2>
+                                    <div class="dsk-content">
+                                        <div class="dsk-info">
+                                            <h2> *** Company </h2>
+                                            <p>Get my first job at *** Company, and hold main responsibility in Android&iOS software development.</p>
+                                            <!--<a href="#" class="dsk-link">Read More</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="step" id="step-5">
+                                    <div class="dsk-circle"></div>
+                                    <h2 class="dsk-circle-title">2018.1</h2>
+                                    <div class="dsk-content">
+                                        <div class="dsk-info">
+                                            <h2> *** Company </h2>
+                                            <p> Start a business with friends in artificial intelligence</p>
+                                            <!--<a href="#" class="dsk-link">Read More</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
             </div>
         </div>
     </section>
@@ -113,13 +172,44 @@
 <script src="../resource/js/galaxy.js"></script>
 <script>
   $(function () {
+    let activeId = 1
+    let active = 'step-1'
+    function move(before, after) {
+      if (before === null) {
+        $('#' + active).removeClass('active')
+      } else {
+        $('#' + before).removeClass('active')
+      }
+      $('#' + after).addClass('active')
+      active = after;
+    }
+
+    function loop() {
+      if (activeId >= 5) {
+        return
+      }
+      let after = 'step-' + (++activeId)
+      move(active, after);
+      setTimeout(loop,2000)
+    }
+
     $('#wrap').fullpage({
       'verticalCentered': false,
       'fitToSection': false,
       'navigation': true,
       'navigationPosition': 'right',
       'resize': true,
-      'fadingEffect': true
+      'fadingEffect': true,
+      'afterLoad': function(before, after) {
+        if (after.anchor === 'about') {
+            // setTimeout(loop,2000)
+        }
+      }
+    })
+
+    $("#step-1,#step-2,#step-3,#step-4,#step-5").click( function(valude){
+      move(null,valude.currentTarget.id)
+      activeId = 5
     })
   })
 </script>

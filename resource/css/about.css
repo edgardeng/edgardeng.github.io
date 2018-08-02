@@ -39,6 +39,11 @@ section:after {
   padding: 0.5em;
   margin: auto;
 }
+
+.double-line {
+  border-bottom:solid white 3px;
+  max-width: 120px;
+}
 .author-info h6 {
   margin-top: 1em;
   color: #605560;
