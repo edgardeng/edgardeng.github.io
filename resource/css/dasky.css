@@ -5,7 +5,6 @@
   width:100%;
   margin:0 auto;
   height:480px;
-  overflow:hidden
 }
 
 .dsk-supported .dsk-wrapper {
@@ -287,11 +286,7 @@
     position: absolute;
     height: 80%;
     top:10%;
-    left: 70px;
-  }
-
-  .step-group .step {
-     position: relative;
+    left: 40px;
   }
 
   .step-group {
@@ -299,22 +294,43 @@
     left: 0;
     transform: translate(0, 0);
   }
+  .step-group .step {
+     position: relative;
+  }
+
+  .dsk-supported .active .dsk-circle {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    margin-top: -28px;
+    margin-left: -18px;
+  }
+
+  .step .dsk-circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    margin-top: -28px;
+    margin-left: -14px;
+  }
 
 
   #step-1 {
-    transform: translate(-50%, -50%) translate3d(200px, 140px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 140px, 0px) ;
   }
   #step-2 {
-    transform: translate(-50%, -50%) translate3d(200px, 220px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 220px, 0px) ;
   }
   #step-3 {
-    transform: translate(-50%, -50%) translate3d(200px, 300px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 300px, 0px) ;
   }
   #step-4 {
-    transform: translate(-50%, -50%) translate3d(200px, 380px, 0px);
+    transform: translate(-50%, -50%) translate3d(190px, 380px, 0px);
   }
   #step-5 {
-    transform: translate(-50%, -50%) translate3d(200px, 460px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 460px, 0px) ;
   }
 
 
@@ -334,11 +350,14 @@
 
   #step-4 .dsk-content {
     left: 60px;
-    top: 30%;
+    top: -50%;
   }
   #step-5 .dsk-content {
     left: 60px;
-    top: -200px;
+    top: -50%;
+  }
+  .dsk-content .dsk-info{
+    width: 80%;
   }
 
   .dsk-supported  .dsk-circle-title {
@@ -347,7 +366,7 @@
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
     top: -30px;
-
+    left: -120px;
   }
 
   .dsk-supported .active .dsk-circle-title {
@@ -355,7 +374,7 @@
   -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
-    left: -40px;
+    left: -60px;
     top: 18px;
   }
 
