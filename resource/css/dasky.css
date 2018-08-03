@@ -208,22 +208,17 @@
 
 
 .step-group{
-  /*position: absolute;*/
   position: relative;
   width: 540px;
   left: 50%;
   height: 100%;
   bottom: 58px;
   transform: translate(-50%, 0);
-  /*transform-origin: left top 0px;*/
-  /*transition: --transform 1s ease-in-out 0s, --perspective, opacity; transform-style: preserve-3d; transform: translate(-50%, -50%) scaleX(1) scaleY(1) scaleZ(1) translate3d(0px, 0px, 0px) scaleX(1) scaleY(1) scaleZ(1) rotateZ(0deg) rotateY(0deg) rotateX(0deg) translate3d(-400px, 0px, 0px);"*/
 }
 .step-group .step {
   position: absolute;
   bottom: 0;
   transform-style: preserve-3d;
-
-  /*transform: translate(-50%, -50%) translate3d(0, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);*/
 }
 
 .wrap-line {
@@ -277,9 +272,7 @@
 
 
 @media screen and (max-width:1080px) {
-  .dsk-supported {
-    height:600px
-  }
+
 
   .wrap-line {
     width:5px;
@@ -318,46 +311,47 @@
 
 
   #step-1 {
-    transform: translate(-50%, -50%) translate3d(190px, 140px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 120px, 0px) ;
   }
   #step-2 {
-    transform: translate(-50%, -50%) translate3d(190px, 220px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 200px, 0px) ;
   }
   #step-3 {
-    transform: translate(-50%, -50%) translate3d(190px, 300px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 280px, 0px) ;
   }
   #step-4 {
-    transform: translate(-50%, -50%) translate3d(190px, 380px, 0px);
+    transform: translate(-50%, -50%) translate3d(190px, 360px, 0px);
   }
   #step-5 {
-    transform: translate(-50%, -50%) translate3d(190px, 460px, 0px) ;
+    transform: translate(-50%, -50%) translate3d(190px, 440px, 0px) ;
   }
 
 
   #step-1 .dsk-content {
     left: 60px;
-    top:50%;
+    top:  60px;
   }
   #step-2 .dsk-content {
     left: 60px;
-    top: 40%;
+    top:  -20px;
   }
 
   #step-3 .dsk-content {
     left: 60px;
-    top: 50%;
+    top: -100px;
   }
 
   #step-4 .dsk-content {
     left: 60px;
-    top: -50%;
+    top: -180px;
   }
   #step-5 .dsk-content {
     left: 60px;
-    top: -50%;
+    top: -260px;
   }
+
   .dsk-content .dsk-info{
-    width: 80%;
+    width: 75%;
   }
 
   .dsk-supported  .dsk-circle-title {
@@ -371,15 +365,13 @@
 
   .dsk-supported .active .dsk-circle-title {
     -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     left: -60px;
     top: 18px;
   }
 
-
-  /* transform: rotate(-45deg); */
 
 }
 

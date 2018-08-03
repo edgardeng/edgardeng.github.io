@@ -38,7 +38,8 @@
 　　原则是尽量使用合成/聚合的方式，而不是使用继承。继承实际上破坏了类的封装性，超类的方法可能会被子类修改。
 
 ### 1. 工厂模式（Factory Method）
-　　常用的工厂模式是静态工厂，利用static方法，作为一种类似于常见的工具类Utils等辅助效果，一般情况下工厂类不需要实例化。
+
+常用的工厂模式是静态工厂，利用static方法，作为一种类似于常见的工具类Utils等辅助效果，一般情况下工厂类不需要实例化。
 
 ```
 interface food{}
@@ -49,7 +50,7 @@ class C implements food{}
 
 public class StaticFactory {
 
-    private StaticFactory(){}
+    private StaticFactory(){ }
     
     public static food getA(){  return new A(); }
     public static food getB(){  return new B(); }
@@ -73,9 +74,10 @@ class Client{
 ```
 
 ### 2. 抽象工厂模式（Abstract Factory）
-　　一个基础接口定义了功能，每个实现接口的子类就是产品，然后定义一个工厂接口，实现了工厂接口的就是工厂，这时候，接口编程的优点就出现了，我们可以新增产品类（只需要实现产品接口），只需要同时新增一个工厂类，客户端就可以轻松调用新产品的代码。
 
-　　抽象工厂的灵活性就体现在这里，无需改动原有的代码，毕竟对于客户端来说，静态工厂模式在不改动StaticFactory类的代码时无法新增产品，如果采用了抽象工厂模式，就可以轻松的新增拓展类。
+  一个基础接口定义了功能，每个实现接口的子类就是产品，然后定义一个工厂接口，实现了工厂接口的就是工厂，这时候，接口编程的优点就出现了，我们可以新增产品类（只需要实现产品接口），只需要同时新增一个工厂类，客户端就可以轻松调用新产品的代码。
+
+  抽象工厂的灵活性就体现在这里，无需改动原有的代码，毕竟对于客户端来说，静态工厂模式在不改动StaticFactory类的代码时无法新增产品，如果采用了抽象工厂模式，就可以轻松的新增拓展类。
 
 ```
 interface food{}
@@ -106,7 +108,8 @@ public class AbstractFactory {
 ```
 
 ### 3. 单例模式（Singleton）
- 　　在内部创建一个实例，构造器全部设置为private，所有方法均在该实例上改动，在创建上要注意类的实例化只能执行一次，可以采用许多种方法来实现，如Synchronized关键字，或者利用内部类等机制来实现。
+
+  在内部创建一个实例，构造器全部设置为private，所有方法均在该实例上改动，在创建上要注意类的实例化只能执行一次，可以采用许多种方法来实现，如Synchronized关键字，或者利用内部类等机制来实现。
 
 ```
 public class Singleton {
@@ -116,17 +119,20 @@ public class Singleton {
         private static Singleton value = new Singleton();
     }
 
-    public Singleton getInstance(){  return  SingletonBuild.value ;}
-    
+    public Singleton getInstance() {
+      return  SingletonBuild.value;
+    }
+  
 }
 ```
 
 ### 4.建造者模式（Builder）
-　　在了解之前，先假设有一个问题，我们需要创建一个学生对象，属性有name,number,class,sex,age,school等属性，如果每一个属性都可以为空，也就是说我们可以只用一个name,也可以用一个school,name,或者一个class,number，或者其他任意的赋值来创建一个学生对象，这时该怎么构造？
 
-　　难道我们写6个1个输入的构造函数，15个2个输入的构造函数.......吗？这个时候就需要用到Builder模式了。给个例子，大家肯定一看就懂：
+　　假设有一个问题，需要创建一个学生对象，属性有name,number,class,sex,age,school等属性，如果每一个属性都可以为空，也就是说我们可以只用一个name,也可以用一个school,name,或者其他任意的赋值来创建一个学生对象，这时该怎么构造？
 
- ```
+　　难道我们写6个1个输入的构造函数，15个2个输入的构造函数...吗？这个时候就需要用到Builder模式了。
+
+```
 public class Builder {
 
     static class Student{
@@ -136,7 +142,8 @@ public class Builder {
         int age = -1 ;
         String school = null ;
 
-　　　　　//构建器，利用构建器作为参数来构建Student对象
+　　　　　// 构建器，利用构建器作为参数来构建Student对象
+
         static class StudentBuilder{
             String name = null ;
             int number = -1 ;
@@ -186,10 +193,10 @@ public class Builder {
         Student b = new Student.StudentBuilder().setSchool("sc").setSex("Male").setName("ZhangSan").build();
     }
 }
-
 ```
 
-### 5. 原型模式（Protype）
+### 5.原型模式（Prototype）
+
 原型模式就是讲一个对象作为原型，使用clone()方法来创建新的实例。
 
 ```
@@ -223,32 +230,38 @@ public class Prototype implements Cloneable{
 }
 
 ```
+
 此处使用的是浅拷贝，关于深浅拷贝，大家可以另行查找相关资料。
 
 ### 6.适配器模式（Adapter）
 
-适配器模式的作用就是在原来的类上提供新功能。主要可分为3种：
+  适配器模式的作用就是在原来的类上提供新功能。主要可分为3种：
 
 * 类适配：
+
 > 创建新类，继承源类，并实现新接口
 
-class  adapter extends oldClass  implements newFunc{}
+class adapter extends oldClass  implements newFunc{ }
 
 * 对象适配：
+
 > 创建新类持源类的实例，并实现新接口，例如 
 
 class adapter implements newFunc { private oldClass oldInstance ;}
 
 * 接口适配：
+
 > 创建新的抽象类实现旧接口方法。例如 
 
 abstract class adapter implements oldClassFunc { void newFunc();}
 
 ### 7.装饰模式（Decorator）
- 给一类对象增加新的功能，装饰方法与具体的内部逻辑无关。例如：
+
+ 给一类对象增加新的功能，装饰方法与具体的内部逻辑无关。
 
 ```
-interface Source{ void method();}
+interface Source{ void method(); }
+
 public class Decorator implements Source{
 
     private Source source ;
@@ -263,6 +276,7 @@ public class Decorator implements Source{
 }
 ```
 ### 8.代理模式（Proxy）
+
 客户端通过代理类访问，代理类实现具体的实现细节，客户只需要使用代理类即可实现操作。
 
 这种模式可以对旧功能进行代理，用一个代理类调用原有的方法，且对产生的结果进行控制。
@@ -273,25 +287,29 @@ interface Source{ void method();}
 class OldClass implements Source{
     @Override
     public void method() {
+      // do some thing
     }
 }
 
 class Proxy implements Source{
     private Source source = new OldClass();
 
-    void doSomething(){}
+    void doSomething() { }
     @Override
     public void method() {
         new Class1().Func1();
         source.method();
         new Class2().Func2();
-        doSomething();
+        // do some thing
     }
 }
 ```
 
 ### 9.外观模式（Facade）
-为子系统中的一组接口提供一个一致的界面，定义一个高层接口，这个接口使得这一子系统更加容易使用。这句话是百度百科的解释，有点难懂，但是没事，看下面的例子，我们在启动停止所有子系统的时候，为它们设计一个外观类，这样就可以实现统一的接口，这样即使有新增的子系统subSystem4,也可以在不修改客户端代码的情况下轻松完成。
+
+为子系统中的一组接口提供一个一致的界面，定义一个高层接口，这个接口使得这一子系统更加容易使用。
+
+在启动停止所有子系统的时候，为它们设计一个外观类，这样就可以实现统一的接口，这样即使有新增的子系统subSystem4,也可以在不修改客户端代码的情况下轻松完成。
 
 ```
 public class Facade {
@@ -315,20 +333,20 @@ public class Facade {
 
 ### 10.桥接模式（Bridge）
 
-这里引用下http://www.runoob.com/design-pattern/bridge-pattern.html的例子。Circle类将DrwaApi与Shape类进行了桥接，代码：
+Circle类将DrawApi与Shape类进行了桥接，代码：
 
 ```
-interface DrawAPI {
+interface Draw {
     public void drawCircle(int radius, int x, int y);
 }
-class RedCircle implements DrawAPI {
+class RedCircle implements Draw {
     @Override
     public void drawCircle(int radius, int x, int y) {
         System.out.println("Drawing Circle[ color: red, radius: "
                 + radius +", x: " +x+", "+ y +"]");
     }
 }
-class GreenCircle implements DrawAPI {
+class GreenCircle implements Draw {
     @Override
     public void drawCircle(int radius, int x, int y) {
         System.out.println("Drawing Circle[ color: green, radius: "
@@ -337,9 +355,9 @@ class GreenCircle implements DrawAPI {
 }
 
 abstract class Shape {
-    protected DrawAPI drawAPI;
-    protected Shape(DrawAPI drawAPI){
-        this.drawAPI = drawAPI;
+    protected Draw draw;
+    protected Shape(Draw d){
+        this.draw = d;
     }
     public abstract void draw();
 }
@@ -347,15 +365,15 @@ abstract class Shape {
 class Circle extends Shape {
     private int x, y, radius;
 
-    public Circle(int x, int y, int radius, DrawAPI drawAPI) {
-        super(drawAPI);
+    public Circle(int x, int y, int radius, Draw d) {
+        super(d);
         this.x = x;
         this.y = y;
         this.radius = radius;
     }
 
     public void draw() {
-        drawAPI.drawCircle(radius,x,y);
+        draw.drawCircle(radius,x,y);
     }
 }
 
@@ -371,12 +389,12 @@ greenCircle.draw();
  组合模式是为了表示那些层次结构，同时部分和整体也可能是一样的结构，常见的如文件夹或者树。举例：
 
 ```
-abstract class component{}
+abstract class component { }
 
-class File extends  component{ String filename;}
+class File extends component { String filename; }
 
-class Folder extends  component{
-    component[] files ;  //既可以放文件File类，也可以放文件夹Folder类。Folder类下又有子文件或子文件夹。
+class Folder extends component {
+    component[] files ;  // 既可以放文件File类，也可以放文件夹Folder类。Folder类下又有子文件或子文件夹。
     String foldername ;
     public Folder(component[] source){ files = source ;}
     
@@ -430,6 +448,9 @@ class  FlyweightFactory{
 相关连接：
 
 [23中设计模式](https://blog.csdn.net/doymm2008/article/details/13288067)
+
+[菜鸟教程设计模式](http://www.runoob.com/design-pattern/design-pattern-intro.html)
+
 
 创建型
 
