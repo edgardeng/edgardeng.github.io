@@ -1,4 +1,18 @@
 [
+
+
+  {
+    "name": "Android Support中的RecyclerView",
+    "page": "android/support_widget_recycler_view",
+    "datetime": "2018-08-07 22:00",
+    "about": "Google提供在Support Library提供了android.support.v7.widget.RecyclerView，RecyclerView可做为listview,gridview的一个替换方案，是一个有效的数据列表控件"
+  },
+  {
+    "name": "Android Support中的ActionBar",
+    "page": "android/support_action_bar",
+    "datetime": "2018-08-06 22:00",
+    "about": "ActionBar是一个专用区域，可以标识您的应用并指示用户在应用中的位置，访问重要操作，支持导航和视图切换"
+  },
   {
     "name": "Android 开发学习资料",
     "page": "android/android_material",

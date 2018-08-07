@@ -1,5 +1,11 @@
 [
   {
+    "name": "Vue中的Component组件",
+    "page": "web/vue_component",
+    "datetime": "2018-08-06 20:00",
+    "about": "组件（Component）是 Vue.js 最强大的功能之一, 可以扩展 HTML 元素，封装可重用的代码"
+  },
+  {
     "name": "Web使用库（框架）集锦",
     "page": "web/web_library",
     "datetime": "2018-07-27 10:00",
