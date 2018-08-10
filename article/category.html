@@ -36,7 +36,7 @@
                         <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">About</a>
+                        <a class="nav-link" href="./me.html">About</a>
                     </li>
                 </ul>
             </div>
@@ -209,11 +209,6 @@
       }
       _self.page = page
 
-      $.get("../asset/" + page + ".json", function (data) {
-        _self.articleAll = data
-        _self.showArticleList()
-      })
-
       $.get("../asset/category.json", function (data) {
         for (index in data) {
           if (_self.page === data[index].page) {
@@ -222,6 +217,7 @@
         }
         _self.categories = data
       })
+      this.getArticleList()
     },
     methods: {
       handleClick: function (item) {
@@ -229,7 +225,24 @@
         window.location.href = "./index.html?article=" + page
       },
       handleCateClick: function (item) {
-        window.location.href = "?cate=" + item.page
+        if (this.page !== item.page) {
+          this.page = item.page
+          this.category = item
+        }
+        this.getArticleList()
+        this.toTop(50);
+
+        // window.scrollTo(0,0)
+        // window.location.href = "?cate=" + item.page
+      },
+      toTop (i) {
+        // 参数i表示间隔的幅度大小，以此来控制速度
+        document.documentElement.scrollTop -= i;
+        if (document.documentElement.scrollTop > 0) {
+          var c = setTimeout(()=>this.toTop(i),25)
+        }else {
+          clearTimeout(c);
+        }
       },
       getUrlParam: function (name) {
         let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
@@ -239,20 +252,24 @@
         }
         return null; //返回参数值
       },
+      getArticleList() {
+        let _self = this;
+        $.get("../asset/" + this.page + ".json", function (data) {
+          _self.articleAll = data
+          _self.showArticleList()
+        })
+      },
       showArticleList() {
         this.totalCount = this.articleAll.length
         this.pagination.index = 0
         let pSize = Math.floor(this.totalCount / 5) + 1
         this.pagination.size = pSize
-        console.log(pSize)
         // set pageItem
         if (pSize > 1) {
-            for(let i = 0;i<pSize; i++) {
+            for(let i = 0;i < pSize; i++) {
               this.pageItemArr.push(i)
             }
         }
-        console.log("pageItemArr:")
-        console.log(this.pageItemArr)
         this.showArticle()
       },
       showPagePre() {
@@ -280,7 +297,6 @@
       },
       showArticle() {
         let index = this.pagination.index
-        console.log("show page: " + index)
         let count = this.pagination.count
         let articles = []; // index
         for (let i = 0;i<5;i++) {
