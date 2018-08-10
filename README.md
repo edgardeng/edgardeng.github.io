@@ -2,7 +2,7 @@
 
 [Edgar Deng Personal Blog](https://edgardeng.github.io )
 
-![screenshot](./resource/image/screenshot.jpg)
+![screenshot](./resource/image/screenshot.png)
 ## Structure
 
 > Website for Personal Blog
