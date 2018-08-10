@@ -1,7 +1,8 @@
 # edgardeng.github.io
 
-[Edgar Personal Blog](https://edgardeng.github.io )
+[Edgar Deng Personal Blog](https://edgardeng.github.io )
 
+![screenshot](./resource/image/screenshot.jpg)
 ## Structure
 
 > Website for Personal Blog
@@ -9,9 +10,15 @@
 ```
   -- article
     -- android
+    -- ios
     -- ...
+    -- category.html 
+    -- index.html 
+    -- me.html 
   -- asset
    -- category.json 
+   -- android.json 
+   -- ...
   -- resource
       -- css
       -- fonts
@@ -21,18 +28,14 @@
   
 ```
 
-## Category
+## Technology Stack 
 
- * Android
+* [Bootsrap](https://getbootstrap.com/) - an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
  
- * iOS
- 
- * Web (html,js,css)
+* [Vue](https://vuejs.org/index.html) - The Progressive JavaScript Framework
 
- * Server (nginx, linux, server )
- 
- * PHP
- 
- * Python 
- 
+* [JQuery](https://jquery.com/ ) - a fast, small, and feature-rich JavaScript library
 
+* [showdown.js](http://showdownjs.com/) - A Markdown to HTML converter written in Javascript!
+
+* [highlight.js](https://highlightjs.org/) - Syntax highlighting for the Web

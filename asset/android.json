@@ -1,6 +1,11 @@
 [
 
-
+  {
+    "name": "Android 开发中的 Proguard",
+    "page": "android/build_proguard",
+    "datetime": "2018-08-09 22:00",
+    "about": "Proguard在Android应用的构建过程中，主要是混淆功能，根据Proguard帮助文档的描述，Proguard可以对Java class 文件进行shrink，optimize，obfuscate和preveirfy。"
+  },
   {
     "name": "Android Support中的RecyclerView",
     "page": "android/support_widget_recycler_view",
