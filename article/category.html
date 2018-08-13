@@ -79,7 +79,7 @@
                     </div>
                 </div>
 
-                <div v-show="pagination > 1">
+                <div v-show="pagination.size > 1">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center">
 
@@ -179,14 +179,13 @@
 
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <!--<script src=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js" > </script>-->
-<script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
 
 <script lang="javascript">
 
   let app = new Vue({
     el: '#app',
     data: {
-      message: 'Hello Vue!',
       page: undefined,
       articleList: [],
       category: {},
@@ -239,7 +238,7 @@
         // 参数i表示间隔的幅度大小，以此来控制速度
         document.documentElement.scrollTop -= i;
         if (document.documentElement.scrollTop > 0) {
-          var c = setTimeout(()=>this.toTop(i),25)
+          var c = setTimeout(()=>this.toTop(i),20)
         }else {
           clearTimeout(c);
         }
