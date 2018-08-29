@@ -1,5 +1,11 @@
 [
   {
+    "name": "Python的Web开发框架Flask",
+    "page": "python/flask",
+    "datetime": "2018-08-22 21:00",
+    "about": "Flask是Python语言下的一个非常轻量级的Web开发框架，提供了搭建 Web 服务的必要组件，同时具有良好的扩展性"
+  },
+  {
     "name": "Python　进阶学习",
     "page": "python/python_advance",
     "datetime": "2018-04-25 22:00",
