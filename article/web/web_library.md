@@ -2,6 +2,12 @@
 
 > 整理收集一些值得学习或使用的框架和第三方库
 
+## 移动端的框架
+
+[F2](http://antv.alipay.com/zh-cn/f2/3.x/index.html) 移动端可视化解决方案 (蚂蚁金服出品)
+
+[vux](https://github.com/airyland/vux) 一个凑合的 Vue.js 移动端 UI 组件库，微信风格
+
 ### js 动画库 （2018）
 
 1. Three.js (https://github.com/mrdoob/three.js/))

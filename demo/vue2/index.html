@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title></title>
+      <% for (let i of htmlWebpackPlugin.options.dll) { %>
+      <script src="<%= i %>"></script>
+      <% } %>
   </head>
   <body>
     <div id="app"></div>
