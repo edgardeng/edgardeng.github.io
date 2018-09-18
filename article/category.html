@@ -111,6 +111,40 @@
             <div class="col-md-4">
 
                 <div class="">
+                    <!-- Search Widget -->
+                    <div class="card">
+                        <h5 class="card-header">Search</h5>
+                        <div class="card-body">
+
+                            <div class="input-group mb-3">
+                                <input type="search" class="form-control" placeholder="Keyword" aria-label="Keyword" v-model="keyword" >
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" v-on:click="handleSearchClick()">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="card">
+                        <h5 class="card-header">Categories</h5>
+                        <div class="card-body">
+                            <div class="list-group">
+                                <button type="button"
+                                        class="list-group-item list-group-item-action"
+                                        v-for="item in categories"
+                                        v-on:click="handleCateClick(item)">
+                                    <i :class="item.ic"> </i> {{item.name}}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                    </div>
+
                     <!-- Author Widget -->
                     <div class="card ">
                         <h5 class="card-header">Author</h5>
@@ -134,25 +168,6 @@
                         </div>
                     </div>
 
-                    <!-- Categories Widget -->
-                    <div class="card">
-                        <h5 class="card-header">Categories</h5>
-                        <div class="card-body">
-                            <div class="list-group">
-                                <button type="button"
-                                        class="list-group-item list-group-item-action"
-                                        v-for="item in categories"
-                                        v-on:click="handleCateClick(item)">
-                                    <i :class="item.ic"> </i> {{item.name}}
-                                </button>
-                            </div>
-                        </div>
-
-                        <div>
-
-                        </div>
-
-                    </div>
                 </div>
 
             </div>
@@ -197,7 +212,8 @@
         count: 5,
       },
       pageItemArr: [],
-      totalCount: 0
+      totalCount: 0,
+      keyword: ''
     },
     mounted: function () {
       var _self = this;
@@ -223,16 +239,24 @@
         let page = encodeURI(item.page)
         window.location.href = "./index.html?article=" + page
       },
+      handleSearchClick: function () {
+        if (this.keyword.length < 1) {
+          // this.showArticle()
+        } else {
+          this.articleList = this.articleAll.filter((e) => {
+            let name = e.name.indexOf(this.keyword) >= 0;
+            let desc = e.about.indexOf(this.keyword) >= 0;
+            return name | desc;
+          })
+        }
+      },
       handleCateClick: function (item) {
         if (this.page !== item.page) {
           this.page = item.page
           this.category = item
         }
         this.getArticleList()
-        this.toTop(50);
-
-        // window.scrollTo(0,0)
-        // window.location.href = "?cate=" + item.page
+        this.toTop(50)
       },
       toTop (i) {
         // 参数i表示间隔的幅度大小，以此来控制速度

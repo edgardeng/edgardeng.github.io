@@ -1,5 +1,10 @@
 [
-
+  {
+    "name": "Android 约束布局 ConstraintLayout",
+    "page": "android/layout_constrain",
+    "datetime": "2018-09-18 22:00",
+    "about": "当布局嵌套过多时会出现一些性能问题，可用约束布局ConstraintLayout来减少布局的层级结构。"
+  },
   {
     "name": "Android 开发中的 Proguard",
     "page": "android/build_proguard",
