@@ -68,4 +68,21 @@ npm install webpack-cli -D
     new vueLoaderPlugin()
   ],
 ```
+####  引入Postcss的问题
 
+需要在项目的根目录添加　.postcssrc.js 或　postcss.config.js
+```js
+module.exports = {
+  "plugins": {
+    "postcss-import": {},
+    "postcss-url": {},
+    // to edit target browsers: use "browserslist" field in package.json
+    "autoprefixer": {}
+  }
+}
+
+```
+
+#### vue-template-compiler must be installed as a peer dependency,
+
+vue的版本应该和vue-template-compiler版本一至
