@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        #app {
+            text-align: center;
+            margin: 60px;
+            max-width: 370px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        button {
+            font-family: 'Roboto Mono';
+            border: 2px solid black;
+            background: white;
+            padding: 10px 15px;
+            margin: 0 10px;
+            outline: 0;
+            width: 60%;
+            cursor: pointer;
+        }
+
+        h4 {
+            margin: 0 0 15px;
+        }
+
+        .modal {
+            background: cyan;
+            color: black;
+            padding: 20px;
+            width: 200px;
+            position: absolute;
+        }
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 1s ease-out;
+        }
+
+        .fade-enter-to, .fade-leave-to {
+            opacity: 0;
+        }
+
+
+        </style>
+</head>
+<body>
+<div id="app">
+    <h3>Let's trigger this here modal!</h3>
+    <button @click="toggleShow">
+        <span v-if="isShowing">Hide child</span>
+        <span v-else>Show child</span>
+    </button>
+
+    <transition name="fade">
+        <app-child v-if="isShowing" class="modal">
+            <button @click="toggleShow">
+                Close
+            </button>
+        </app-child>
+    </transition>
+
+    <!--<app-child v-if="isShowing" class="modal">-->
+        <!--<button @click="toggleShow">-->
+            <!--Close-->
+        <!--</button>-->
+    <!--</app-child>-->
+
+    <div>
+
+    </div>
+</div>
+
+<script type="text/x-template" id="childarea">
+    <div>
+        <h2>Here I am!</h2>
+        <slot></slot>
+    </div>
+</script>
+
+</body>
+
+<script >
+  const Child = {
+    template: '#childarea'
+  };
+
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        isShowing: false
+      }
+    },
+    methods: {
+      toggleShow() {
+        this.isShowing = !this.isShowing;
+      }
+    },
+    components: {
+      appChild: Child
+    }
+  });
+
+</script>
+</html>
