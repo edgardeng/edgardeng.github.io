@@ -6,6 +6,17 @@
 
 ### 3.0升级到4.8.1
 
+#### 需要更新的依赖
+
+```
+npm i -D html-webpack-plugin 
+npm i -D webpack-dev-server
+npm i -D vue-loader 
+npm i -D extract-text-webpack-plugin@next
+
+```
+
+
 #### webpack.optimize.CommonsChunkPlugin has been removed, please use splitChunks
 
   在webpack.prod.conf.js中，去除 new webpack.optimize.CommonsChunkPlugin。并添加：
@@ -40,7 +51,7 @@ optimization: {
 
 #### Use Chunks.groupsIterable and filter by instanceof Entrypoint instead
 
-升级extract-text-webpack-plugin@
+升级extract-text-webpack-plugin@next
 
 
 #### Path variable [contenthash] not implemented in this context: static/css/[name].[contenthash].css
@@ -68,4 +79,11 @@ npm install webpack-cli -D
     new vueLoaderPlugin()
   ],
 ```
+
+#### Module build failed: 
+
+1. TypeError: Cannot read property 'eslint' of undefined
+
+> 
+
 

@@ -10,7 +10,6 @@
 
 > 在计算机视觉、自然语言理解、知识推理、智能硬件、机器人等技术领域作出突破性,服务于安防、金融、交通、医疗等多个行业。
 
-
 ### 旷世
 
 [北京旷视科技有限公司](https://www.megvii.com/)
@@ -20,21 +19,36 @@
 #### [face++](https://www.faceplusplus.com.cn/)
 
 功能：人脸检测，人脸关键点，人脸属性，人脸比对，人体属性，人体检测，人体抠像，文字识别，其他物体识别
+
 接入：Web API, Mobile SDk, 服务端sdk
 
 #### [faceID](https://www.faceplusplus.com.cn/)
 
 功能：人脸比对，活体检测，证件识别
-SDK：app,pc web,mobile web, server 的sdk集成
 
+SDK：app,pc web,mobile web, server 的sdk集成
 
 ### 商汤
 
 [北京市商汤科技开发有限公司](https://www.sensetime.com/)
 
-功能： 智能视频, 身份验证, 移动互联网, 其它商业解决方案
+[商汤云平台](https://cloud.sensetime.com/#/home)
 
+功能: 智能视频, 身份验证, 移动互联网, 其它商业解决方案
 
+接入: 
+
+### 虹软
+[虹软（杭州）多媒体信息技术有限公司](http://www.arcsoft.com.cn/)
+[虹软AI开发平台](https://ai.arcsoft.com.cn/index.html)
+
+功能： 人脸检测， 人脸跟踪，人脸比对，人脸查找，人脸属性分析
+
+接入: 人证核验SDK, 人脸识别SDK, 活体检测SDK
+
+支持: windows, linux, android, ios
+
+    
 ### 腾讯优图
 
 [腾讯优图](https://open.youtu.qq.com/#/open)
@@ -42,15 +56,18 @@ SDK：app,pc web,mobile web, server 的sdk集成
 [腾讯AI平台](https://ai.qq.com/)
 
 功能:人脸识别, 人体识别,人像分割,图像识别,文字识别
+
 接入: 在线api 。[文档](https://open.youtu.qq.com/legency/#/develop/new-platform)
 
 ### 百度AI
+
 [百度AI开放平台](http://ai.baidu.com/)
+
 功能:  语音技术、图像技术、人脸与人体识别、视频技术、AR与VR、 自然语言处理、数据智能、知识图谱
 
 接入：人脸识别在线API
 
-离线: android,window。 	299元/个
+离线支持：Android、Windows、Linux、iOS（敬请期待）  	299元/个 （2个免费，试用3个月）需要企业认证
 
 
 
