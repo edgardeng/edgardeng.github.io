@@ -9,6 +9,8 @@
     </span>
     </InfoItem>
     <InfoGroup :data="itemArr" title="title" edit @edit-click="onGroupEdit"> </InfoGroup>
+  <NoFound > </NoFound>
+
   </div>
 </template>
 
@@ -16,11 +18,12 @@
 import HelloWorld from './components/HelloWorld'
 import InfoItem from './components/InfoItem'
 import InfoGroup from './components/InfoGroup'
+import NoFound from './page/NoFound'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld, InfoItem, InfoGroup
+    HelloWorld, InfoItem, InfoGroup, NoFound
   },
   data () {
     return {

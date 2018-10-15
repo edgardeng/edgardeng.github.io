@@ -6,17 +6,6 @@
 
 ### 3.0升级到4.8.1
 
-#### 需要更新的依赖
-
-```
-npm i -D html-webpack-plugin 
-npm i -D webpack-dev-server
-npm i -D vue-loader 
-npm i -D extract-text-webpack-plugin@next
-
-```
-
-
 #### webpack.optimize.CommonsChunkPlugin has been removed, please use splitChunks
 
   在webpack.prod.conf.js中，去除 new webpack.optimize.CommonsChunkPlugin。并添加：
@@ -51,7 +40,7 @@ optimization: {
 
 #### Use Chunks.groupsIterable and filter by instanceof Entrypoint instead
 
-升级extract-text-webpack-plugin@next
+升级extract-text-webpack-plugin@
 
 
 #### Path variable [contenthash] not implemented in this context: static/css/[name].[contenthash].css
@@ -79,11 +68,21 @@ npm install webpack-cli -D
     new vueLoaderPlugin()
   ],
 ```
+####  引入Postcss的问题
 
-#### Module build failed: 
+需要在项目的根目录添加　.postcssrc.js 或　postcss.config.js
+```js
+module.exports = {
+  "plugins": {
+    "postcss-import": {},
+    "postcss-url": {},
+    // to edit target browsers: use "browserslist" field in package.json
+    "autoprefixer": {}
+  }
+}
 
-1. TypeError: Cannot read property 'eslint' of undefined
+```
 
-> 
+#### vue-template-compiler must be installed as a peer dependency,
 
-
+vue的版本应该和vue-template-compiler版本一至

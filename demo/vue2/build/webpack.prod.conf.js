@@ -51,17 +51,17 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     // add webpack dll
-    ...(function () {
-      let max = 3
-      let res = []
-      for (let i = 0; i < max; i++) {
-        res.push(new webpack.DllReferencePlugin({
-          context: path.resolve(__dirname),
-          manifest: require(path.resolve(`./dll/vendor${i}-manifest.json`))
-        }))
-      }
-      return res
-    })(),
+    // ...(function () {
+    //   let max = 3
+    //   let res = []
+    //   for (let i = 0; i < max; i++) {
+    //     res.push(new webpack.DllReferencePlugin({
+    //       context: path.resolve(__dirname),
+    //       manifest: require(path.resolve(`./dll/vendor${i}-manifest.json`))
+    //     }))
+    //   }
+    //   return res
+    // })(),
     new webpack.DefinePlugin({
       'process.env': env
     }),
@@ -91,15 +91,16 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: config.build.index,
       template: 'index.html',
       inject: true,
-      dll: (function () {
-        let max = 3
-        let res = []
-        for (let i = 0; i < max; i++) {
-          const dllName = require(path.resolve(__dirname, `../dll/vendor${i}-manifest.json`)).name.split('_')
-          res.push(`./static/js/${dllName[0]}.${dllName[1]}.dll.js`)
-        }
-        return res
-      })(),
+      dll: [],
+      // dll: (function () {
+      //   let max = 3
+      //   let res = []
+      //   for (let i = 0; i < max; i++) {
+      //     const dllName = require(path.resolve(__dirname, `../dll/vendor${i}-manifest.json`)).name.split('_')
+      //     res.push(`./static/js/${dllName[0]}.${dllName[1]}.dll.js`)
+      //   }
+      //   return res
+      // })(),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -121,12 +122,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
-      },
-      {
-        from: path.resolve(__dirname, '../dll/static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
       }
+      // {
+      //   from: path.resolve(__dirname, '../dll/static'),
+      //   to: config.build.assetsSubDirectory,
+      //   ignore: ['.*']
+      // }
     ])
   ]
 })
