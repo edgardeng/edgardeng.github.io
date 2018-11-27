@@ -42,7 +42,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./article/me.html">About</a>
+                        <a class="nav-link" href="./about">About</a>
                     </li>
                 </ul>
             </div>
@@ -122,7 +122,7 @@
                                         class="list-group-item list-group-item-action"
                                         v-for="item in categories"
                                         v-on:click="handleCateClick(item)">
-                                    <i :class="item.ic"> </i> {{item.name}}
+                                    <i :class="item.ic" :style="item.sty"> </i> {{item.name}}
                                 </button>
                             </div>
                         </div>
@@ -215,8 +215,5 @@
       document.body.removeChild(document.getElementById('loading'))
     }, 20000)
   })
-
-
-
 </script>
 </html>

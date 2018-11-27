@@ -3,36 +3,56 @@
     "name": "Web",
     "page": "web",
     "ic": "fab fa-html5",
+    "sty": "color:red",
     "bg": "../resource/image/a1.svg"
   },
   {
     "name": "Android",
     "page": "android",
     "ic": "fab fa-android",
+    "sty": "color:forestgreen",
     "bg": "../resource/image/a2.svg"
   },
   {
     "name": "iOS",
     "page": "ios",
     "ic": "fab fa-apple",
+    "sty": "color:lightslategray",
     "bg": "../resource/image/a3.svg"
   },
   {
     "name": "Python",
     "page": "python",
     "ic": "fab fa-python",
+    "sty": "color:steelblue",
     "bg": "../resource/image/a4.svg"
   },
   {
     "name": "PHP",
     "page": "php",
     "ic": "fab fa-php",
+    "sty": "color:purple",
     "bg": "../resource/image/a5.svg"
+  },
+  {
+    "name": "Java",
+    "page": "java",
+    "ic": "fab fa-java",
+    "sty": "color:orangered",
+    "bg": "../resource/image/a6.svg"
+  },
+  {
+    "name": "Server",
+    "page": "server",
+    "ic": "fas fa-server",
+    "sty": "color:steelblue",
+    "bg": "../resource/image/a7.svg"
   },
   {
     "name": "Program",
     "page": "program",
     "ic": "fab fa-teamspeak",
-    "bg": "../resource/image/a7.svg"
+    "sty": "color:Mediumslateblue",
+    "bg": "../resource/image/a10.svg"
   }
 ]

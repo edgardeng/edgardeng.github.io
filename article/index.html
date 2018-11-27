@@ -19,6 +19,7 @@
     <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/regular.css" integrity="sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I" crossorigin="anonymous">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
 
 </head>
 
@@ -37,13 +38,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.html">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./me.html">About</a>
+                    <a class="nav-link" href="/about">About</a>
                 </li>
             </ul>
         </div>
@@ -82,7 +81,6 @@
             <div class="fix-card">
                 <!-- Author Widget -->
                 <div class="card my-4 ">
-                    <h5 class="card-header">Author</h5>
                     <div class="card-body text-center">
                         <a class="author" href="./me.html">
                             <img class="favicon"
@@ -92,50 +90,35 @@
                             <div class="figure-caption"> FE Developer in Web, Android, iOS</div>
                             <div class="social-account">
                                 <a href="https://weibo.com/edgardeng" target="_blank">
-                                    <i class="fab fa-weibo fa-2x" style="color:#EE5544;"> </i>
+                                    <i class="fab fa-weibo" style="color:#EE5544;font-size: 1.4rem;"> </i>
                                 </a>
                                 <a href="https://github.com/edgardeng" target="_blank">
-                                    <i class="fab fa-github fa-2x" style="color:#2b3137"> </i>
+                                    <i class="fab fa-github" style="color:#2b3137;font-size: 1.4rem;"> </i>
                                 </a>
                             </div>
                         </a>
-
                     </div>
                 </div>
                 <!-- Categories Widget -->
                 <div class="card my-4 ">
                     <h5 class="card-header">Categories</h5>
                     <div class="card-body">
-
-                        <div class="list-group">
+                        <div class="list-group list-group-flush">
                             <button type="button"
                                     class="list-group-item list-group-item-action"
                                     v-for="item in categories"
                                     v-on:click="handleCateClick(item)">
-                                <i :class="item.ic" > </i> {{item.name}}
+                                <i :class="item.ic" :style="item.sty"> </i> {{item.name}}
                             </button>
                         </div>
                     </div>
-
                 <div>
-
-
-
         </div>
 
     </div>
             </div>
         </div>
 </div>
-
-<!-- Footer -->
-<!--<footer class="py-3 bg-dark">-->
-    <!--<div class="container">-->
-        <!--<p class="text-center text-white">Copyright &copy; edgardeng 2018</p>-->
-    <!--</div>-->
-<!--</footer>-->
-
-
     </div>
     <!-- ShowDown Highlight Bootstrap Jquery core JavaScript -->
 </div>
