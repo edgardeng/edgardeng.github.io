@@ -62,7 +62,6 @@ Proguard不仅提供了-keep选项，还有一些其它配置选项，比如-don
 #### 通用配置
 
 ```
-
 #代码混淆压缩比，在0~7之间，默认为5，一般不做修改	
 -optimizationpasses 5
 
@@ -162,16 +161,14 @@ Proguard不仅提供了-keep选项，还有一些其它配置选项，比如-don
 
 ```
 -keep class com.dev.example.A$* { *; }
-
 ```
 2.保留写在某个内部类里面所有的内部类，这话听着有点绕口，举个例子，类A里面有个内部类B，下面表示写在类B里面的内部类都会被保留。此时，类B像上面第一点所举得类A一样，有点递归意思在里面。还有就是此时类B的名字不会被混淆，但里面的方法和成员变量会被混淆，如果其它地方没有对类B的方法和成员变量进行保留的话。
 
 ```
 -keep class com.dev.example.A$B$* { *; }
-
 ```
-3. 对webView进行处理
 
+3. 对webView进行处理
 ```
  -keepclassmembers class fqcn.of.javascript.interface.for.webview {
    public *;
@@ -183,7 +180,6 @@ Proguard不仅提供了-keep选项，还有一些其它配置选项，比如-don
 -keepclassmembers class * extends android.webkit.webViewClient {
     public void *(android.webkit.webView, jav.lang.String);
 }
-
 ```
 
 4. 保留js调用的原生方法
@@ -194,23 +190,19 @@ Proguard不仅提供了-keep选项，还有一些其它配置选项，比如-don
 -keepclassmembers class ** {
     @android.webkit.JavascriptInterface public *;
 }
-
 ```
 5. 对含有反射类的处理
 有时候项目中有些类不是实体类，但仍然用到反射功能,如Class.forName("xxx")，这是我们需要保留的。比如这些类在com.dev.example包下，可以通过下面的配置进行保留。
 ```
 -keep class com.dev.example.* { *; }
-
 ```
 另外上面只是保留了该包下的类，如果该包下还有子包，则子包的类仍然会被混淆，
 如果想保留该包下子包的类，我们可以如下配置（**能匹配本包和所含子包，其中子包也可以含有子包）
 ```
 -keep class com.dev.example.**{ *; }
-
 ```
 
 6. 常见的自定义的配置
-
 
 ```
 # 1.保留某个特定的类
@@ -252,7 +244,6 @@ Proguard不仅提供了-keep选项，还有一些其它配置选项，比如-don
 下面给出几个例子,用到具体第三发依赖库的时候，对应的文档会给出相应配置的。
 
 ```
-
 #okhttp
 -dontwarn com.squareup.okhttp.**
 -dontwarn com.squareup.okhttp3.**
@@ -329,14 +320,12 @@ Proguard不仅提供了-keep选项，还有一些其它配置选项，比如-don
 关于多module项目的配置，一种方法是关闭子module的Proguard功能，在我们主app的proguard-rules.pro文件中配置所有module的配置选项。这样会使主app的proguard配置文件变得比较杂乱，如果业务发展过程中，某个子module的功能不需要了，还要在主app的配置文件中找到对应子module的配置，并删除它们，不建议使用。
 另一种方式是各个module配置好自己的配置文件，要注意的是，子module中制定配置文件的方式如下所示:
 
-
 ```
 buildTypes {
         release {
             consumerProguardFiles  'proguard-rules.pro'
         }
-    }
-    
+    } 
 ```
 子module是通过consumerProguardFiles来指定配置文件的，而不是proguardFiles。
 在导出包时，如果发现有很多could not reference class之类的warning信息，确认app在运行时和这些warning没有任何关系，可以配置-dontwarn选项，就不会提示这些warning信息了。
@@ -364,7 +353,6 @@ https://github.com/shwenzhang/AndResGuard
 retrace.bat|retrace.sh [-verbose] mapping.txt [<stacktrace_file>]
 ```
 例如：
-
 ```
 retrace.bat -verbose mapping.txt obfuscated_trace.txt
 ```

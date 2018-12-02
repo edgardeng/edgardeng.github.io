@@ -34,11 +34,5 @@
     "datetime": "2018-06-20 12:00",
     "page": "android/custom_view",
     "about": "在Android开发中，自带的控件无法满足要求时，需要开发自定义视图。此处介绍通过Canvas和Paint完成简单的绘画视图"
-  },
-  {
-    "name": "Java开发中的23种设计模式详解",
-    "datetime": "2018-06-19 12:00",
-    "page": "android/java_pattern_design",
-    "about": "java的设计模式大体上分为三大类：创建型模式（5种）, 结构型模式（7种）, 行为型模式（11种）"
   }
 ]
