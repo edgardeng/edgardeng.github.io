@@ -180,7 +180,8 @@ striptags 渲染之前把值中所有的 HTML 标签都删掉
 Jinja2 还支持宏。宏类似于 Python 代码中的函数。
   
 ```html
-  {% macro render_comment(comment) %} <li>{{ comment }}</li>
+  {% macro render_comment(comment) %} 
+  <li>{{ comment }}</li>
   {% endmacro %}
   <ul>
   {% for comment in comments %}
@@ -191,7 +192,6 @@ Jinja2 还支持宏。宏类似于 Python 代码中的函数。
   {% for comment in comments %}
   {{ macros.render_comment(comment) }}
   {% endfor %} </ul>
-
 ```
   
 模板继承,base.html
