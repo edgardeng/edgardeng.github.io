@@ -21,6 +21,22 @@
     * [SpringBoot Start](./java/spring_boot_start.md)
     
     * [Thread Pool](./java/thread_ScheduledThreadPool.md)
+    
+    
+* [Python](./python/readme.md)
+
+    * [Basic](./python/python_basic.md)
+    
+    * [Advance](./python/python_advance.md)
+    
+    * [Flask](./python/flask.md)
+    
+    * [Flask-Login](./python/ext_flask_login.md)
+    
+    * [Faker](./python/ext_faker.md)
+    
+    * [SQLalchemy](./python/sqlalchemy.md)
+        
 
 
 
