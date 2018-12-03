@@ -125,7 +125,7 @@ def index():
 
 模板文件，在.py目录下，创建templates文件夹
 
-```html
+```
 <h1>Hello World!</h1>
 <h2>Hello, {{ name }}!</h2>
 ```
@@ -145,7 +145,7 @@ def user(name):
 
 #### 变量
 
-```html
+```
    <p>A value from a dictionary: {{ mydict['key'] }}.</p>
    <p>A value from a list: {{ mylist[3] }}.</p>
    <p>A value from a list, with a variable index: {{ mylist[myintvar] }}.</p>
@@ -164,7 +164,7 @@ Jinja2变量过滤器
 * striptags 渲染之前把值中所有的 HTML 标签都删掉
  
 #### 模板中的控制结构
-```html
+```
   {% if user %}
   Hello, {{ user }}!
   {% else %}
@@ -180,7 +180,7 @@ Jinja2变量过滤器
 Jinja2 还支持宏。宏类似于 Python 代码中的函数。
   
 模板继承,base.html
-```html
+```
 <html>
 <head>
   {% block head %}
@@ -195,7 +195,7 @@ Jinja2 还支持宏。宏类似于 Python 代码中的函数。
 ```
 block 标签定义的元素可在衍生模板中修改。
   
-```html
+```
 {% extends "base.html" %}
 {% block title %}Index{% endblock %} 
 {% block head %} {{ super() }}<style> </style> {% endblock %}
@@ -305,7 +305,7 @@ def index():
 最好在 基模板中渲染 Flash 消息，所有页面都能使用这些消息。Flask 把 get_flashed_ messages() 函数开放给模板，用来获取并渲染消息
 `templates/base.html`: 渲染 Flash 消息
 
-```html
+```
 {% block content %}
  <div class="container">
 {% for message in get_flashed_messages() %} 
