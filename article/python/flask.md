@@ -236,17 +236,8 @@ name = StringField('What is your name?', validators=[Required()]) submit = Submi
 
 ```
 
-`templates/index.html`:模板
+在`templates/index.html`:模板中使用 {{ wtf.quick_form(form) }} 即可
 
-```html
-{% extends "bootstrap/base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-{% block title %}Flasky{% endblock %}
-{% block page_content %} <div class="page-header">
-<h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1> </div>
-{{ wtf.quick_form(form) }} {% endblock %}
-
-```
 
 `hello.py`:路由方法
 ```python
@@ -281,21 +272,9 @@ def index():
     return render_template('index.html',form = form, name = session.get('name'))
 ```
 
-最好在 基模板中渲染 Flash 消息，所有页面都能使用这些消息。Flask 把 get_flashed_ messages() 函数开放给模板，用来获取并渲染消息
-`templates/base.html`: 渲染 Flash 消息
-
-```
-{% block content %}
- <div class="container">
-{% for message in get_flashed_messages() %} 
-    <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message }}
-    </div>
-{% endfor %}
-{% block page_content %}{% endblock %} </div>
-{% endblock %}
-```
+最好在 基模板中渲染 Flash 消息，所有页面都能使用这些消息。
+Flask 把 get_flashed_ messages() 函数开放给模板，用来获取并渲染消息
+渲染Flash消息时，在`templates/base.html`中使用: ` for message in get_flashed_messages() `
 
 ### 大型项目的结构
 
