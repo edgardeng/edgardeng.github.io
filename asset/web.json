@@ -1,7 +1,7 @@
 [
   {
     "name": "Vue中的Webpack的使用",
-    "page": "web/vue_component",
+    "page": "web/vue_webpack",
     "datetime": "2018-09-14 20:00",
     "about": "Webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)。在处理应用程序时，会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后打包成一个或多个 bundle。"
   },

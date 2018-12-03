@@ -1,0 +1,14 @@
+[
+  {
+    "name": "C和C++的学习过程",
+    "page": "server/c_learn",
+    "datetime": "2018-11-30 22:00",
+    "about": "c和c++从入门到精通的学习书籍和过程。"
+  },
+  {
+    "name": "Nginx中Location的配置",
+    "page": "server/nginx_location",
+    "datetime": "2018-11-29 22:00",
+    "about": "Nginx做为服务器时，会遇到动态路径的匹配和静态文件路径的配置，此处记录location的使用。"
+  }
+]
