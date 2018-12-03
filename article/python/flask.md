@@ -121,7 +121,7 @@ def index():
 
 ### 模板
 
-> 模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。此处使用Jinja2模板引擎
+> 模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用[Jinja2模板引擎](http://docs.jinkan.org/docs/jinja2/)
 
 模板文件，在.py目录下，创建templates文件夹
 
@@ -177,30 +177,9 @@ Jinja2变量过滤器
   </ul>
 
 ```
-Jinja2 还支持宏。宏类似于 Python 代码中的函数。
-  
-模板继承,base.html
-```
-<html>
-<head>
-  {% block head %}
-  <title>{% block title %}{% endblock %} - My Application</title> 
-  {% endblock %}
-</head>
- <body>
-  {% block body %}
-  {% endblock %} 
-</body>
-</html>
-```
-block 标签定义的元素可在衍生模板中修改。
-  
-```
-{% extends "base.html" %}
-{% block title %}Index{% endblock %} 
-{% block head %} {{ super() }}<style> </style> {% endblock %}
-{% block body %} <h1>Hello, World!</h1> {% endblock %}
-```
+Jinja2 还支持宏和模板继承，可查阅官网
+
+
 #### 使用Flask-Bootstap
 初始化 Flask-Bootstrap
 ```python
