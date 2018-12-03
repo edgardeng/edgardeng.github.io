@@ -155,13 +155,13 @@ def user(name):
 ```
 Jinja2变量过滤器
 
-safe 渲染值时不转义
-capitalize 把值的首字母转换成大写，其他字母转换成小写
-lower 把值转换成小写形式
-upper 把值转换成大写形式
-title 把值中每个单词的首字母都转换成大写
-trim 把值的首尾空格去掉
-striptags 渲染之前把值中所有的 HTML 标签都删掉
+* safe 渲染值时不转义
+* capitalize 把值的首字母转换成大写，其他字母转换成小写
+* lower 把值转换成小写形式
+* upper 把值转换成大写形式
+* title 把值中每个单词的首字母都转换成大写
+* trim 把值的首尾空格去掉
+* striptags 渲染之前把值中所有的 HTML 标签都删掉
  
 #### 模板中的控制结构
 ```html
@@ -179,27 +179,13 @@ striptags 渲染之前把值中所有的 HTML 标签都删掉
 ```
 Jinja2 还支持宏。宏类似于 Python 代码中的函数。
   
-```html
-  {% m_a_c_r_o render_comment(comment) %} 
-  <li>{{ comment }}</li>
-  {% endmacro %}
-  <ul>
-  {% for comment in comments %}
-  {{ render_comment(comment) }} {% endfor %}
-  </ul>
-  
-  {% import 'macros.html' as macros %} <ul>
-  {% for comment in comments %}
-  {{ macros.render_comment(comment) }}
-  {% endfor %} </ul>
-```
-  
 模板继承,base.html
 ```html
 <html>
 <head>
   {% block head %}
-  <title>{% block title %}{% endblock %} - My Application</title> {% endblock %}
+  <title>{% block title %}{% endblock %} - My Application</title> 
+  {% endblock %}
 </head>
  <body>
   {% block body %}
