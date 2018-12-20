@@ -1,5 +1,18 @@
 [
   {
+    "name": "机器学习-模型评估",
+    "page": "python/ml_model_evaluation",
+    "datetime": "2018-12-10 20:00",
+    "about": "分类型模型评判的指标中，常用的三种：混淆矩阵（也称误差矩阵，Confusion Matrix), ROC曲线, AUC面积"
+  },
+
+  {
+    "name": "Python扩展Urllib",
+    "page": "python/ext_urllib",
+    "datetime": "2018-12-09 20:00",
+    "about": "urllib3 is a powerful, sanity-friendly HTTP client for Python"
+  },
+  {
     "name": "Python扩展SQLAlchemy",
     "page": "python/sqlalchemy",
     "datetime": "2018-12-02 10:00",
@@ -22,6 +35,18 @@
     "page": "python/flask",
     "datetime": "2018-08-22 21:00",
     "about": "Flask是Python语言下的一个非常轻量级的Web开发框架，提供了搭建 Web 服务的必要组件，同时具有良好的扩展性"
+  },
+  {
+    "name": "Python中的集合类型",
+    "page": "python/collection_data",
+    "datetime": "2018-05-09 20:00",
+    "about": "Python中的集合类型数据包括: List（列表）,Tuple（元组）, Set（集合）,Dictionary（字典）"
+  },
+  {
+    "name": "Python的数值类型和字符串",
+    "page": "python/number_string",
+    "datetime": "2018-05-09 20:00",
+    "about": "Python中最基础的数据类型包括数字型和字符型"
   },
   {
     "name": "Python　进阶学习",

@@ -1,6 +1,6 @@
 # Python的Web开发框架Flask
 
->  Flask是Python语言下的一个非常轻量级的Web开发框架，提供了搭建 Web 服务的必要组件，同时具有良好的扩展性。
+> Flask是Python语言下的一个非常轻量级的Web开发框架，提供了搭建 Web 服务的必要组件，同时具有良好的扩展性。
 
 ## 关于Flask 
 
@@ -19,12 +19,14 @@ $ cd flask
 $ virtualenv venv // 创建虚拟环境，命名为 venv
 $ source venv/bin/activate  // 激活虚拟环境
 ```
+
 Mac OS X 系统下
-```text
+```
 $ sudo easy_install virtualenv
 ```
 
 #### 使用pip安装Python包
+
 在虚拟环境中安装 Flask
 ```
 (venv) $ pip install flask
@@ -32,14 +34,12 @@ $ sudo easy_install virtualenv
 
 ### Flask程序的基本结构
 
-> 所有 Flask 程序都必须创建一个程序实例。Web 服务器使用一种名为 Web 服务器网关接口 (Web Server Gateway Interface，WSGI)的协议，把接收自客户端的所有请求都转交给这个对象处理
+> 所有Flask程序都必须创建一个程序实例。Web服务器使用一种名为 Web 服务器网关接口 (Web Server Gateway Interface，WSGI)的协议，把接收自客户端的所有请求都转交给这个对象处理
   
 一个完整的程序 （app.py）
-
 ```python
 from flask import Flask
 app = Flask(__name__) # 创建实例
-
 
 @app.route('/') # 使用修饰器声明路由
 def index():
@@ -49,17 +49,13 @@ if __name__ == '__main__':
   app.run(debug=True) # 启动服务器
 ```
 
-输入命令启动程序,打开浏览器 http://127.0.0.1:5000/即可:
-
-```text
-(venv) $ python hello.py
-```
+输入命令启动程序`python app.py`,打开浏览器 http://127.0.0.1:5000/即可:
 
 #### 请求与响应
 
 请求对象，封装了客户端发送的 HTTP 请求。
 
-Flask 使用上下文临时把某些对象 变为全局可访问。
+Flask 使用上下文临时把某些对象变为全局可访问。
 
 ```text
 from flask import request
@@ -72,8 +68,9 @@ def index():
 ```
 
 Flask上下文全局变量
+
 |变量名|上下文|说明|
-| ---- | :---: | :--- |
+|:---- | :---- |:----  |
 |current_app|程序上下文|当前激活程序的程序实例|
 |g|程序上下文|处理请求时用作临时存储的对象。每次请求都会重设这个变量|
 |request|请求上下文|请求对象，封装了客户端发出的 HTTP 请求中的内容|
@@ -81,13 +78,12 @@ Flask上下文全局变量
 
 ####请求调度
 
-URL 映射是 URL 和视图函数之间的对应关系。
-
-处理 URL 和函数之间关系的程序称为路由。
+URL 映射是 URL 和视图函数之间的对应关系。处理 URL 和函数之间关系的程序称为路由。
 ```python
 from app import app
 app.url_map # 查看映射
 ```  
+
 #### 请求钩子
 为了避免在每个视图函数中都使用重复的代码， Flask 提供了注册通用函数的功能，注册的函数可在请求被分发到视图函数之前或之后 调用。
 
@@ -98,17 +94,15 @@ app.url_map # 查看映射
 
 #### 响应
 
-HTTP响应就是一个简单的字符串，作为 HTML 页面回送客户端。另一重要的部分是状态码，Flask 默认设为 200
-
-```phthon
+HTTP响应就是一个简单的字符串，作为HTML页面回送客户端。另一重要的部分是状态码，Flask默认设为200
+```python
 @app.route('/')
 def index():
   return '<h1>Bad Request</h1>', 400 # 自定义状态码
 ```
 
 创建一个响应对象，设置 cookie:
-
-```phthon
+```python
 @app.route('/')
 def index():
   response = make_response('<h1>This document carries a cookie!</h1>')
@@ -123,14 +117,14 @@ def index():
 
 > 模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请求上下文中才能知道。使用[Jinja2模板引擎](http://docs.jinkan.org/docs/jinja2/)
 
-模板文件，在.py目录下，创建templates文件夹
+模板文件，在根目录下，创建templates文件夹
 
 ```
 <h1>Hello World!</h1>
 <h2>Hello, {{ name }}!</h2>
 ```
 
-渲染模板 (hello.py)
+渲染模板
 ```python
 from flask import Flask, render_template
 
@@ -144,15 +138,15 @@ def user(name):
 ```
 
 #### 变量
-
+模版中使用变量
 ```
    <p>A value from a dictionary: {{ mydict['key'] }}.</p>
    <p>A value from a list: {{ mylist[3] }}.</p>
    <p>A value from a list, with a variable index: {{ mylist[myintvar] }}.</p>
    <p>A value from an object's method: {{ myobj.somemethod() }}.</p>
    <p> 过滤器修改变量 Hello, {{ name|capitalize }} </p>
-
 ```
+
 Jinja2变量过滤器
 
 * safe 渲染值时不转义
@@ -164,21 +158,18 @@ Jinja2变量过滤器
 * striptags 渲染之前把值中所有的 HTML 标签都删掉
  
 #### 模板中的控制结构
-```
+```html
   {% if user %}
   Hello, {{ user }}!
   {% else %}
   Hello, Stranger!
   {% endif %}
-  
   <ul>
     {% for comment in comments %}
     <li>{{ comment }}</li> {% endfor %}
   </ul>
-
 ```
 Jinja2 还支持宏和模板继承，可查阅官网
-
 
 #### 使用Flask-Bootstap
 初始化 Flask-Bootstrap
@@ -197,9 +188,9 @@ def page_not_found(e):
 def internal_server_error(e):
   return render_template('500.html'), 500
 ```
+
 #### 链接
-任何具有多个路由的程序都需要可以连接不同页面的链接
-用 url_for() 生成动态地址时，
+任何具有多个路由的程序都需要可以连接不同页面的链接, 用 url_for() 生成动态地址时，
 ```python
 url_for ('user', name='john', _external=True) 
 # http://localhost:5000/user/john。
@@ -209,25 +200,24 @@ url_for ('index', page=2) # 返回结果是 /?page=2
 静态文件，例如 HTML代码中引用的图片、JavaScript 源码文件和 CSS。
 
 对静态文件的引用被当成一个特殊的路由，即 /static/<filename>。
-
 调用 url_for('static', filename='css/styles.css', _external=True) 是 http://localhost:5000/static/css/styles.css。
 
 默认设置下，Flask 在程序根目录中名为 static 的子目录中寻找静态文件。
 
 ### 表单
 
-Flask-WTF(http://pythonhosted.org/Flask-WTF/)扩展可以高效处理 Web 表单的过程。
-这个扩展对独立的 WTForms(http://wtforms.simplecodes.com)包进行了包装，方便集成到 Flask 程序中。
+[Flask-WTF](http://pythonhosted.org/Flask-WTF/)扩展可以高效处理 Web 表单的过程。
+对独立的 [WTForms](http://wtforms.simplecodes.com)包进行了包装，方便集成到Flask中。
 
 pip 安装: `(venv) $ pip install flask-wtf`
 
-为了实现 CSRF 保护，Flask-WTF 需要程序设置一个密钥。使用这个密钥生成加密令牌，再用令牌验证请求中表单数据的真伪。设置密钥的方法如示例 4-1 所示。 示例 4-1 hello.py:设置 Flask-WTF
+为了实现 CSRF 保护，Flask-WTF 需要程序设置一个密钥。使用这个密钥生成加密令牌，再用令牌验证请求中表单数据的真伪。
+设置Flask-WTF:
 ```python
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
 ```
-
-`hello.py`定义表单类
+定义表单类
 ```python
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField from wtforms.validators import Required
@@ -236,10 +226,9 @@ name = StringField('What is your name?', validators=[Required()]) submit = Submi
 
 ```
 
-在`templates/index.html`:模板中使用 {{ wtf.quick_form(form) }} 即可
+在`templates/index.html`:模板中使用 `{{ wtf.quick_form(form) }}` 即可
 
-
-`hello.py`:路由方法
+路由方法中渲染模版
 ```python
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -252,12 +241,10 @@ def index():
 ```
      
 ####Flash消息
+
 使用确认消息、警告或者错误提醒。
 
 一个典型例子是，用户提交了有一项错误的登录表单后，服务器发回的响应重新 渲染了登录表单，并在表单上面显示一个消息，提示用户用户名或密码错误。
-
-`hello.py`:Flash消息
-
 ```python
 from flask import Flask, render_template, session, redirect, url_for, flash
 
@@ -303,15 +290,16 @@ Flask 把 get_flashed_ messages() 函数开放给模板，用来获取并渲染�
 
 ```
 
-
 #### 配置选项
+
 程序经常需要设定多个配置。使用层次结构的配置类。
 `config.py`:程序的配置 
 ```python
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string' SQLALCHEMY_COMMIT_ON_TEARDOWN = True
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string' 
+    SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     FLASK_MAIL_SUBJECT_PREFIX = '[Flask]'
     FLASK_MAIL_SENDER = 'Flask Admin <flasky@example.com>' 
     FLASK_ADMIN = os.environ.get('FLASK_ADMIN')
@@ -327,10 +315,10 @@ class DevelopmentConfig(Config):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
               'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
-    class TestingConfig(Config): TESTING = True
+class TestingConfig(Config): TESTING = True
           SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
               'sqlite:///' + os.path.join(basedir, 'data-test.sqlite')
-    class ProductionConfig(Config):
+class ProductionConfig(Config):
         SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
               'sqlite:///' + os.path.join(basedir, 'data.sqlite')
               
@@ -349,8 +337,7 @@ config = {
 运行脚本时，程序实例已经创建，再修改配置为时已晚。
 延迟创建程序实例，把创建过程移到可显式调用的工厂函数中。不仅可以给脚本留出配置程序的时间，还能够创建多个程序实例，
 
-`app/__init__.py`:程序包的构造文件
-
+程序包的构造文件`app/__init__.py` :
 ```python
 from flask import Flask, render_template 
 from flask.ext.bootstrap import Bootstrap 
@@ -374,11 +361,12 @@ def create_app(config_name):
   return app
 ```
 
-工厂函数返回创建的程序示例，不过要注意，现在工厂函数创建的程序还不完整，因为没 有路由和自定义的错误页面处理程序。这是下一节要讲的话题。
+工厂函数返回创建的程序示例，不过要注意，现在工厂函数创建的程序还不完整，因为没有路由和自定义的错误页面处理程序。
 
 ####  在蓝本中实现程序功能
 
-程序实例存在于全 局作用域中，路由可以直接使用 app.route 修饰器定义。
+程序实例存在于全局作用域中，路由可以直接使用 app.route 修饰器定义。
+
 在蓝本中定义的路由处于休眠状态，直到蓝本注册到程序上后，路由才真正成为程序的一部分。使用位于全局作用域中的蓝本时，定义路由的方法几乎和单脚本程序一样。
 和程序一样，蓝本可以在单个文件中定义，也可使用更结构化的方式在包中的多个模块中创建。
 为了获得最大的灵活性，程序包中创建了一个子包，用于保存蓝本。
@@ -391,7 +379,7 @@ from flask import Blueprint
 ```
 
 通过实例化一个 Blueprint 类对象可以创建蓝本。
-在app/__init__.py 脚本的末尾导入，注册蓝本
+在`app/__init__.py`脚本的末尾导入，注册蓝本
 ```python
 def create_app(config_name):
     pass
@@ -401,34 +389,33 @@ def create_app(config_name):
 ```
 
 `app/main/errors.py`: 蓝本中的错误处理程序,如果使用 errorhandler 修饰器，那么只有蓝本中的
-错误才能触发处理程序。要想注册程序全局的错误处理程序，必须使用 app_errorhandler。
+错误才能触发处理程序。
+注册程序全局的错误处理程序，必须使用 app_errorhandler。
 
 `app/main/views.py`:蓝本中定义的程序路由
 ```python
-from datetime import datetime
 from flask import render_template, session, redirect, url_for
 from . import main
 from .forms import NameForm
-from .. import db
-from ..models import User
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = NameForm()
     if form.validate_on_submit():
         pass
         return redirect(url_for('.index'))
-    return render_template('index.html',form=form, name=session.get('name'),
-                known=session.get('known', False), current_time=datetime.utcnow())
+    return render_template('index.html',form=form, name=session.get('name'))
 ``` 
  
-在蓝本中编写视图函数主要有两点不同:第一，和前面的错误处理程序一样，路由修饰器 由蓝本提供;第二，url_for() 函数的用法不同。你可能还记得，url_for() 函数的第一 个参数是路由的端点名，在程序的路由中，默认为视图函数的名字。例如，在单脚本程序 中，index() 视图函数的 URL 可使用 url_for('index') 获取。
-在蓝本中就不一样了，Flask 会为蓝本中的全部端点加上一个命名空间，这样就可以在不
-同的蓝本中使用相同的端点名定义视图函数，而不会产生冲突。命名空间就是蓝本的名字 (Blueprint 构造函数的第一个参数)，所以视图函数 index() 注册的端点名是 main.index，
-其 URL 使用 url_for('main.index') 获取。
+在蓝本中编写视图函数主要有两点不同:
+第一，和前面的错误处理程序一样，路由修饰器 由蓝本提供;
+第二，url_for() 函数的用法不同。你可能还记得，url_for() 函数的第一 个参数是路由的端点名，在程序的路由中，默认为视图函数的名字。
 
+例如，在单脚本程序 中，index() 视图函数的 URL 可使用 url_for('index') 获取。在蓝本中就不一样了，Flask 会为蓝本中的全部端点加上一个命名空间.
+在不同的蓝本中使用相同的端点名定义视图函数，而不会产生冲突。命名空间就是蓝本的名字 (Blueprint 构造函数的第一个参数)，所以视图函数 index() 注册的端点名是 main.index，其URL使用 url_for('main.index') 获取。
 
-url_for() 函数还支持一种简写的端点形式，在蓝本中可以省略蓝本名，例如 url_for('. index')。在这种写法中，命名空间是当前请求所在的蓝本。这意味着同一蓝本中的重定向 可以使用简写形式，但跨蓝本的重定向必须使用带有命名空间的端点名。
-为了完全修改程序的页面，表单对象也要移到蓝本中，保存于 app/main/forms.py 模块。
+url_for()在蓝本中可以省略蓝本名，例如 url_for('. index')。在这种写法中，命名空间是当前请求所在的蓝本。
+同一蓝本中的重定向可以使用简写形式，但跨蓝本的重定向必须使用带有命名空间的端点名。
+
 #### 启动脚本
 顶级文件夹中的 manage.py 文件用于启动程序。脚本内容如示例 7-8 所示。
 `manage.py`:启动脚本
@@ -454,7 +441,8 @@ if __name__ == '__main__':
 
 如果已经定义了环境变量 FLASK_CONFIG，则从中读取配置名;否则 使用默认配置。
 初始化 Flask-Script、Flask-Migrate 和为 Python shell 定义的上下文。
-出于便利，脚本中加入了shebang 声明，在基于 Unix 的操作系统中可以通过 ./manage. py 执行脚本。
+
+在基于 Unix 的操作系统中可以通过 `./manage py`执行脚本。
 
 程序中必须包含一个 requirements.txt 文件，用于记录所有依赖包及其精确的版本号。
 ```shell
@@ -485,8 +473,7 @@ class BasicsTestCase(unittest.TestCase):
         self.assertTrue(current_app.config['TESTING'])
 ```
    
-在 manage.py 脚本中添加一个自定义命令。示例 7-10 展示了如 何添加 test 命令。
-示例 7-10 manage.py:启动单元测试的命令
+在 manage.py 脚本中添加一个自定义命令。在`manage.py`启动单元测试的命令
 ```python
 @manager.command
 def test():
@@ -495,11 +482,10 @@ def test():
     unittest.TextTestRunner(verbosity=2).run(tests)
 ```    
     
-manager.command 修饰器让自定义命令变得简单。修饰函数名就是命令名，函数的文档字符 串会显示在帮助消息中。test() 函数的定义体中调用了 unittest 包提供的测试运行函数。
-单元测试可使用下面的命令运行:
-```shell
-(venv) $ python manage.py test   
-```
+manager.command 修饰器让自定义命令变得简单。修饰函数名就是命令名，函数的文档字符串会显示在帮助消息中。
+test() 函数的定义体中调用了 unittest 包提供的测试运行函数。
+单元测试可使用命令`python manage.py test` 运行:
+
 
 #### 创建数据库
 

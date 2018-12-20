@@ -2,7 +2,9 @@
 
 > 关于基本数据类型，数据结构，函数
 
-### 基础语法
+## 基础语法
+
+### 格式，编码，注释
 
 *编码*
 默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。
@@ -43,30 +45,9 @@ IndentationError: unindent does not match any outer indentation level
 *多行语句*
 Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠(\)来实现多行语句
 
-数字(Number)类型
 
-python中数字有四种类型：整数、布尔型、浮点数和复数。
 
-* int (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。
-* bool (布尔), 如 True。
-* float (浮点数), 如 1.23、3E-2
-* complex (复数), 如 1 + 2j、 1.1 + 2.2j
-
-字符串(String)
-
-* python中单引号和双引号使用完全相同。
-* 使用三引号('''或""")可以指定一个多行字符串。
-* 转义符 '\'
-* 反斜杠可以用来转义，使用r可以让反斜杠不发生转义。。 如 r"this is a line with \n" 则\n会显示，并不是换行。
-* 按字面意义级联字符串，如"this " "is " "string"会被自动转换为this is string。
-* 字符串可以用 + 运算符连接在一起，用 * 运算符重复。
-* Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。
-* Python中的字符串不能改变。
-* Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。
-
-字符串的截取的语法格式：变量[头下标:尾下标]
-
-空行
+__空行__
 
 函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。
 
@@ -74,14 +55,14 @@ python中数字有四种类型：整数、布尔型、浮点数和复数。
 
 记住：空行也是程序代码的一部分。
 
-等待用户输入
+__等待用户输入__
 执行下面的程序在按回车键后就会等待用户输入：
 ```
 input("\n\n按下 enter 键后退出。")
 ```
 以上代码中 ，"\n\n"在结果输出前会输出两个新的空行。一旦用户按下 enter 键时，程序将退出。
 
-*同一行显示多条语句*
+__同一行显示多条语句__
 
 Python可以在同一行中使用多条语句，语句之间使用分号(;)分割，以下是一个简单的实例：
 
@@ -90,7 +71,7 @@ import sys; x = 'runoob'; sys.stdout.write(x + '\n')
 # runoob
 ```
 
-*多个语句构成代码组*
+__多个语句构成代码组__
 
 缩进相同的一组语句构成一个代码块，我们称之代码组。
 像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。将首行及后面的代码组称为一个子句(clause)。
@@ -118,7 +99,6 @@ print 默认输出是换行的，如果要实现不换行需要在变量末尾�
 
 将某个模块中的全部函数导入，格式为： from somemodule import *
 
-
 ### 标准数据类型
 > Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建
 
@@ -137,6 +117,30 @@ Python3 的六个标准数据类型中：
 * 可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
 
 
+#### 数字(Number)类型
+
+python中数字有四种类型：整数、布尔型、浮点数和复数。
+
+* int (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。
+* bool (布尔), 如 True。
+* float (浮点数), 如 1.23、3E-2
+* complex (复数), 如 1 + 2j、 1.1 + 2.2j
+
+#### 字符串(String)
+
+* python中单引号和双引号使用完全相同。
+* 使用三引号('''或""")可以指定一个多行字符串。
+* 转义符 '\'
+* 反斜杠可以用来转义，使用r可以让反斜杠不发生转义。。 如 r"this is a line with \n" 则\n会显示，并不是换行。
+* 按字面意义级联字符串，如"this " "is " "string"会被自动转换为this is string。
+* 字符串可以用 + 运算符连接在一起，用 * 运算符重复。
+* Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。
+* Python中的字符串不能改变。
+* Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。
+
+字符串的截取的语法格式：变量[头下标:尾下标]
+
+
 ### 函数
 
 定义一个函数要使用def语句，依次写出函数名、括号、括号中的参数和冒号:，然后，在缩进块中编写函数体，函数的返回值用return语句返回。
@@ -150,7 +154,7 @@ def my_abs(x):
 // my_abs(-9)  调用  
 ```
 
-*空函数*
+#### 空函数
 
 如果想定义一个什么事也不做的空函数，可以用pass语句,(pass 作为占位符)：
 
@@ -162,7 +166,7 @@ if age >= 18:
     pass    
 ```
 
-参数检查
+#### 参数检查
 
 调用函数时，如果参数个数不对，Python解释器会自动检查出来，并抛出TypeError
 
@@ -177,7 +181,7 @@ def my_abs(x):
         return -x
 ```
         
-返回多个值
+#### 返回多个值
 
 ```
 import math
@@ -187,7 +191,8 @@ def move(x, y, step, angle=0):
     return nx, ny
 ```   
  
-*默认参数* （定义默认参数要牢记一点：默认参数必须指向不变对象！）
+#### 默认参数
+定义默认参数要牢记一点：默认参数必须指向不变对象！
 
 ```
 def enroll(name, gender, age=6, city='shanghai'):
@@ -208,7 +213,7 @@ def add_end(L=None):
 add_end()    
 ```
 
-*可变参数*
+#### 可变参数
 
 ```
 def calc(numbers):
@@ -223,7 +228,7 @@ nums = [1, 2, 3]
 calc(*nums)   // 定义可变参数和定义一个list或tuple参数相比，仅仅在参数前面加了一个*号
 ```
 
-*关键字参数*
+#### 关键字参数
 
 关键字参数允许你传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict
 
@@ -237,7 +242,7 @@ extra = {'city': 'Beijing', 'job': 'Engineer'}
 person('Jack', 24, **extra)   // **extra表示把extra这个dict的所有key-value用关键字参数传入到函数的**kw参数  
 ```
 
-*命名关键字参数*
+#### 命名关键字参数
 
 如果要限制关键字参数的名字，就可以用命名关键字参数，例如，只接收city和job作为关键字参数
 和关键字参数*kw不同，命名关键字参数需要一个特殊分隔符，*后面的参数被视为命名关键字参数。
@@ -256,7 +261,7 @@ def person(name, age, city, job):
 
 如果没有可变参数，就必须加一个作为特殊分隔符。如果缺少，Python解释器将无法识别位置参数和命名关键字参数：
 
-*参数组合*
+#### 参数组合
 
 在Python中定义函数，可以用必选参数、默认参数、可变参数、关键字参数和命名关键字参数，这5种参数都可以组合使用。
 参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数。
@@ -296,7 +301,7 @@ a = 1 b = 2 c = 3 args = (4,) kw = {'d': 99, 'x': '#'}
 a = 1 b = 2 c = 3 d = 88 kw = {'x': '#'}
 ```
 
-*递归函数*
+#### 递归函数 
 
 在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数。
 举个例子，计算阶乘n! = 1 x 2 x 3 x ... x n
@@ -324,7 +329,7 @@ def fact_iter(num, product):
     return fact_iter(num - 1, num * product)
 ``` 
 
-*切片* (取前N个元素)
+#### 切片 (取前N个元素)
 
 ```
   L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
@@ -362,7 +367,7 @@ def fact_iter(num, product):
     return s
 ```
   
-*迭代*
+#### 迭代
 
 如果给定一个list或tuple，通过for循环来遍历这个list或tuple，这种遍历我们称为迭代（Iteration）
 
@@ -436,18 +441,16 @@ L = ['Hello', 'World', 'IBM', 'Apple']
 
 ```
 
-生成器
+#### 生成器
 
 如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器：generator。
 
-```
+```python
  L = [x * x for x in range(10)]
- L
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+ # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
  g = (x * x for x in range(10))
- g
-<generator object <genexpr> at 0x1022ef63
-next(g)
+ # <generator object <genexpr> at 0x1022ef63
+ next(g)
 
 for n in g:
   print(n)
@@ -500,17 +503,16 @@ generator的函数，在每次调用next()的时候执行，遇到yield语句返
               break
 ```
               
-迭代器
+#### 迭代器
 凡是可作用于for循环的对象都是Iterable类型；
 
 凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列；
 
 集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。
 
-```
+```python
 for x in [1, 2, 3, 4, 5]:
     pass
-实际上完全等价于：
 
 # 首先获得Iterator对象:
 it = iter([1, 2, 3, 4, 5])
@@ -528,16 +530,11 @@ while True:
 
 ```
  from collections import Iterable
- isinstance([], Iterable)
-True
- isinstance({}, Iterable)
-True
- isinstance('abc', Iterable)
-True
- isinstance((x for x in range(10)), Iterable)
-True
- isinstance(100, Iterable)
-False
+ isinstance([], Iterable) # True
+ isinstance({}, Iterable) # True
+ isinstance('abc', Iterable) # True
+ isinstance((x for x in range(10)), Iterable) # True
+ isinstance(100, Iterable) # False
 ```
 
 相关连接：

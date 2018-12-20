@@ -27,6 +27,10 @@
 
     * [Basic](./python/python_basic.md)
     
+    * [Number String](./python/number_string.md)
+    
+    * [Collection Data](./python/collection_data.md)
+    
     * [Advance](./python/python_advance.md)
     
     * [Flask](./python/flask.md)
@@ -36,6 +40,10 @@
     * [Faker](./python/ext_faker.md)
     
     * [SQLalchemy](./python/sqlalchemy.md)
+    
+* [机器学习](./python/readme.md)    
+    
+    * [机器学习模型评价指标](./python/ml_model_evaluation.md)    
         
 
 
