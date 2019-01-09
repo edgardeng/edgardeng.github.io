@@ -53,8 +53,7 @@ H1 ：两个总体服从不同的分布
 
 求出样本数较少的那个总体的秩和T
 
-查“秩和检验表”，得出临界值T1(a)T1(a)，T2(a)T2(a)，若T1(a)<T<T2(a)T1(a)<T<T2(a)则接受H0
-
+查秩和检验表，得出临界值T1(a)，T2(a)，若T1(a)<T<T2(a)则接受H0
 
 ##  混淆矩阵 confusion matrix
 
@@ -67,7 +66,7 @@ H1 ：两个总体服从不同的分布
 | 苹果   | 10    | 3     |
 | 梨    | 2      | 15    |
 
-对于一个二分类的模型，其模型的混淆矩阵是一个2×22×2的矩阵。
+对于一个二分类的模型，其模型的混淆矩阵是一个2×2的矩阵。
 
 | correctness\Predict	| Positive	| Negative|
 | :---- | :---- |:----|
@@ -76,7 +75,6 @@ H1 ：两个总体服从不同的分布
 
 混淆矩阵比模型的精度的评价指标更能够详细地反映出模型的”好坏”。
 模型的精度指标，在正负样本数量不均衡的情况下，会出现容易误导的结果。
-
 
 四个矩阵元素的含义分别是:
 
@@ -89,61 +87,64 @@ H1 ：两个总体服从不同的分布
 * True Negative 真负类(TN)，样本的真实类别是负类，并且模型将其预测成为负类。
 
 ### 混淆矩阵延伸出的各个评价指标
+
 从混淆矩阵中，可以衍生出各种评价的指标。
 [wiki上的一个解释](https://en.wikipedia.org/wiki/Confusion_matrix)
 
-* Accuracy
-模型的精度，即模型预测正确的个数 / 样本的总个数 
-Accuracy= TP+TN / (TP+FN+FP+TN)
+* Accuracy 模型的精度
 
-* Positive predictive value (PPV, Precision)
-查准率，阳性预测值，在模型预测为正类的样本中，真正为正类的样本所占的比例。 
-Precision=TP/TP+FP
-一般情况下，查准率越高，说明模型的效果越好。
+模型预测正确的个数 / 样本的总个数 Accuracy= TP+TN / (TP+FN+FP+TN)
 
-* False discovery rate (FDR)
-错误发现率，表示在模型预测为正类的样本中，真正的负类的样本所占的比例。 
-FDR=FPTP+FPFDR=FPTP+FP 
+* Positive predictive value (PPV, Precision)查准率，阳性预测值，
+
+在模型预测为正类的样本中，真正为正类的样本所占的比例。 Precision=TP/TP+FP。一般情况下，查准率越高，说明模型的效果越好。
+
+* False discovery rate (FDR)错误发现率
+
+在模型预测为正类的样本中，真正的负类的样本所占的比例。 
+FDR=FP/(TP+FP)
 一般情况下，错误发现率越小，说明模型的效果越好。
 
-* False omission rate (FOR)
-错误遗漏率，表示在模型预测为负类的样本中，真正的正类所占的比例。即评价模型”遗漏”掉的正类的多少。 
-FOR=FNFN+TNFOR=FNFN+TN 
+* False omission rate (FOR) 错误遗漏率
+
+在模型预测为负类的样本中，真正的正类所占的比例。即评价模型”遗漏”掉的正类的多少。 
+FOR=FN/(FN+TN)
 一般情况下，错误遗漏率越小，模型的效果越好。
 
-*  Negative predictive value (NPV)
-阴性预测值，在模型预测为负类的样本中，真正为负类的样本所占的比例。 
-NPV=TNFN+TNNPV=TNFN+TN 
+*  Negative predictive value (NPV)阴性预测值
+
+在模型预测为负类的样本中，真正为负类的样本所占的比例。 
+NPV=TN/(FN+TN)
 一般情况下，NPV越高，说明的模型的效果越好。
 
-* True positive rate (TPR, Recall)
-召回率，真正类率，表示的是，模型预测为正类的样本的数量，占总的正类样本数量的比值。 
-Recall=TPTP+FNRecall=TPTP+FN 
+* True positive rate (TPR, Recall)召回率，真正类率
+
+模型预测为正类的样本的数量，占总的正类样本数量的比值。 
+Recall=TP/(TP+FN)
 一般情况下，Recall越高，说明有更多的正类样本被模型预测正确，模型的效果越好。
 
-* False positive rate (FPR), Fall-out
-假正率，表示的是，模型预测为正类的样本中，占模型负类样本数量的比值。 
-Fall−out=FPFP+TNFall−out=FPFP+TN 
+* False positive rate (FPR), Fall-out 假正率
+
+模型预测为正类的样本中，占模型负类样本数量的比值。 
+Fall−out=FP/(FP+TN)
 一般情况下，假正类率越低，说明模型的效果越好。
 
-* False negative rate (FNR), Miss rate
-假负类率，缺失率，模型预测为负类的样本中，是正类的数量，占真实正类样本的比值。 
-FNR=FNFN+TNFNR=FNFN+TN
+* False negative rate (FNR), Miss rate 假负类率，缺失率，
 
+模型预测为负类的样本中，是正类的数量，占真实正类样本的比值。 
+FNR=FN/(FN+TN)
 缺失值越小，说明模型的效果越好。
 
-*  True negative rate (TNR)
-一般情况下，真负类率越高，说明的模型的效果越好 
-TNR=TN/FN+TN
+*  True negative rate (TNR) 真负类率
 
- 
-三级指标 F1 Score。
+TNR=TN/FN+TN 一般情况下，真负类率越高，说明的模型的效果越好 
 
+
+* 三级指标 F1 Score。
 
 F1 Score = 2PR/(P + R)
 其中，P代表Precision，R代表Recall。
 F1-Score指标综合了Precision与Recall的产出的结果。F1-Score的取值范围从0到1的，1代表模型的输出最好，0代表模型的输出结果最差。
-
  
 ```python
  from sklearn.metrics import confusion_matrix
@@ -186,14 +187,16 @@ F1-Score指标综合了Precision与Recall的产出的结果。F1-Score的取值�
 
 ### ROC(Receiver Operating Characteristic)
 * True Positive Rate 
-TPR = TP/(TP+FN) = Presicion
+
+TPR = TP / (TP+FN) = Presicion
 
 * False Positive Rate
 
-FPR = FP / (TN+FP)
+FPR = FP / (TN+FP) 
 
 将点集(predict,y)(predict,y)根据predict probability从小到大排列
 设置截断点cut point从0一直到1， 求出TPR, FPR。
+
 ```python
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve
@@ -201,7 +204,6 @@ from sklearn.metrics import roc_curve
 fpr,tpr,thresholds = roc_curve(y_true, y_score)
 plt.plot(fpr,tpr, label='roc')
 plt.legend()
-
 ```
 
 ### AUC(Area Under ROC Curve)

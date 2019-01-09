@@ -20,7 +20,10 @@
     
     * [SpringBoot Start](./java/spring_boot_start.md)
     
-    * [Thread Pool](./java/thread_ScheduledThreadPool.md)
+    * [Thread Pool](java/thread_pool.md)
+    
+    * [Scheduled Thread Pool](java/scheduled_thread_pool.md)
+    
     
     
 * [Python](./python/readme.md)

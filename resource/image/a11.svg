@@ -1,0 +1,13 @@
+<!-- wave -->
+<svg viewBox="0 0 100 100" preserveAspectRatio="none" class="wave">
+    <path fill="rgba(67, 117, 178, 0.15)">
+        <animate attributeName="d" values="M0,50 A50,200 0 0,1 50,50 A50,200 0 0,0 100,50 L100,100 L0,100; M0,60 A50,50 0 0,1 50,50 A50,50 0 0,0 100,50 L100,100 L0,100;    M0,50 A50,200 0 0,1 50,50 A50,200 0 0,0 100,50 L100,100 L0,100"
+                 dur="10s" repeatCount="indefinite"
+                 rotate="auto"></animate>
+    </path>
+    <path fill="rgba(60, 120, 200, 0.15)">
+        <animate attributeName="d" values="M0,50 A50,150 0 0,0 40,50 A50,100 0 0,1 100,50 L100,100 L0,100; M0,30 A50,300 0 0,0 40,50 A50,150 0 0,1 100,50 L100,100 L0,100; M0,50 A50,150 0 0,0 40,50 A50,100 0 0,1 100,50 L100,100 L0,100"
+                 dur="15s" repeatCount="indefinite"
+                 rotate="auto"></animate>
+    </path>
+</svg>
