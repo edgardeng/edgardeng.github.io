@@ -1,47 +1,35 @@
 ## Python中的数字(Number)和字符串(String)
+
 > Python中最基础的数据类型包括数字型和字符型
 
 ### 数字数据
 
 > 存储数值。数据类型是不允许改变的,这就意味着如果改变数字数据类型的值，将重新分配内存空间。
 
-以下实例在变量赋值时 Number 对象将被创建：
+在变量赋值时 Number 对象将被创建 `var1 = 1`
 
-var1 = 1
-var2 = 10
-您也可以使用del语句删除一些数字对象的引用。
+使用del语句删除一些数字对象的引用 `del var1[,var2[,var3[....,varN]]]]`
+使用del语句删除单个或多个对象的引用，例如： ` del var_a, var_b `
 
-del语句的语法是：
-
-del var1[,var2[,var3[....,varN]]]]
-您可以通过使用del语句删除单个或多个对象的引用，例如：
-
-del var
-del var_a, var_b
 Python 支持三种不同的数值类型：
 
-整型(Int) - 通常被称为是整型或整数，是正或负整数，不带小数点。Python3 整型是没有限制大小的，可以当作 Long 类型使用，所以 Python3 没有 Python2 的 Long 类型。
-浮点型(float) - 浮点型由整数部分与小数部分组成，浮点型也可以使用科学计数法表示（2.5e2 = 2.5 x 102 = 250）
-复数( (complex)) - 复数由实数部分和虚数部分构成，可以用a + bj,或者complex(a,b)表示， 复数的实部a和虚部b都是浮点型。
+* 整型(Int) - 通常被称为是整型或整数，是正或负整数，不带小数点。Python3 整型是没有限制大小的，可以当作 Long 类型使用，所以 Python3 没有 Python2 的 Long 类型。
+* 浮点型(float) - 浮点型由整数部分与小数部分组成，浮点型也可以使用科学计数法表示（2.5e2 = 2.5 x 102 = 250）
+* 复数( (complex)) - 复数由实数部分和虚数部分构成，可以用a + bj,或者complex(a,b)表示， 复数的实部a和虚部b都是浮点型。
 
 我们可以使用十六进制和八进制来代表整数：
 
->>> number = 0xA0F # 十六进制
->>> number
-2575
+```python
 
->>> number=0o37 # 八进制
->>> number
-31
-int	float	complex
-10	0.0	3.14j
-100	15.20	45.j
--786	-21.9	9.322e-36j
-080	32.3+e18	.876j
--0490	-90.	-.6545+0J
--0x260	-32.54e100	3e+26J
-0x69	70.2-E12	4.53e-7j
-Python支持复数，复数由实数部分和虚数部分构成，可以用a + bj,或者complex(a,b)表示， 复数的实部a和虚部b都是浮点型。
+number = 0xA0F # 十六进制 2575
+number=0o37 # 八进制 = 31
+number=q0 # int
+number=1.0 # float
+number=3.14j # complex
+
+``` 
+
+> Python支持复数，复数由实数部分和虚数部分构成，可以用a + bj,或者complex(a,b)表示， 复数的实部a和虚部b都是浮点型。
 
 __数字类型转换__
 
@@ -54,7 +42,7 @@ __数字类型转换__
 * complex(x, y) 将 x 和 y 转换到一个复数，实数部分为 x，虚数部分为 y。x 和 y 是数字表达式。
 
 
-Python 数字运算
+#### Python 数字运算
 
 表达式的语法很直白： +, -, * 和 / ：
 
@@ -72,6 +60,7 @@ Python 数字运算
 
 
 __数学函数__
+
 * abs(x)	返回数字的绝对值，如abs(-10) 返回 10
 * ceil(x)	返回数字的上入整数，如math.ceil(4.1) 返回 5
 * cmp(x, y) 如果 x < y 返回 -1, 如果 x == y 返回 0, 如果 x > y 返回 1。 Python 3 已废弃 。使用 使用 (x>y)-(x<y) 替换。
@@ -111,7 +100,7 @@ __三角函数__
 
 __数学常量__
 
-*  pi	数学常量 pi（圆周率，一般以π来表示）
+* pi	数学常量 pi（圆周率，一般以π来表示）
 * e	数学常量 e，e即自然常数（自然常数）。
 
 ### 字符串
@@ -193,6 +182,21 @@ python字符串格式化符号:
 m.n.	m 是显示的最小总宽度,n 是小数点后的位数(如果可用的话)
 ```
 
+格式化示例
+```python
+for i in range(1, 10):
+  print
+  for j in range(1, i+1):
+    print "%d*%d=%d" % (i, j, i*j)
+
+name='test'
+desc = "name=%s" % string 
+age = 18
+desc = "name=%s,age=%d" % (name, age)
+height=1.7102
+desc = "name=%s,age=%d,height=%.*f" % (name, age, 3, height)
+```
+
 __Python三引号__ 允许一个字符串跨多行，字符串中可以包含换行符、制表符以及其他特殊字符。
 ```python
 para_str = """这是一个多行字符串的实例
@@ -250,3 +254,44 @@ __内建函数__
 * upper() 转换字符串中的小写字母为大写
 *  zfill (width) 返回长度为 width 的字符串，原字符串右对齐，前面填充0
 * isdecimal() 检查字符串是否只包含十进制字符，返回 true, false。
+
+
+
+### 随机串
+
+基础使用
+
+```python
+import random
+# 随机整数：
+random.randint(1,50) # a <= N <= b.
+
+# 随机选取0到100间的偶数：
+print random.randrange(0, 101, 2)
+
+random.random()       # 随机浮点数
+
+random.uniform(1, 10) # 随机浮点数
+
+random.choice('abcdefghijklmnopqrstuvwxyz!@#$%^&*()') # 随机字符：
+
+random.sample('zyxwvutsrqponmlkjihgfedcba',5) # 多个字符中生成指定数量的随机字符 数组：
+
+# 从a-zA-Z0-9生成指定数量的随机字符：
+ran_str = ''.join(random.sample(string.ascii_letters + string.digits, 8))
+print ran_str
+
+# 多个字符中选取指定数量的字符组成新字符串：
+prin ''.join(random.sample(['z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a'], 5))
+
+# 随机选取字符串：
+print random.choice(['剪刀', '石头', '布'])
+
+# 打乱排序
+items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+print random.shuffle(items)
+
+```
+
+
+
