@@ -1,9 +1,15 @@
 [
   {
-  "name": "人工智能领域的公司",
-  "page": "program/ai_company",
-  "datetime": "2018-09-10 22:00",
-  "about": "在人工智能的新时代背景下，通过不断的发展和研究，该领域的一些公司和组织已经取得了不错的成果"
+    "name": "Git的使用",
+    "page": "program/git",
+    "datetime": "2018-12-10 22:00",
+    "about": "Git(a free and open source distributed version control system)是一个开源的分布式版本控制系统"
+  },
+  {
+    "name": "人工智能领域的公司",
+    "page": "program/ai_company",
+    "datetime": "2018-09-10 22:00",
+    "about": "在人工智能的新时代背景下，通过不断的发展和研究，该领域的一些公司和组织已经取得了不错的成果"
   },
   {
     "name": "一些好的编程书籍",
