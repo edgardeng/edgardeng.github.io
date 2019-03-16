@@ -1,29 +1,22 @@
 <template>
   <div id="app">
     <div> Vue2 Demo</div>
-    <HelloWorld/>
-
-    <InfoItem label="Label" value="value">
-      <span>
-      sssss
-    </span>
-    </InfoItem>
-    <InfoGroup :data="itemArr" title="title" edit @edit-click="onGroupEdit"> </InfoGroup>
-  <NoFound > </NoFound>
-
+    <Home/>
+    <!--<InfoGroup :data="itemArr" title="title" edit @edit-click="onGroupEdit"> </InfoGroup>-->
+    <!--<NoFound > </NoFound>-->
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import HelloWorld from './components/HelloWorld'
 import InfoItem from './components/InfoItem'
 import InfoGroup from './components/InfoGroup'
 import NoFound from './page/NoFound'
+import Home from './page/Home'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld, InfoItem, InfoGroup, NoFound
+    InfoItem, InfoGroup, NoFound, Home
   },
   data () {
     return {

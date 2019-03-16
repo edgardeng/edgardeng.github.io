@@ -49,8 +49,13 @@
 * [机器学习](./python/readme.md)    
     
     * [机器学习模型评价指标](./python/ml_model_evaluation.md)    
+
    
+* [服务器](./server/c_learn.md)    
+     
+     * [Docker部署Flask](./server/docker_nginx_mongo_flask.md)    
     
+       
 * [程序员提高](./program/book.md)    
         
     * [Git的使用](./program/git.md)   

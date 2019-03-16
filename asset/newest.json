@@ -1,5 +1,11 @@
 [
   {
+    "name": "使用Docker部署Nginx+Flask+Mongo的应用",
+    "page": "server/docker_nginx_mongo_flask",
+    "datetime": "2019-03-16 22:00",
+    "about": "Nginx做为服务器，Mongo为数据库支持，Flask为Python语言的Web框架，利用Docker的容器特性，可以简单地部署在linux服务器上。"
+  },
+  {
     "name": "Android 开发学习资料",
     "page": "android/android_material",
     "datetime": "2018-06-04 22:00",
