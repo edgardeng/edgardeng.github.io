@@ -79,7 +79,8 @@ Dockerfile的基本指令有十三个，分别是：FROM、MAINTAINER、RUN、CM
 
 ###  Dockerfile例子
 
-一个使用安装包安装的tomcat例子：
+一个使用安装包安装的tomcat例子
+
 ```dockerfile
 FROM centos
 MAINTAINER nobody "xx@qq.com"
@@ -152,12 +153,12 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 * 项目 ( project )：由一组关联的应用容器组成的一个完整业务单元，在 dockercompose.yml 文件中定义。
 
-
 ### 简单的例子
 
 用docker创建一个Python网站应用容器
 
 1. 编写web应用
+
 ```python
 # app.py
 from flask import Flask
@@ -176,6 +177,7 @@ if __name__ == "__main__":
 ```
 
 2. 编写Dockerfile文件
+
 ```dockerfile
 FROM python:3.6-alpine
 ADD . /code
@@ -185,6 +187,7 @@ CMD ["python","app.py"]
 ```
 
 3. 编写 docker-compose.yml 文件
+
 ```yaml
 version: '3'
 services:
@@ -197,6 +200,7 @@ services:
 ```
 
 4. 运行 compose 项目 `docker-compose up`. 此时访问本地 5000 端口，每次刷新页面，计数就会加 1。
+
 ```dockerfile
   mongo:
     build: ./mongo
@@ -224,5 +228,3 @@ services:
     restart: always
     command: nginx -g 'daemon off';
 ```
-
-

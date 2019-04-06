@@ -1,5 +1,23 @@
 [
   {
+    "name": "MySQL的介绍",
+    "page": "server/mysql",
+    "datetime": "2019-04-05 22:00",
+    "about": "MySQL的介绍，安装，使用"
+  },
+  {
+    "name": "Oracle的介绍",
+    "page": "server/oracle",
+    "datetime": "2019-04-05 22:00",
+    "about": "Oracle的介绍，安装，使用"
+  },
+  {
+    "name": "SQL Server的介绍",
+    "page": "server/sql_server",
+    "datetime": "2019-04-05 22:00",
+    "about": "SQL Server的介绍，安装，使用"
+  },
+  {
     "name": "使用Docker部署Nginx+Flask+Mongo的应用",
     "page": "server/docker_nginx_mongo_flask",
     "datetime": "2019-03-16 22:00",

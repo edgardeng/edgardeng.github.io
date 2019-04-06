@@ -51,11 +51,16 @@
     * [机器学习模型评价指标](./python/ml_model_evaluation.md)    
 
    
-* [服务器](./server/c_learn.md)    
-     
-     * [Docker部署Flask](./server/docker_nginx_mongo_flask.md)    
+* [服务器](./server/c_learn.md)  
+    * [Docker系列-介绍](./server/docker.md) 
+    * [Docker系列-使用docker-compose](./server/docker_compose.md) 
+    * [Docker系列-部署Flask应用](./server/docker_nginx_mongo_flask.md) 
+    * [MySQL系列-介绍 ](./server/mysql.md)
+    * [Oracle](./server/oracle.md)  
+    * [SQL-Server](./server/sql_server.md)
+    * [MongoDB](./server/mongodb.md) 
+    * [Redis](./server/redis.md) 
     
-       
 * [程序员提高](./program/book.md)    
         
     * [Git的使用](./program/git.md)   

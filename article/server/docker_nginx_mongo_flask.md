@@ -75,7 +75,7 @@ services:
 
 ### MongoDB的配置
 
-/mongo/Dockerfile的内容如下
+`/mongo/Dockerfile`的内容
 
 ```Dockerfile
 
@@ -93,7 +93,7 @@ COPY ./$INSTALL_MONGO_SHELL $AUTO_RUN_DIR/
 RUN chmod +x $AUTO_RUN_DIR/$INSTALL_MONGO_SHELL
 
 ```
-/mongo/setup.sh的内容如下
+`/mongo/setup.sh`的内容如下
 
 > 该文件的目的是，启动MongoDB后创建一个密码为test的用户test，并赋予它数据库test的读写操作
 
@@ -110,7 +110,7 @@ EOF
 
 ### Flask应用的配置
 
-/flask/Dockerfile的内容如下
+`/flask/Dockerfile`的内容如下
 
 ```Dockerfile
 FROM python:3.6
@@ -129,18 +129,19 @@ RUN pip3 install -i https://pypi.douban.com/simple/ -r requirements.txt
 CMD gunicorn -w 4 -b 0.0.0.0:5000 run:app
 ```
 
-/src/app/run.py的代码
-> 此处注释了调试用的 app.run()，发布时用gunicorn启动
+`/src/app/run.py`的代码
+
 ```python
 from app import create_app
 app = create_app('default')
 app.debug=False
 # if __name__ == '__main__':
 #    app.run()
+# 此处注释了调试用的 app.run()，发布时用gunicorn启动
 ```
 ### Nginx的配置
 
-/nginx/Dockerfile的内容如下
+`/nginx/Dockerfile`的内容
 
 ```Dockerfile
 FROM nginx:1.14
@@ -151,7 +152,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 ```
 
-/nignx/conf/nginx.conf的内容如下
+`/nignx/conf/nginx.conf`的内容
 
 ```conf
 user  nginx;
@@ -163,7 +164,6 @@ pid        /var/run/nginx.pid;
 events {
     worker_connections  1024;
 }
-
 
 http {
     include       /etc/nginx/mime.types;
@@ -211,17 +211,9 @@ http {
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header Host $http_host;
             proxy_set_header X-Real-IP $remote_addr;
-
-            #proxy_buffers 8 32k;
-            #proxy_buffer_size 64k;
-
         }
     }
-
-
 }
-
-
 ```
 
 ## 启动部署
@@ -231,14 +223,11 @@ http {
 3. 查看容器状态 `docker ps` 
 4. 本地部署浏览器输入 127.0.0.1即可
 
-
-
 最后出现类似docker_file_nginx_1,docker_file_mongo_1, docker_file_flask_1的3个容器，说明成功！！！
-
 
 ## 踩坑吐槽
 
-* 1 mongol容器中的初始化文件需要放在 docker-entrypoint-initdb.d 目录下
+__1. mongol容器中的初始化文件需要放在 docker-entrypoint-initdb.d 目录下__
 
 本人做过如下尝试，会显示 mongdb未启动。
 
@@ -248,7 +237,7 @@ RUN chmod +x /data/setup.sh
 CMD ["/data/setup.sh"]
 ```
 
-* 2 flask应用无法连接mongo，本文使用link方式。
+__2. flask应用无法连接mongo，本文使用link方式__
 
 在数据库的配置应相应写成：
 ```
@@ -262,4 +251,4 @@ MONGODB_SETTINGS = {
 ```
 本地测试时改回127.0.0.1
 
-* 3 nginx中配置使用的代理模式，其中执行flask应用的IP，应为内网IP
+__3. nginx中配置使用的代理模式，其中执行flask应用的IP，应为内网IP __
