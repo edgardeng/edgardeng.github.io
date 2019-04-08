@@ -1,6 +1,9 @@
 # Summary
-
-> Docs Menu for Gitbook (`gitbook serve`)
+    
+* [Web](./web/readme.md)
+    * [Vue - Component](./web/vue_component.md)
+    * [Vue - Mixins](./web/vue_mixins.md)
+    * [Vue - Webpack](./web/vue_webpack.md)
 
 
 * [Android](./android/readme.md)
@@ -14,8 +17,8 @@
     * [Action Bar](./android/support_action_bar.md)
     
     * [Recycler View](./android/support_widget_recycler_view.md)
-    
-    
+
+
 * [Java](./java/readme.md)
 
     * [Pattern Design](./java/java_pattern_design.md)

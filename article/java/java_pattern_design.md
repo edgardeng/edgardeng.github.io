@@ -1,4 +1,4 @@
-d## Java开发中的23种设计模式详解
+# Java开发中的23种设计模式详解
 
 > java的设计模式大体上分为三大类：创建型模式（5种）, 结构型模式（7种）, 行为型模式（11种）
   
@@ -41,7 +41,7 @@ d## Java开发中的23种设计模式详解
 
 常用的工厂模式是静态工厂，利用static方法，作为一种类似于常见的工具类Utils等辅助效果，一般情况下工厂类不需要实例化。
 
-```
+```java
 interface food{}
 
 class A implements food{}
@@ -79,7 +79,7 @@ class Client{
 
   抽象工厂的灵活性就体现在这里，无需改动原有的代码，毕竟对于客户端来说，静态工厂模式在不改动StaticFactory类的代码时无法新增产品，如果采用了抽象工厂模式，就可以轻松的新增拓展类。
 
-```
+```java
 interface food{}
 
 class A implements food{}
@@ -111,7 +111,7 @@ public class AbstractFactory {
 
   在内部创建一个实例，构造器全部设置为private，所有方法均在该实例上改动，在创建上要注意类的实例化只能执行一次，可以采用许多种方法来实现，如Synchronized关键字，或者利用内部类等机制来实现。
 
-```
+```java
 public class Singleton {
     private Singleton(){}
 
@@ -132,7 +132,7 @@ public class Singleton {
 
 　　难道我们写6个1个输入的构造函数，15个2个输入的构造函数...吗？这个时候就需要用到Builder模式了。
 
-```
+```java
 public class Builder {
 
     static class Student{
@@ -199,7 +199,7 @@ public class Builder {
 
 原型模式就是讲一个对象作为原型，使用clone()方法来创建新的实例。
 
-```
+```java
 public class Prototype implements Cloneable{
 
     private String name;
@@ -259,7 +259,7 @@ abstract class adapter implements oldClassFunc { void newFunc();}
 
  给一类对象增加新的功能，装饰方法与具体的内部逻辑无关。
 
-```
+```java
 interface Source{ void method(); }
 
 public class Decorator implements Source{
@@ -281,7 +281,7 @@ public class Decorator implements Source{
 
 这种模式可以对旧功能进行代理，用一个代理类调用原有的方法，且对产生的结果进行控制。
 
-```
+```java
 interface Source{ void method();}
 
 class OldClass implements Source{
@@ -311,7 +311,7 @@ class Proxy implements Source{
 
 在启动停止所有子系统的时候，为它们设计一个外观类，这样就可以实现统一的接口，这样即使有新增的子系统subSystem4,也可以在不修改客户端代码的情况下轻松完成。
 
-```
+```java
 public class Facade {
     private subSystem1 subSystem1 = new subSystem1();
     private subSystem2 subSystem2 = new subSystem2();
@@ -335,7 +335,7 @@ public class Facade {
 
 Circle类将DrawApi与Shape类进行了桥接，代码：
 
-```
+```java
 interface Draw {
     public void drawCircle(int radius, int x, int y);
 }
@@ -388,7 +388,7 @@ greenCircle.draw();
 
  组合模式是为了表示那些层次结构，同时部分和整体也可能是一样的结构，常见的如文件夹或者树。举例：
 
-```
+```java
 abstract class component { }
 
 class File extends component { String filename; }
@@ -417,7 +417,7 @@ class Folder extends component {
 
 使用共享对象的方法，用来尽可能减少内存使用量以及分享资讯。通常使用工厂类辅助，例子中使用一个HashMap类进行辅助判断，数据池中是否已经有了目标实例，如果有，则直接返回，不需要多次创建重复实例。
 
-```
+```java
 abstract class flywei{ }
 
 public class Flyweight extends flywei{
@@ -447,59 +447,58 @@ class  FlyweightFactory{
 
 相关连接：
 
-[23中设计模式](https://blog.csdn.net/doymm2008/article/details/13288067)
+* [23中设计模式](https://blog.csdn.net/doymm2008/article/details/13288067)
 
-[菜鸟教程设计模式](http://www.runoob.com/design-pattern/design-pattern-intro.html)
+* [菜鸟教程设计模式](http://www.runoob.com/design-pattern/design-pattern-intro.html)
 
+* 创建型
 
-创建型
+    * [抽象工厂模式](http://www.cnblogs.com/java-my-life/archive/2012/03/28/2418836.html) 
 
-抽象工厂模式 http://www.cnblogs.com/java-my-life/archive/2012/03/28/2418836.html
+    * [工厂方法 ](http://www.cnblogs.com/java-my-life/archive/2012/03/25/2416227.html)
 
-工厂方法 http://www.cnblogs.com/java-my-life/archive/2012/03/25/2416227.html
+    * [建造者模式  ](http://www.cnblogs.com/java-my-life/archive/2012/04/07/2433939.html)
 
-建造者模式  http://www.cnblogs.com/java-my-life/archive/2012/04/07/2433939.html
+    * [原型模式 ](http://www.cnblogs.com/java-my-life/archive/2012/04/11/2439387.html)
 
-原型模式 http://www.cnblogs.com/java-my-life/archive/2012/04/11/2439387.html
+    * [单态模式 ](http://www.cnblogs.com/java-my-life/archive/2012/03/31/2425631.html)
 
-单态模式 http://www.cnblogs.com/java-my-life/archive/2012/03/31/2425631.html
+* 结构型
 
-结构型
+    * [适配器模式 ](http://www.cnblogs.com/java-my-life/archive/2012/04/13/2442795.html)
 
-适配器模式 http://www.cnblogs.com/java-my-life/archive/2012/04/13/2442795.html
+    * [桥接模式 ](http://blog.csdn.net/jason0539/article/details/22568865)
 
-桥接模式 http://blog.csdn.net/jason0539/article/details/22568865
+    * [组合模式 ](http://blog.csdn.net/jason0539/article/details/22642281)
 
-组合模式 http://blog.csdn.net/jason0539/article/details/22642281
+    * [外观模式 ](http://blog.csdn.net/jason0539/article/details/22775311)
 
-外观模式 http://blog.csdn.net/jason0539/article/details/22775311
+    * [装饰者模式 ](http://www.cnblogs.com/java-my-life/archive/2012/04/20/2455726.html)
 
-装饰者模式 http://www.cnblogs.com/java-my-life/archive/2012/04/20/2455726.html
+    * [享元模式 ](http://www.cnblogs.com/java-my-life/archive/2012/04/26/2468499.html)
 
-享元模式 http://www.cnblogs.com/java-my-life/archive/2012/04/26/2468499.html
+    * [代理模式](http://www.cnblogs.com/java-my-life/archive/2012/04/23/2466712.html)
 
-代理模式 http://www.cnblogs.com/java-my-life/archive/2012/04/23/2466712.html
+* 行为型
 
-行为型
+    * [责任链模式 ](http://blog.csdn.net/zhouyong0/article/details/7909456)
 
-责任链模式 http://blog.csdn.net/zhouyong0/article/details/7909456
+    * [命令模式 ](http://www.cnblogs.com/java-my-life/archive/2012/06/01/2526972.html)
 
-命令模式 http://www.cnblogs.com/java-my-life/archive/2012/06/01/2526972.html
+    * [解释器模式 ](http://www.cnblogs.com/java-my-life/archive/2012/06/19/2552617.html)
 
-解释器模式 http://www.cnblogs.com/java-my-life/archive/2012/06/19/2552617.html
+    * [迭代模式]( http://www.cnblogs.com/java-my-life/archive/2012/05/22/2511506.html)
 
-迭代模式 http://www.cnblogs.com/java-my-life/archive/2012/05/22/2511506.html
+    * [中介者模式 ](http://blog.csdn.net/chenhuade85/article/details/8141831)
 
-中介者模式 http://blog.csdn.net/chenhuade85/article/details/8141831
+    * [备忘录模式 ](http://www.cnblogs.com/java-my-life/archive/2012/06/06/2534942.html)
 
-备忘录模式 http://www.cnblogs.com/java-my-life/archive/2012/06/06/2534942.html
+    * [观察者模式 ](http://www.cnblogs.com/java-my-life/archive/2012/05/16/2502279.html)
 
-观察者模式 http://www.cnblogs.com/java-my-life/archive/2012/05/16/2502279.html
+    * [状态模式 ](http://www.cnblogs.com/java-my-life/archive/2012/06/08/2538146.html)
 
-状态模式 http://www.cnblogs.com/java-my-life/archive/2012/06/08/2538146.html
+    * [策略模式 ](http://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html)
 
-策略模式 http://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html
+    * [模板方法模式 ](http://www.cnblogs.com/java-my-life/archive/2012/05/14/2495235.html)
 
-模板方法模式 http://www.cnblogs.com/java-my-life/archive/2012/05/14/2495235.html
-
-访问者模式 http://www.cnblogs.com/java-my-life/archive/2012/06/14/2545381.html
+    * [访问者模式 ](http://www.cnblogs.com/java-my-life/archive/2012/06/14/2545381.html)
