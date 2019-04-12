@@ -1,6 +1,12 @@
 [
   {
-    "name": "MySQL的介绍",
+    "name": "[MySQL系列] - 函数",
+    "page": "server/mysql_function",
+    "datetime": "2019-04-11 22:00",
+    "about": "MySQL的的常用函数，聚合函数，分组函数"
+  },
+  {
+    "name": "[MySQL系列] - 介绍",
     "page": "server/mysql",
     "datetime": "2019-04-05 22:00",
     "about": "MySQL的介绍，安装，使用"

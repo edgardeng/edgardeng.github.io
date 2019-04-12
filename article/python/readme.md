@@ -91,7 +91,7 @@
 * Pygame 摩擦
 
 
-## Preference 参考
+## Reference 参考
 
 * Book - [Python for Everybody](https://www.py4e.com/)
 
