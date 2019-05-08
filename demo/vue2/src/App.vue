@@ -16,7 +16,7 @@ import Home from './page/Home'
 export default {
   name: 'App',
   components: {
-    InfoItem, InfoGroup, NoFound, Home
+    Home
   },
   data () {
     return {

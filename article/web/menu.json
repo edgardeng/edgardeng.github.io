@@ -1,5 +1,11 @@
 [
   {
+    "name": "Awesome Vue",
+    "page": "web/vue_awesome",
+    "datetime": "2019-05-07 20:00",
+    "about": "Awesome Metariel for Vue Learning, Such as Frameworks, Components, Features"
+  },
+  {
     "name": "Vue.js系列 - 单元测试",
     "page": "web/vue_test_karma",
     "datetime": "2019-04-12 20:00",

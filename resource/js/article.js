@@ -83,7 +83,7 @@ let app = new Vue({
     },
     getCategories () {
       let _self = this
-      $.get("../asset/category.json", function (data) {
+      $.get("./category.json", function (data) {
         _self.categories = data
       })
     }

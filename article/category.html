@@ -204,14 +204,13 @@
         },
         mounted: function () {
             var _self = this;
-
             let page = _self.getUrlParam('cate');
             if (!page) {
                 page = "android"
             }
             _self.page = page
 
-            $.get("../asset/category.json", function (data) {
+            $.get("./category.json", function (data) {
                 for (index in data) {
                     if (_self.page === data[index].page) {
                         _self.category = data[index]
@@ -231,9 +230,10 @@
                     // this.showArticle()
                 } else {
                     this.articleList = this.articleAll.filter((e) => {
-                        let name = e.name.indexOf(this.keyword) >= 0;
-                        let desc = e.about.indexOf(this.keyword) >= 0;
-                        return name | desc;
+                        let k = this.keyword.toLowerCase()
+                        let name = e.name.toLowerCase().indexOf(k) >= 0
+                        let desc = e.about.toLowerCase().indexOf(k) >= 0
+                        return name | desc
                     })
                 }
             },
@@ -264,7 +264,7 @@
             },
             getArticleList() {
                 let _self = this;
-                $.get("../asset/" + this.page + ".json", function (data) {
+                $.get("./" + this.page + "/menu.json", function (data) {
                     _self.articleAll = data
                     _self.showArticleList()
                 })
