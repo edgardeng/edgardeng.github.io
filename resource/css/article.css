@@ -1,7 +1,6 @@
 /*
-
+  css for article
 */
-
 body {
   padding-top: 54px;
   margin: 0;
@@ -15,9 +14,9 @@ body {
 }
 
 .article {
-
+  font-size: 16px;
   background: white;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 5px;
   margin-top: 1.5rem!important;
   -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
@@ -37,7 +36,6 @@ body {
   position: fixed;
 }
 
-
 @media screen and (max-width: 960px){
   .fix-card {
     position: inherit;
@@ -45,10 +43,9 @@ body {
 }
 
 p {
-  font-size: 16px;
+  font-size: 1rem;
   font-family: -apple-system,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Arial,sans-serif;
   line-height: 32px;
-
 }
 
 code, kbd, pre, samp {
@@ -73,14 +70,28 @@ code, kbd, pre, samp {
 .article blockquote p {
   border-left: solid 5px #F78D40;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: .9rem;
 }
 
 h1 ,h2 {
-  margin: 20px 0;
+  margin: 1rem 0;
 }
 
 h3,h4 {
-  margin: 10px 0;
+  margin: .5rem 0;
 }
 
+h1 {
+  font-size: 2rem
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
