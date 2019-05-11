@@ -50,9 +50,10 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead"
-            style="background-image: url(./resource/image/ablum2.jpg);background-repeat: no-repeat;background-size: cover;">
-        <div class="overlay"></div>
+    <header class="masthead">
+        <div class="overlay">
+            <img :src="bannerImg"　style="min-width:100%"/>
+        </div>
         <div class="container">
             <div class="row">
 
@@ -167,6 +168,7 @@
       category: {},
       categories: [],
       motto: {},
+      bannerImg: './resource/image/ablum2.jpg'
     },
     mounted: function () {
       let _self = this
@@ -182,6 +184,14 @@
         let hour = Math.round(time / 3600) % size // 100 以内
         _self.motto = data[hour]
         _self.removeLoading()
+      })
+      // 每日图片
+      $.get("https://www.toolnb.com/Tools/Api/bingimages.html", function (data) {
+        console.log(data)
+        if (data.data) {
+          let image = data.data.img
+          _self.bannerImg = image
+        }
       })
     },
     methods: {

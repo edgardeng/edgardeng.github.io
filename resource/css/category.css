@@ -21,7 +21,8 @@ header.masthead .overlay {
   height: 100%;
   width: 100%;
   background-color: #212529;
-  opacity: .3
+  opacity: .8;
+  overflow: hidden;
 }
 
 header.masthead .page-heading, header.masthead .post-heading, header.masthead .site-heading {
