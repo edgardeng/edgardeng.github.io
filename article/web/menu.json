@@ -1,5 +1,17 @@
 [
   {
+    "name": "Vue.js系列 - Render的使用",
+    "page": "web/vue_render",
+    "datetime": "2019-05-16 20:00",
+    "about": "在Vue中，绝大多数情况下使用模板来创建HTML, 在一些场景中需要使用渲染函数来达到目的。"
+  },
+  {
+    "name": "Vue.js系列 - Mixins的使用",
+    "page": "web/vue_mixins",
+    "datetime": "2019-05-08 20:00",
+    "about": "混入 (mixins) 是一种分发 Vue 组件中可复用功能的非常灵活的方式。混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被混入该组件本身的选项。"
+  },
+  {
     "name": "Awesome Vue",
     "page": "web/vue_awesome",
     "datetime": "2019-05-07 20:00",
