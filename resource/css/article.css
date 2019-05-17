@@ -53,6 +53,15 @@ code, kbd, pre, samp {
   line-height: 1.6em;
 }
 
+table {
+  border-collapse:collapse;
+  margin: 5px;
+}
+table, th, td {
+  border: 1px solid #c2c8ce;
+  padding: 10px;
+}
+
 .article pre {
   background: #f6f8fa;
   padding: 20px;
