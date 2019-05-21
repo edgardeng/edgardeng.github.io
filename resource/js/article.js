@@ -1,5 +1,5 @@
 /**
- * Created by dengxixi on 2018/7/25.
+ * Created by edgardeng on 2018/7/25.
  */
 
 $(function(){
@@ -11,7 +11,6 @@ $(function(){
 let app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!',
     page: undefined,
     article: undefined,
     articleList: [],
@@ -29,9 +28,7 @@ let app = new Vue({
   },
   methods: {
     handleArticleClick: function (item) {
-      console.log('item')
-      let page = encodeURI(item.page)
-      window.location.href= "./index.html?article=" + page
+      window.location.href= "./index.html?article=" + encodeURI(item.page)
     },
     handleCateClick: function (item) {
       window.location.href= "./category.html?cate=" + item.page
@@ -45,17 +42,17 @@ let app = new Vue({
       return null; //返回参数值
     },
     renderArticle () {
-      let converter = new showdown.Converter({
+      var converter = new showdown.Converter({
+        tables: true,
         extensions: function () {
-          function htmlunencode(text) {
+          function htmlUnencode(text) {
             return (
               text
                 .replace(/&amp;/g, '&')
                 .replace(/&lt;/g, '<')
                 .replace(/&gt;/g, '>')
-            );
+            )
           }
-
           return [
             {
               type: 'output',
@@ -66,13 +63,13 @@ let app = new Vue({
                   flags = 'g',
                   replacement = function (wholeMatch, match, left, right) {
                     // unescape match to prevent double escaping
-                    match = htmlunencode(match);
+                    match = htmlUnencode(match);
                     return left + hljs.highlightAuto(match).value + right;
                   };
                 return showdown.helper.replaceRecursiveRegExp(text, replacement, left, right, flags);
               }
             }
-          ];
+          ]
         }()
       });
       $.get(this.article + ".md", function (text) {

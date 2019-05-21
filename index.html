@@ -60,8 +60,6 @@
                 <div class="col-lg mx-auto">
                     <div class="page-heading">
                         <h2>{{motto.motto}}</h2>
-                        <!--<span class="subheading">This is what I do.</span>-->
-                        <!--<span class="subheading">Android Develop Study</span>-->
                     </div>
                 </div>
 
@@ -75,7 +73,6 @@
             <div class="col-lg-8 col-md-10 mx-auto">
 
                 <div class="card" v-for="item in articleList">
-                    <!--<img class="card-img-top" src="..." alt="">-->
                     <div class="card-body">
                         <h5 class="card-title">{{item.name}}</h5>
                         <p class="card-text">{{item.about}}</p>
@@ -138,9 +135,7 @@
 
         </div>
     </div>
-
     <hr>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -168,17 +163,17 @@
       category: {},
       categories: [],
       motto: {},
-      bannerImg: './resource/image/ablum2.jpg'
+      bannerImg: ''
     },
     mounted: function () {
       let _self = this
-      $.get("./asset/newest.json",function(data){
+      $.get('./asset/newest.json',function(data){
         _self.articleList = data
       })
-      $.get("./article/category.json", function (data) {
+      $.get('./article/category.json', function (data) {
         _self.categories = data
       })
-      $.get("./asset/motto.json", function (data) {
+      $.get('./asset/motto.json', function (data) {
         let time = new Date().getTime() / 1000; // second
         let size = data.length
         let hour = Math.round(time / 3600) % size // 100 以内
@@ -186,21 +181,22 @@
         _self.removeLoading()
       })
       // 每日图片
-      $.get("https://www.toolnb.com/Tools/Api/bingimages.html", function (data) {
+      $.get('https://www.toolnb.com/Tools/Api/bingimages.html', function (data) {
         console.log(data)
         if (data.data) {
-          let image = data.data.img
-          _self.bannerImg = image
+          _self.bannerImg = data.data.img
+        } else {
+          _self.bannerImg = './resource/image/ablum2.jpg'
         }
       })
     },
     methods: {
       handleArticleClick: function (item) {
         let page = encodeURI(item.page)
-        window.location.href= "./article/?article=" + page
+        window.location.href= './article/?article=' + page
       },
       handleCateClick: function (item) {
-        window.location.href= "./article/category.html?cate=" + item.page
+        window.location.href= './article/category.html?cate=' + item.page
       },
       removeLoading: function () {
         document.body.removeChild(document.getElementById('loading'))
@@ -209,12 +205,12 @@
   })
 
   $(function() {
-    "use strict"
+    'use strict'
     let navbarCollapse = function() {
-      if ($("#mainNav").offset().top > 400) {
-        $("#mainNav").addClass("bg-primary")
+      if ($('#mainNav').offset().top > 400) {
+        $('#mainNav').addClass('bg-primary')
       } else {
-        $("#mainNav").removeClass("bg-primary")
+        $('#mainNav').removeClass('bg-primary')
       }
     }
     navbarCollapse()
