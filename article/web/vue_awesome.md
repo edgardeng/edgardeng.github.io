@@ -15,6 +15,8 @@
     * [vue-chartjs](https://github.com/apertureless/vue-chartjs) - Vue.js wrapper for [Chart.js](https://github.com/chartjs/Chart.js)
 
     * [v-charts](https://github.com/ElemeFE/v-charts) - Vue.js wrapper for [Echarts](https://github.com/apache/incubator-echarts)
+    
+    * [vue-charts](https://github.com/ecomfe/vue-echarts) - Vue.js wrapper for [Echarts](https://github.com/apache/incubator-echarts)
 
 
 ### Nice Component

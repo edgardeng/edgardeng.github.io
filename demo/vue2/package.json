@@ -14,13 +14,14 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "echarts": "^4.1.0",
     "element-ui": "^2.3.3",
+    "numerify": "1.2.9",
+    "utils-lite": "0.1.10",
+    "view-echarts": "^0.1.0",
     "vue": "^2.5.2",
     "vue-router": "^2.7.0",
-    "vuex": "^2.4.0",
-    "numerify": "1.2.9",
-    "echarts": "^4.1.0",
-    "utils-lite": "0.1.10"
+    "vuex": "^2.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

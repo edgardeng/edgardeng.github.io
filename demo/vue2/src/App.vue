@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div> Vue2 Demo</div>
+    <img src="static/logo.png">
     <Home/>
     <!--<InfoGroup :data="itemArr" title="title" edit @edit-click="onGroupEdit"> </InfoGroup>-->
     <!--<NoFound > </NoFound>-->
