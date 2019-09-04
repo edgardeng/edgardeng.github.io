@@ -42,6 +42,18 @@
     "about": "Nginx做为服务器，Mongo为数据库支持，Flask为Python语言的Web框架，利用Docker的容器特性，可以简单地部署在linux服务器上。"
   },
   {
+    "name": "MongoDB Map-Reduce",
+    "page": "server/mongodb_aggregation",
+    "datetime": "2019-06-20 22:00",
+    "about": "Map-reduce is a data processing paradigm for condensing large volumes of data into useful aggregated results.。"
+  },
+  {
+    "name": "MongoDB Aggregation",
+    "page": "server/mongodb_aggregation",
+    "datetime": "2019-06-19 22:00",
+    "about": "Mongodb本身也提供了aggregation、mapreduce特性，以支持对大数据的计算、统计、分类等需求。"
+  },
+  {
     "name": "MongoDB的使用",
     "page": "server/mongodb",
     "datetime": "2019-01-16 22:00",
