@@ -2,3 +2,5 @@
 .idea
 _book
 *.iml
+/node_modules
+/dist
