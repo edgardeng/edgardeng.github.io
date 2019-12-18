@@ -1,5 +1,4 @@
 [
-
   {
     "name": "Flutter 资料汇总",
     "page": "android/flutter",
@@ -8,21 +7,45 @@
   },
   {
     "name": "Flutter 环境搭建",
-    "page": "android/flutter_start_1",
+    "page": "android/flutter_start_install",
     "datetime": "2019-12-04 22:00",
     "about": "Flutter包括一个现代的响应式框架、一个2D渲染引擎、现成的组件和开发工具。首先完成环境搭建"
   },
   {
     "name": "Flutter 基础知识",
-    "page": "android/flutter_start_2",
+    "page": "android/flutter_start_basic",
     "datetime": "2019-12-05 22:00",
     "about": "了解Flutter的基础知识:入口程序,Material Design,Flutter主题,无状态组件和有状态组件,使用包资源,Http请求"
   },
   {
     "name": "Flutter Dart语言",
-    "page": "android/flutter_start_3",
+    "page": "android/flutter_start_dart",
     "datetime": "2019-12-06 22:00",
     "about": "Dart语言的知识点：常用开发库/变量与基本数据类型/函数/运算符/流程控制语句/异常处理/面向对象/泛型/库的使用/异步支持/元数据/注释"
+  },
+  {
+    "name": "Flutter 常用组件",
+    "page": "android/flutter_start_widget",
+    "datetime": "2019-12-07 22:00",
+    "about": "Flutter常用组件: Text , Container, Image, ListView, Form 和一些表单组件(TextField,Radio,CheckBox)"
+  },
+  {
+    "name": "Flutter 常用布局",
+    "page": "android/flutter_start_layout",
+    "datetime": "2019-12-08 22:00",
+    "about": "Flutter的常用布局: Row 水平布局, Column 垂直布局, Stack 堆叠布局"
+  },
+  {
+    "name": "Flutter Material Design",
+    "page": "android/flutter_start_md",
+    "datetime": "2019-12-09 22:00",
+    "about": "Material Design是由Google推出一种有质感的设计风格. Flutter中提供了多种Material Design风格组件:App结构和导航组件,按钮和提示组件等"
+  },
+  {
+    "name": "Flutter 页面导航",
+    "page": "android/flutter_start_navi",
+    "datetime": "2019-12-10 22:00",
+    "about": "Flutter在多页面切换时，需要进行使用导航器Navigator"
   },
   {
     "name": "Android 约束布局 ConstraintLayout",

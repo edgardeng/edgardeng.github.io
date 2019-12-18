@@ -82,8 +82,9 @@ if(name == null);
         `var sex = '男'; if (sex) { print('你的性别是!' + sex);}`编译不能正常通过，原因是sex变量是一个字符串，不能使用条件判断语句，必需使用bool类型才可以
 
     4. List类型(具有一系列相同类型的数据)
-        List对象的第一个元素的索引是0，最后一个元素的索引是list.lenght – 1
-        `var list = [1,2,3,4,5,6]; print(list.length); print(list[list.length - 1]); `
+        * 索引: 第一个元素的索引是0，最后一个是list.lenght – 1 `var list = [1,2,3,4,5,6]; print(list.length); print(list[list.length - 1]); `
+        * 声明: 非固定长度`List()`。 固定长度 `List(2)`。固定类型 `List<String>()`。 直接赋值`[1,2,3]`。
+        * 生成: 使用generate方法,` new List<String>.generate(1000, (i)=> "Item $i")`
 
     5. Map类型
         > Map类型将key和value关联在一起，也就是健值对。像其他支持Map的编程语言一样，key必须是唯一的。

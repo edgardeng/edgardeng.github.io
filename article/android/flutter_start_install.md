@@ -237,6 +237,19 @@ return MaterialApp(
 
 10. 重新运行此程序，标题栏显示Welcome to Flutter，页面中间显示Hello World。这样，第一个Flutter程序就运行出来啦，如图1-29所示。
 
- 
+ ### 1.4 Flutter 常用命令
+
+* flutter run 
+
+* flutter clean
+
+
+
+
+
+
+
+
+
 
 
