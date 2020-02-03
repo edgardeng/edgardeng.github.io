@@ -5,37 +5,46 @@
     <title> Edgar Deng Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <link type="favicon" rel="shortcut icon" href="../favicon.ico">
+
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css"
-          integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css"
-          integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css"
-          integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
 
-    <link href="../resource/css/aside.css" rel="stylesheet">
-    <link href="../resource/css/category.css" rel="stylesheet">
+    <link href="../assets/css/main.css" rel="stylesheet">
+    <link href="../assets/css/aside.css" rel="stylesheet">
+    <link href="../assets/css/category.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
 </head>
 
 <body>
 <div id="app">
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="">Edgar Deng Blog</a>
+    <nav class="navbar navbar-expand-lg fixed-top bg-white " id="mainNav">
+        <div class="container ">
+            <div class="navbar-brand">
+                <img src="../assets/image/favicon.jpg" width="30" height="30" class="d-inline-block align-top" alt="" style="border-radius: 50%;border: solid 1px #71361d;">
+                <span class="navbar-brand-name">Edgar Deng Blog </span>
+            </div>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                    aria-label="Toggle navigation"> Menu
+                    aria-label="Toggle navigation">
                 <i class="fas fa-bars"> </i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home </a>
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Article</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
+                        <a class="nav-link" href="/project/list.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
                     </li>
                 </ul>
             </div>
@@ -43,19 +52,14 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead"
-            v-bind:style="{ backgroundImage: 'url(' + category.bg + ')' }">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-9 mx-auto">
-                    <div class="page-heading">
-                        <h2>{{category.name}} Develop Study</h2>
-                    </div>
-                </div>
-            </div>
+    <div class="container app-header">
+        <div class="pt-2 pb-5">
+            <p class="text-center " style="font-size: 32px;">
+                <i :class="category.ic" :style="category.sty"> </i>
+                <span class="ml-2">{{category.name}} Develop Study </span>
+            </p>
         </div>
-    </header>
+    </div>
 
     <!-- Main Content -->
     <div class="container">
@@ -69,7 +73,7 @@
                         <p class="card-text">{{item.about}}</p>
                         <div class="d-flex justify-content-between">
                             <small class="text-muted">{{item.datetime}}</small>
-                            <button class="btn btn-primary" v-on:click="handleClick(item)">check</button>
+                            <button class="btn btn-link" v-on:click="handleClick(item)">Read More</button>
                         </div>
                     </div>
                 </div>
@@ -106,26 +110,11 @@
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">
                 <div>
-                    <!-- Search Widget -->
-                    <div class="card">
-                        <h5 class="card-header">Search</h5>
-                        <div class="card-body">
-                            <div class="input-group mb-3">
-                                <input type="search" class="form-control" placeholder="Keyword" aria-label="Keyword"
-                                       v-model="keyword">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"
-                                            v-on:click="handleSearchClick()">Search
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Categories Widget -->
                     <div class="card">
                         <h5 class="card-header">Categories</h5>
-                        <div class="card-body p-2">
+                        <div class="card-body p-0">
                             <div class="list-group list-group-flush">
                                 <button type="button"
                                         class="list-group-item list-group-item-action"
@@ -140,9 +129,9 @@
                      <!-- Author Widget -->
                     <div class="card ">
                         <div class="card-body text-center">
-                                <a class="author" href="/about">
+                                <a class="author" href="/about.html">
                                     <img class="favicon"
-                                         src="../resource/image/favicon.jpg"
+                                         src="../assets/image/favicon.jpg"
                                          alt=""/>
                                     <div> Edgar Deng</div>
                                     <div class="figure-caption"> FE Developer in Web, Android, iOS</div>
@@ -168,8 +157,8 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <p class="copyright text-center">Copyright © Edgar Deng 2018</p>
+                <div class="col-lg-8 col-md-10 mx-auto p-4">
+                    <p class="copyright text-center text-muted">Copyright © Edgar Deng 2020</p>
                 </div>
             </div>
         </div>
@@ -180,7 +169,7 @@
 </body>
 
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<!--<script src=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js" > </script>-->
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js" > </script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
 
 <script lang="javascript">
@@ -206,7 +195,7 @@
             var _self = this;
             let page = _self.getUrlParam('cate');
             if (!page) {
-                page = "android"
+                page = "web"
             }
             _self.page = page
 
@@ -323,21 +312,21 @@
         }
     })
 
-    $(function () {
-        "use strict"; // Start of use strict
-        // Collapse Navbar
-        let navbarCollapse = function () {
-            if ($("#mainNav").offset().top > 400) {
-                $("#mainNav").addClass("bg-primary");
-            } else {
-                $("#mainNav").removeClass("bg-primary");
-            }
-        };
-        // Collapse now if page is not at top
-        navbarCollapse();
-        // Collapse the navbar when page is scrolled
-        $(window).scroll(navbarCollapse);
-    })
+    // $(function () {
+    //     "use strict"; // Start of use strict
+    //     // Collapse Navbar
+    //     let navbarCollapse = function () {
+    //         if ($("#mainNav").offset().top > 400) {
+    //             $("#mainNav").addClass("bg-primary");
+    //         } else {
+    //             $("#mainNav").removeClass("bg-primary");
+    //         }
+    //     };
+    //     // Collapse now if page is not at top
+    //     navbarCollapse();
+    //     // Collapse the navbar when page is scrolled
+    //     $(window).scroll(navbarCollapse);
+    // })
 
 </script>
 </html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    <title> Edgar Deng Blog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link type="favicon" rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css"
+          integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css"
+          integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+
+    <link href="resource/css/aside.css" rel="stylesheet">
+    <link href="resource/css/category.css" rel="stylesheet">
+    <link href="resource/css/loading.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="loading" >
+    <div class="load-container">
+        <div class="loader">Loading...</div>
+    </div>
+</div>
+
+<div id="app">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="">Edgar Deng Blog</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"> </i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead">
+        <div class="overlay">
+            <img :src="bannerImg"　style="min-width:100%"/>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg mx-auto">
+                    <div class="page-heading">
+                        <h2>{{motto.motto}}</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+
+                <div class="card" v-for="item in articleList">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.about}}</p>
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted">{{item.datetime}}</small>
+                            <button class="btn btn-primary" v-on:click="handleArticleClick(item)">check</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <div class="">
+                    <!-- Author Widget -->
+                    <div class="card ">
+                        <div class="card-body text-center">
+                            <a class="author" href="./about">
+                                <img class="favicon"
+                                     src="./resource/image/favicon.jpg"
+                                     alt=""/>
+                                <div> Edgar Deng</div>
+                                <div class="figure-caption"> FE Developer in Web, Android, iOS</div>
+                                <div class="social-account">
+                                    <a href="https://weibo.com/edgardeng" target="_blank">
+                                        <i class="fab fa-weibo fa-2x" style="color:#EE5544;"> </i>
+                                    </a>
+                                    <a href="https://github.com/edgardeng" target="_blank">
+                                        <i class="fab fa-github fa-2x" style="color:#2b3137"> </i>
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="card">
+                        <h5 class="card-header">Categories</h5>
+                        <div class="card-body p-2">
+                            <div class="list-group list-group-flush">
+                                <button type="button"
+                                        class="list-group-item list-group-item-action"
+                                        v-for="item in categories"
+                                        v-on:click="handleCateClick(item)">
+                                    <i :class="item.ic" :style="item.sty"> </i> {{item.name}}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p class="copyright text-center">Copyright © Edgar Deng 2018</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+</body>
+
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"> </script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+
+<script lang="javascript">
+
+  let app = new Vue({
+    el: '#app',
+    data: {
+      articleList: [],
+      category: {},
+      categories: [],
+      motto: {},
+      bannerImg: ''
+    },
+    mounted: function () {
+      let _self = this
+      $.get('./asset/newest.json',function(data){
+        _self.articleList = data
+      })
+      $.get('./article/category.json', function (data) {
+        _self.categories = data
+      })
+      $.get('./asset/motto.json', function (data) {
+        let time = new Date().getTime() / 1000; // second
+        let size = data.length
+        let hour = Math.round(time / 3600) % size // 100 以内
+        _self.motto = data[hour]
+        _self.removeLoading()
+      })
+      // 每日图片
+      $.get('https://www.toolnb.com/Tools/Api/bingimages.html', function (data) {
+        console.log(data)
+        if (data.data) {
+          _self.bannerImg = data.data.img
+        } else {
+          _self.bannerImg = './resource/image/ablum2.jpg'
+        }
+      })
+    },
+    methods: {
+      handleArticleClick: function (item) {
+        let page = encodeURI(item.page)
+        window.location.href= './article/?article=' + page
+      },
+      handleCateClick: function (item) {
+        window.location.href= './article/category.html?cate=' + item.page
+      },
+      removeLoading: function () {
+        document.body.removeChild(document.getElementById('loading'))
+      }
+    }
+  })
+
+  $(function() {
+    'use strict'
+    let navbarCollapse = function() {
+      if ($('#mainNav').offset().top > 400) {
+        $('#mainNav').addClass('bg-primary')
+      } else {
+        $('#mainNav').removeClass('bg-primary')
+      }
+    }
+    navbarCollapse()
+    // Collapse the navbar when page is scrolled
+    $(window).scroll(navbarCollapse)
+    setTimeout(function () {
+      document.body.removeChild(document.getElementById('loading'))
+    }, 20000)
+  })
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151584790-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-151584790-1');
+</script>
+</html>
