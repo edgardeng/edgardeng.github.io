@@ -40,23 +40,23 @@ Widget具有丰富的属性及方法，属性通常用来改变组件的状态�
 
 ```dart
 return new Center(
-//添加容器
-child: new Container(
-
-//添加装饰器
-decoration: new BoxDecoration(
-),
-child: new Text(
-//添加文本组件
-),
-),
-),
+  // 添加容器
+  child: new Container(
+    // 添加装饰器
+    decoration: new BoxDecoration(
+    ),
+    child: new Text(
+    // 添加文本组件
+    ),
+  ),
+)
 ```
 
 最基础的组件类是Widget，其他所有的组件都是继承Widget的。
-紧接着下面有两大类组件：有状态组件及无状态组件。
-有状态组件是界面会发生变化的组件，如Scrollable、Animatable等，
-无状态的组件即界面不发生变化的组件，如Text、AssetImage等。
+
+两大类组件：
+* 有状态组件: 界面会发生变化的组件，如Scrollable、Animatable等，
+* 无状态组件: 界面不发生变化的组件，如Text、AssetImage等。
 
 ####  1.1.3　构建Widget
 可以重写Widget的build方法来构建一个组件，如下代码所示：
@@ -84,26 +84,25 @@ build即为创建一个Widget的意思，返回值也是一个Widget对象，不
 框架在适当的时候完成查找和重用现有状态对象的所有工作。
 
 #### 1.1.5　什么是状态
+
 Flutter中的状态和React中的状态概念一致。React 的核心思想是组件化的思想，应用由组件搭建而成，而组件中最重要的概念是State（状态），State是一个组件的UI数据模型，是组件渲染时的数据依据。
 Flutter程序的运行可以认为是一个巨大的状态机，用户的操作、请求API和系统事件的触发都是推动状态机运行的触发点，触发点通过调用setState方法推动状态机进行响应。
 
-状态的生命周期如图所示:
-![](../img/flutter_lifecycle.jpg)
-
 #### 1.1.6　分层的框架
+
 Flutter框架是一个分层的结构，每一层都建立在前一层之上. Flutter框架如图所示:上层比下层的使用频率更高。
-![](../img/flutter_framework.webp)
 
 > 提示:有关构成Flutter分层框架的完整库，请参阅官方的[API文档](https://docs.flutter.dev/)。
 
 分层设计的目标是帮助开发者用更少的代码做更多的事情。例如，Material层通常组合来自Widget层的基本Widget， 而Widget层通过较低级对象渲染层来构建。
 
-
 ### 1.2　开发环境搭建
 > 开发环境搭建还是非常烦琐的，任何一个步骤失败都会导致最终环境搭建不能完成。Flutter支持三种环境：Windows、MacOS和Linux
 
 #### 1.2.1　Windows环境搭建
+
 1. 使用镜像
+
 首先解决网络问题。环境搭建过程中需要下载很多资源文件，当某个资源更新不到时，就可能会报各种错误。
 在国内访问Flutter有时可能会受到限制，Flutter官方为中国开发者搭建了临时镜像
 
@@ -130,11 +129,16 @@ Flutter依赖的命令行工具为Git for Windows（Git命令行工具）。Wind
 运行`flutter doctor` 查看是否需要安装任何依赖项来完成安装：
 
 6.编辑器设置
-如果使用flutter命令行工具，可以使用任何编辑器来开发Flutter应用程序。输入flutter help在提示符下查看可用的工具。但是笔者建议最好安装一款功能强大的IDE来进行开发，毕竟开发调试运行打包的效率会更高。由于Windows环境只能开发Flutter的Android应用，所以接下来我们会重点介绍Android Studio这款IDE。
-（1）安装Android Studio: [下载](https://developer.android.com/studio/index.html) 安装 启动
-（2）设置你的Android设备: 需要安装Android 4.1（API level 16）或更高版本的Android设备。步骤如下：
-（3）设置Android模拟器: 启动Android Studio→Tools→Android→AVD Manager?并选择?Create Virtual Device，打开虚拟设备面板，如图1-6所示。
-（4）安装Flutter（运行、调试、热重载等）和Dart （输入代码时进行验证、代码补全等）插件: 打开Android Studio的系统设置面板，找到Plugins分别搜索，点击安装即可
+
+如果使用flutter命令行工具，可以使用任何编辑器来开发Flutter应用程序。
+输入flutter help在提示符下查看可用的工具。
+
+使用Android Studio这款IDE:
+
+  1. 安装Android Studio: [下载](https://developer.android.com/studio/index.html) 安装 启动
+  2. 设置你的Android设备: 需要安装Android 4.1（API level 16）或更高版本的Android设备。步骤如下：
+  3. 设置Android模拟器: 启动Android Studio→Tools→Android→AVD Manager?并选择?Create Virtual Device，打开虚拟设备面板，如图1-6所示。
+  4. 安装Flutter（运行、调试、热重载等）和Dart （输入代码时进行验证、代码补全等）插件: 打开Android Studio的系统设置面板，找到Plugins分别搜索，点击安装即可
 
 #### 1.2.2　MacOS环境搭建
 
@@ -211,6 +215,7 @@ pod setup
 8. 接下来我们打开工程目录下的main.dart文件，清空main.dart代码，如图1-28箭头所指。
 
 9. 把Hello World代码粘贴至main.dart文件里，完整代码如下所示：
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -235,9 +240,9 @@ return MaterialApp(
 }
 ```
 
-10. 重新运行此程序，标题栏显示Welcome to Flutter，页面中间显示Hello World。这样，第一个Flutter程序就运行出来啦，如图1-29所示。
+运行此程序，标题栏显示Welcome to Flutter，页面中间显示Hello World。这样，第一个Flutter程序就运行出来啦，如图1-29所示。
 
- ### 1.4 Flutter 常用命令
+### 1.4 Flutter 常用命令
 
 * flutter run 
 

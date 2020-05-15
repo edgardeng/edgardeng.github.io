@@ -19,11 +19,21 @@
        
    * [Flutter笔记 7.页面导航](?article=android/flutter_start_navi) 
 
+#### Flutter进阶
+
+  * [Flutter进阶之Bloc业务逻辑组](?article=android/flutter_bloc)
+  
+  * [Flutter进阶之StreamBuilder异步加载控件](?article=android/flutter_streambuilder)
+
 #### Fluter 开源的完整应用
 
 * [仿滴滴出行](https://github.com/Sky24n/GreenTravel) 
 
-* [Flutter完整应用](https://github.com/Sky24n/flutter_wanandroid) - 基于Google Flutter的WanAndroid客户端，支持Android和iOS。包括BLoC、RxDart 、国际化、主题色、启动页、引导页，拥有较好的项目结构&比较规范的代码！
+* [仿携程](https://github.com/persilee/flutter_ctrip)
+
+* [豆瓣电影](https://github.com/Mayandev/morec)
+
+* [Flutter完整应用](https://github.com/Sky24n/flutter_wanandroid) - 基于Google Flutter的WanAndroid客户端，支持Android和iOS。包括BLoC、RxDart 、国际化、主题色、启动页、引导页，拥有较好的项目结构&比较规范的代码
 
 #### Fluter 学习教程
 
@@ -37,7 +47,10 @@
 
 * [Flutter-Notebook](https://github.com/OpenFlutter/Flutter-Notebook) flutterDemo的集合
 
-* [Flutter 实战（Juejin）](https://juejin.im/user/582aca2ba22b9d006b59ae68/posts)
+* [Flutter专栏（Juejin）](https://juejin.im/user/582aca2ba22b9d006b59ae68/posts)
+
+* [Flutter实战（Juejin）](https://book.flutterchina.club)
+
 
 #### Flutter 开源组件
 

@@ -258,45 +258,43 @@ return new MaterialApp(
 ### 2.6　Http请求
 > HTTP协议通常用于做前后端的数据交互
 
-1. Http请求方式
+#### 1. Http请求方式
+
 在使用Http方式请求网络时，需要导入http包。
+
 ```Dart
 import 'package:http/http.dart' as http;
-
 void main() => runApp(new MyApp());
-
 class MyApp extends StatelessWidget {
-@override
-Widget build(BuildContext context) {
-
-return new MaterialApp(
-  title: 'http请求示例',
-  home: new Scaffold(
-    appBar: new AppBar(
-      title: new Text('http请求示例'),
-    ),
-    body: new Center(
-      child: new RaisedButton(
-        onPressed: () {
-
-          var url = 'http://httpbin.org/';
-          //向http://httpbin.org/发送get请求
-          http.get(url).then((response) {
-            print("状态： ${response.statusCode}");
-            print("正文： ${response.body}");
-          });
-
-        },
-        child: new Text('发起http请求'),
+  @override
+  Widget build(BuildContext context) {
+  
+  return new MaterialApp(
+    title: 'http请求示例',
+    home: new Scaffold(
+      appBar: new AppBar(
+        title: new Text('http请求示例'),
+      ),
+      body: new Center(
+        child: new RaisedButton(
+          onPressed: () {
+            var url = 'http://httpbin.org/';
+            //向http://httpbin.org/发送get请求
+            http.get(url).then((response) {
+              print("状态： ${response.statusCode}");
+              print("正文： ${response.body}");
+            });
+          },
+          child: new Text('发起http请求'),
+        ),
       ),
     ),
-  ),
-);
-}
+  );
+  }
 }
 ```
 
-2. HttpClient请求方式
+#### 2. HttpClient请求方式
 
 > 在使用HttpClient方式请求网络时，需要导入io及convert包，示例中使用HttpClient请求了一条天气数据,如下所示：
 
@@ -309,53 +307,52 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
 
-//获取天气数据
-void getWeatherData() async {
-
-try {
-  //实例化一个HttpClient对象
-  HttpClient httpClient = new HttpClient();
-
-  //发起请求
-  HttpClientRequest request = await httpClient.getUrl(
-      Uri.parse("http://t.weather.sojson.com/api/weather/city/101030100"));
-
-  //等待服务器返回数据
-  HttpClientResponse response = await request.close();
-
-  //使用utf8.decoder从response里解析数据
-  var result = await response.transform(utf8.decoder).join();
-  //输出响应头
-  print(result);
-
-  //httpClient关闭
-  httpClient.close();
-
-} catch (e) {
-  print("请求失败：$e");
-} finally {
-
-}
-}
-
-@override
-Widget build(BuildContext context) {
-
-return MaterialApp(
-  title: 'httpclient请求',
-  home: Scaffold(
-    appBar: AppBar(
-      title: Text('httpclient请求'),
-    ),
-    body: Center(
-      child: RaisedButton(
-        child: Text("获取天气数据"),
-        onPressed: getWeatherData,
+  //获取天气数据
+  void getWeatherData() async {
+  
+  try {
+    //实例化一个HttpClient对象
+    HttpClient httpClient = new HttpClient();
+    //发起请求
+    HttpClientRequest request = await httpClient.getUrl(
+        Uri.parse("http://t.weather.sojson.com/api/weather/city/101030100"));
+  
+    //等待服务器返回数据
+    HttpClientResponse response = await request.close();
+  
+    //使用utf8.decoder从response里解析数据
+    var result = await response.transform(utf8.decoder).join();
+    //输出响应头
+    print(result);
+  
+    //httpClient关闭
+    httpClient.close();
+  
+  } catch (e) {
+    print("请求失败：$e");
+  } finally {
+  
+  }
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+  
+  return MaterialApp(
+    title: 'httpclient请求',
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text('httpclient请求'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text("获取天气数据"),
+          onPressed: getWeatherData,
+        ),
       ),
     ),
-  ),
-);
-}
+  );
+  }
 }
 ```
 
