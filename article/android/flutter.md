@@ -20,11 +20,12 @@
    * [Flutter笔记 7.页面导航](?article=android/flutter_start_navi) 
 
 #### Flutter进阶
+  * [Flutter进阶之Rxdart](?article=android/flutter_streambuilder)
 
+  * [Flutter进阶之StreamBuilder异步加载控件](?article=android/flutter_streambuilder)
+ 
   * [Flutter进阶之Bloc业务逻辑组](?article=android/flutter_bloc)
   
-  * [Flutter进阶之StreamBuilder异步加载控件](?article=android/flutter_streambuilder)
-
 #### Fluter 开源的完整应用
 
 * [仿滴滴出行](https://github.com/Sky24n/GreenTravel) 
