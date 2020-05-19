@@ -11,7 +11,7 @@ maven包含了一个项目对象模型 (Project Object Model)，一组标准集�
   > pom.xml 通过在此文件中配置jar包的坐标即可将jar包引入到工程中。Jar包的坐标可从maven仓库中获取
   
 2.  项目构建
-  > v项目构建是一个项目从编写源代码到编译，测试，运行，打包，部署，运行的过程。
+  > 项目构建是一个项目从编写源代码到编译，测试，运行，打包，部署，运行的过程。
  
 ## 二、环境准备
 
@@ -42,27 +42,21 @@ pom.xml - Maven核心文件（Project Object Model）；
   > 编译源代码, 用来将src/main/java下的文件编译为class文件，并输出到target中。
 * mvn test test 用来将src/main/test下的文件进行编译，同时执行一次
 * mvn package 打包,将项目进行打包，如果是jar打包为jar，war打包为war。
-
 * mvn clean 删除编译产生的target文件夹
 * mvn install 安装jar包到本地仓库中
-
-
-mvn archetype：create 创建Maven项目
-mvn compile 编译源代码
-mvn deploy 发布项目
-mvn test-compile 编译测试源代码
-mvn test 运行应用程序中的单元测试
-mvn site 生成项目相关信息的网站
-mvn eclipse:eclipse 生成eclipse项目文件
-mvnjetty:run 启动jetty服务
-mvntomcat:run 启动tomcat服务
-mvn clean package -Dmaven.test.skip=true 清除以前的包后重新打包，跳过测试类
-
-用到最多的命令
-
-mvn eclipse:clean 清除Project中以前的编译的东西，重新再来
-mvn eclipse:eclipse 开始编译Maven的Project
-mvn clean package 清除以前的包后重新打包
+* mvn archetype：create 创建Maven项目
+* mvn compile 编译源代码
+* mvn deploy 发布项目
+* mvn test-compile 编译测试源代码
+* mvn test 运行应用程序中的单元测试
+* mvn site 生成项目相关信息的网站
+* mvn eclipse:eclipse 生成eclipse项目文件
+* mvnjetty:run 启动jetty服务
+* mvntomcat:run 启动tomcat服务
+* mvn clean package -Dmaven.test.skip=true 清除以前的包后重新打包，跳过测试类
+* mvn eclipse:clean 清除Project中以前的编译的东西，重新再来
+* mvn eclipse:eclipse 开始编译Maven的Project
+* mvn clean package 清除以前的包后重新打包
  
   Maven 有一个生命周期，当你运行 mvn install 的时候被调用。这条命令告诉 Maven 执行一系列的有序的步骤，直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，Maven 运行了许多默认的插件目标，这些目标完成了像编译和创建一个 JAR 文件这样的工作。
 
@@ -82,23 +76,50 @@ mvn clean package 清除以前的包后重新打包
 
   获取到后，本地仓库及远程仓库各存储一份。如果没有远程仓库，本地仓库则直接从中央仓库获取，然后在本地仓库存储一份。
 
+### 依赖
+
+① maven解析依赖信息时会到本地仓库中取查找被依赖的jar包
+  > 对于本地仓库中没有的会去中央仓库去查找maven坐标来获取jar包，获取到jar之后会下载到本地仓库
+
+② 如果依赖的是自己或者团队开发的maven工程，需要先使用install命令把被依赖的maven工程的jar包导入到本地仓库中
+
+③ 依赖范围
+
+  1、compile，默认值，适用于所有阶段（开发、测试、部署、运行），本jar会一直存在所有阶段。
+  
+  2、provided，只在开发、测试阶段使用，目的是不让Servlet容器和你本地仓库的jar包冲突 。如servlet.jar。
+  
+  3、runtime，只在运行时使用，如JDBC驱动，适用运行和测试阶段。
+  
+  4、test，只在测试时使用，用于编译和运行测试代码。不会随项目发布。
+  
+  5、system，类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它。
+  
+  |scope	|编译	|测试	|运行|
+  |:----|:----|:----|:----|
+  |compile|	Y	|Y|	Y|
+  |test	|	Y	||
+  |provided	|Y	|Y|	
+  |runtime|		Y|	Y|
+  |system	|Y	|Y|	
+  
 ### 生命周期 
 > maven对项目的构建分为三套相互独立的生命周期。
 
-* cleanLifecycle:在项目构建前，先进行一些清理工作。
-* defaultLifecycle:构建的核心部分，编译，测试，打包，部署。
-* siteLifecycle：生成项目报告，站点，发布报告。
+* cleanLifecycle:   在项目构建前，先进行一些清理工作。
+* defaultLifecycle: 构建的核心部分，编译，测试，打包，部署。
+* siteLifecycle：   生成项目报告，站点，发布报告。
 
 maven的每个生命周期都有很多阶段，每个阶段对应一个执行命令。
 
-#### clean
-1、clean生命周期：清理项目，包含三个phase。
+#### clean 生命周期：清理项目，包含三个phase
+
 1）pre-clean：执行清理前需要完成的工作
 2）clean：清理上一次构建生成的文件
 3）post-clean：执行清理后需要完成的工作
 
-#### default
-2、default生命周期：构建项目，重要的phase如下。
+#### default 生命周期：构建项目，重要的phase如下
+
 1）validate：验证工程是否正确，所有需要的资源是否可用。
 2）compile：编译项目的源代码。
 3）test：使用合适的单元测试框架来测试已编译的源代码。这些测试不需要已打包和布署。
@@ -108,14 +129,15 @@ maven的每个生命周期都有很多阶段，每个阶段对应一个执行命
 7）install：把包安装到maven本地仓库，可以被其他工程作为依赖来使用。
 8）deploy：在集成或者发布环境下执行，将最终版本的包拷贝到远程的repository，使得其他的开发者或者工程可以共享。
 
-#### site
-3、site生命周期：建立和发布项目站点，phase如下
+#### site 生命周期：建立和发布项目站点，phase如下
+
 1）pre-site：生成项目站点之前需要完成的工作
 2）site：生成项目站点文档
 3）post-site：生成项目站点之后需要完成的工作
 4）site-deploy：将项目站点发布到服务器
 
 命令与生命周期关系
+
 每个maven命令对应生命周期的某一阶段，例如clean命令对应maven的clean阶段。test命令对应maven的default阶段。
 执行命令会自动将该阶段以前的命令执行，例如执行clean命令，将自动执行pre-clean命令。
 执行某个生命周期某个阶段，不会影响生命周期其他阶段。
@@ -138,6 +160,7 @@ Maven本质上是一个插件框架，它的核心并不执行任何具体的构
 > setting.xml主要用于配置maven的运行环境等一系列通用的属性，是全局级别的配置文件；而pom.xml主要描述了项目的maven坐标，依赖关系，开发者需要遵循的规则，缺陷管理系统，组织和licenses，以及其他所有的项目相关因素，是项目级别的配置文件。
 
 #### 基础配置
+
 一个典型的pom.xml文件配置如下：
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
@@ -145,41 +168,30 @@ Maven本质上是一个插件框架，它的核心并不执行任何具体的构
   
     <!-- 模型版本。maven3.0必须是这样写，现在是maven3唯一支持的版本 -->  
     <modelVersion>4.0.0</modelVersion>  
-  
     <!-- 公司或者组织的唯一标志，并且配置时生成的路径也是由此生成， 如com.winner.trade，maven会将该项目打成的jar包放本地路径：/com/winner/trade -->  
-    <groupId>com.winner.trade</groupId>  
-  
+    <groupId>com.winner.trade</groupId>
     <!-- 本项目的唯一ID，一个groupId下面可能多个项目，就是靠artifactId来区分的 -->  
     <artifactId>trade-core</artifactId>  
-  
     <!-- 本项目目前所处的版本号 -->  
     <version>1.0.0-SNAPSHOT</version>  
-  
     <!-- 打包的机制，如pom,jar, maven-plugin, ejb, war, ear, rar, par，默认为jar -->  
     <packaging>jar</packaging>  
-  
     <!-- 帮助定义构件输出的一些附属构件,附属构件与主构件对应，有时候需要加上classifier才能唯一的确定该构件 不能直接定义项目的classifer,因为附属构件不是项目直接默认生成的，而是由附加的插件帮助生成的 -->  
     <classifier>...</classifier>  
-  
     <!-- 定义本项目的依赖关系 -->  
     <dependencies>  
-  
         <!-- 每个dependency都对应这一个jar包 -->  
-        <dependency>  
-  
+        <dependency> 
             <!--一般情况下，maven是通过groupId、artifactId、version这三个元素值（俗称坐标）来检索该构件， 然后引入你的工程。如果别人想引用你现在开发的这个项目（前提是已开发完毕并发布到了远程仓库），-->   
             <!--就需要在他的pom文件中新建一个dependency节点，将本项目的groupId、artifactId、version写入， maven就会把你上传的jar包下载到他的本地 -->  
             <groupId>com.winner.trade</groupId>  
             <artifactId>trade-test</artifactId>  
-            <version>1.0.0-SNAPSHOT</version>  
-  
+            <version>1.0.0-SNAPSHOT</version>
             <!-- maven认为，程序对外部的依赖会随着程序的所处阶段和应用场景而变化，所以maven中的依赖关系有作用域(scope)的限制。 -->  
             <!--scope包含如下的取值：compile（编译范围）、provided（已提供范围）、runtime（运行时范围）、test（测试范围）、system（系统范围） -->  
-            <scope>test</scope>  
-  
+            <scope>test</scope>
             <!-- 设置指依赖是否可选，默认为false,即子项目默认都继承:为true,则子项目必需显示的引入，与dependencyManagement里定义的依赖类似  -->  
             <optional>false</optional>  
-  
             <!-- 屏蔽依赖关系。 比如项目中使用的libA依赖某个库的1.0版，libB依赖某个库的2.0版，现在想统一使用2.0版，就应该屏蔽掉对1.0版的依赖 -->  
             <exclusions>  
                 <exclusion>  
@@ -187,9 +199,7 @@ Maven本质上是一个插件框架，它的核心并不执行任何具体的构
                     <artifactId>slf4j-api</artifactId>  
                 </exclusion>  
             </exclusions>  
-  
         </dependency>  
-  
     </dependencies>  
   
     <!-- 为pom定义一些常量，在pom中的其它地方可以直接引用 使用方式 如下 ：${file.encoding} -->  
@@ -198,9 +208,7 @@ Maven本质上是一个插件框架，它的核心并不执行任何具体的构
         <java.source.version>1.5</java.source.version>  
         <java.target.version>1.5</java.target.version>  
     </properties>  
-   
 </project> 
-
 ```
  
 > 上面的几个配置项对任何项目都是必不可少的，定义了项目的基本属性。
@@ -223,35 +231,27 @@ classifier的用途在于: maven download javadoc / sources jar包的时候，�
 #### 构建配置
 
 ```xml
- 
-```
 <build>  
   
     <!-- 产生的构件的文件名，默认值是${artifactId}-${version}。 -->  
     <finalName>myPorjectName</finalName>  
-  
     <!-- 构建产生的所有文件存放的目录,默认为${basedir}/target，即项目根目录下的target -->  
     <directory>${basedir}/target</directory>  
-  
     <!--当项目没有规定目标（Maven2叫做阶段（phase））时的默认值， -->  
     <!--必须跟命令行上的参数相同例如jar:jar，或者与某个阶段（phase）相同例如install、compile等 -->  
     <defaultGoal>install</defaultGoal>  
-  
     <!--当filtering开关打开时，使用到的过滤器属性文件列表。 -->  
     <!--项目配置信息中诸如${spring.version}之类的占位符会被属性文件中的实际值替换掉 -->  
     <filters>  
         <filter>../filter.properties</filter>  
     </filters>  
-  
     <!--项目相关的所有资源路径列表，例如和项目相关的配置文件、属性文件，这些资源被包含在最终的打包文件里。 -->  
     <resources>  
         <resource>  
-  
             <!--描述了资源的目标路径。该路径相对target/classes目录（例如${project.build.outputDirectory}）。 -->  
             <!--举个例子，如果你想资源在特定的包里(org.apache.maven.messages)，你就必须该元素设置为org/apache/maven/messages。 -->  
             <!--然而，如果你只是想把资源放到源码目录结构里，就不需要该配置。 -->  
             <targetPath>resources</targetPath>  
-  
             <!--是否使用参数值代替参数名。参数值取自properties元素或者文件里配置的属性，文件在filters元素里列出。 -->  
             <filtering>true</filtering>  
   
@@ -709,6 +709,7 @@ pom.xml中的profile可以看做pom.xml的副本，拥有与pom.xml相同的子�
 ``` 
 
 #### 项目信息配置
+
 ```xml
 <!--项目的名称, Maven产生的文档用 -->  
 <name>banseon-maven </name>  
@@ -868,64 +869,14 @@ pom.xml中的profile可以看做pom.xml的副本，拥有与pom.xml相同的子�
   
 </organization>  
 ```
- 
-## 四、maven依赖范围
 
-> maven项目不同的阶段引入到classpath中的依赖是不同的
-
-> 例如，编译时，maven会将与编译相关的依赖引入classpath中，
-> 测试时，maven会将测试相关的的依赖引入到classpath中，
-> 运行时，maven会将与运行相关的依赖引入classpath中，
-> 而依赖范围就是用来控制依赖于这三种classpath的关系。
-
-### pom中的配置
-
-```xml
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.7</version>
-    <scope>test</scope>
-</dependency>
-```
-
-其scope标签就是依赖范围的配置，默认是compile,可选配置有test、provided、runtime、system、import
-
-
-1. 编译依赖范围（compile）
-> 该范围就是默认依赖范围，此依赖范围对于编译、测试、运行三种classpath都有效，举个简单的例子，假如项目中有spring-core的依赖，那么spring-core不管是在编译，测试，还是运行都会被用到，因此spring-core必须是编译范围（构件默认的是编译范围，所以依赖范围是编译范围的无须显示指定）
-
-2.测试依赖范围(test)，顾名思义就是针对于测试的，使用此依赖范围的依赖，只对测试classpath有效，在编译主代码和项目运行时，都将无法使用该依赖，最典型的例子就是 Junit, 构件在测试时才需要，所以它的依赖范围是测试，因此它的依赖范围需要显示指定为test ,当然不显示指定依赖范围也不会报错，但是该依赖会被加入到编译和运行的classpath中,造成不必要的浪费 。
-
-3. 已提供依赖范围(provided),使用该依赖范围的maven依赖，只对编译和测试的classpath有效，对运行的classpath无效，典型的例子就是servlet-api，编译和测试该项目的时候需要该依赖，但是在运行时，web容器已经提供的该依赖，所以运行时就不再需要此依赖，如果不显示指定该依赖范围，并且容器依赖的版本和maven依赖的版本不一致的话，可能会引起版本冲突，造成不良影响。
-
-4. 运行时依赖范围(runtime),使用该依赖范围的maven依赖，只对测试和运行的classpath有效，对编译的classpath无效，典型例子就是JDBC的驱动实现，项目主代码编译的时候只需要JDK提供的JDBC接口，只有在测试和运行的时候才需要实现上述接口的具体JDBC驱动。
-
-5. 系统依赖范围（system）,该依赖与classpath的关系与provided依赖范围完全一致，但是系统依赖范围必须通过配置systemPath元素来显示指定依赖文件的路径，此类依赖不是由maven仓库解析的，而且往往与本机系统绑定，可能造成构件的不可移植，因此谨慎使用，systemPath元素可以引用环境变量：
-
-6. 导入依赖范围(import),该依赖范围不会对三种classpath产生影响，该依赖范围只能与dependencyManagement元素配合使用，其功能为将目标pom文件中dependencyManagement的配置导入合并到当前pom的dependencyManagement中。有关dependencyManagement的功能请了解maven继承特性。
-
-表格总结
-
-|scope	|编译	|测试	|运行|
-|:----|:----|:----|:----|
-|compile	Y	Y	Y
-|test		Y	
-|provided	Y	Y	
-|runtime		Y	Y
-|system	Y	Y	
-
-## 依赖传递和依赖原则
-A->B,B->C====>A->C
-别人总结
-可以在A的pom.xml用这个标签消除对C的依赖
 
 ## 聚合和继承
 
 ### 继承
 在构建多个模块的时候，往往会多有模块有相同的groupId、version，或者有相同的依赖，为了减少pom文件的配置，跟我们的项目中类的继承一样，在父工程中配置了pom，子项目中的pom可以继承.
 
-可继承的POM元素
+__可继承的POM元素__
 
 groupId:项目组ID,项目坐标的核心元素
 version:项目版本,项目坐标的核心元素
@@ -938,10 +889,11 @@ dependencies:项目的依赖配置
 dependencyManagement:项目的依赖管理配置
 repositories:项目的仓库配置
 build:包括项目的源码目录配置、输出目录配置、插件配置、插件管理配置等
-继承POM的用法
+
+__继承POM的用法__
 面向对象设计中，程序员可以通过一种类的父子结构，在父类中声明一些字段和方法供子类继承，这样可以做到“一处声明、多处使用”，类似的我们需要创建POM的父子结构，然后在父POM中声明一些配置，供子POM继承。
 
-子工程gropid 和version没写,是因为子工程的groupid和version和父工程的一样.所以子工程继承了父工程,但是当子工程的groupid,version和父工程的不一样的时候,就需要自己重写.父模块只是为了帮助消除配置的重复，因此它本身不包含除POM之外的项目文件，也就不需要src/main/java之类的文件夹了。
+子工程groupid 和version没写,是因为子工程的groupid和version和父工程的一样.所以子工程继承了父工程,但是当子工程的groupid,version和父工程的不一样的时候,就需要自己重写.父模块只是为了帮助消除配置的重复，因此它本身不包含除POM之外的项目文件，也就不需要src/main/java之类的文件夹了。
 
 ```xml
 <artifactId>integral-kernel-parent</artifactId>
@@ -1038,6 +990,7 @@ pom文件如下：
 modules里的每一个module都可以用来指定一个被聚合模块，这里每个module的值都是一个当前pom的相对位置。
 
 3.9.3 继承与聚合的关系
+
 继承是为了减少配置,配置是为了方便快速构建项目.
 继承:在子工程的pom 文件中定义元素
 聚合:它知道有哪些被聚合的模块，但那些被聚合的子模块不知道这个聚合模块的存在.

@@ -20,11 +20,15 @@
    * [Flutter笔记 7.页面导航](?article=android/flutter_start_navi) 
 
 #### Flutter进阶
-  * [Flutter进阶之Rxdart](?article=android/flutter_streambuilder)
+  * [Flutter进阶之Rxdart](?article=android/flutter_rxdart)
 
   * [Flutter进阶之StreamBuilder异步加载控件](?article=android/flutter_streambuilder)
  
   * [Flutter进阶之Bloc业务逻辑组](?article=android/flutter_bloc)
+  
+  * [Flutter进阶之dio](?article=android/flutter_dio)
+  
+  * [Flutter异常监测与上报](https://segmentfault.com/a/1190000022280728)
   
 #### Fluter 开源的完整应用
 
