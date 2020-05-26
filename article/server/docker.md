@@ -88,3 +88,47 @@ Docker 允许你在容器内运行应用程序， 使用 docker run 命令来在
     `docker ps -a ` 查询所有的容器：
 
 * 移除WEB应用容器 `docker rm wizardly_chandrasekhar `
+
+### 25个基本命令
+
+__Working with Docker Containers__
+
+* Creating a Container `docker create [IMAGE_NAME] `
+* Creating and Running a Container ` docker run [IMAGE_NAME] `
+* Starting ` docker start [CONTAINER_NAME] `
+* Stopped Container `docker stop [CONTAINER_NAME] `
+* Restarting a Running Container ` docker restart [CONTAINER_NAME] `
+* Pausing a Running Container ` docker pause [CONTAINER_NAME] `
+* Resume `docker unpause [CONTAINER_NAME]` 
+* List Running Containers `docker ps` or `docker container ls`
+* Removing a Container `docker rm [CONTAINER_NAME] `
+
+__Working with Docker Container Images__
+
+* Building an Image from a Dockerfile: ` docker build -f [DOCKERFILE_PATH] `
+* Building an Image from a Container: `docker commit [CONTAINER_NAME] [IMAGE_NAME]`
+* Pulling an Image from the Docker Hub: ` docker image pull [IMAGE_NAME] `
+* Pushing an Image to the Docker Hub: ` docker image push [IMAGE_NAME] `
+  > create an account at the docker hub and login from your terminal:  `docker login`
+* List Container Images: `docker image ls` or `docker image ls`
+* Deleting an Image from your System: `docker image remove [IMAGE_NAME]`
+
+__Working with Docker Volumes__
+
+* Create a Docker Volume `docker volume create [VOLUME_NAME] `
+* Remove a Docker Volume `docker volume rm [VOLUME_NAME] `
+* Inspect a Docker Volume `docker volume inspect [VOLUME_NAME]`
+* List all Docker Volumes `docker volume ls`
+
+__Working with Docker Networks__
+
+* Creating a Docker Network ` docker network create [NETWORK_NAME] `
+  >  create a bridge network on your system that connects containers to each other and shares the network and internet connection of the host machine. Replace [NETWORK_NAME] with the name you want your network to have.
+
+* Connecting a Container to a Network `docker network connect [NETWORK_NAME] [CONTAINER_NAME] `
+* Disconnecting a Container from a Network `docker network disconnect [NETWORK_NAME] [CONTAINER_NAME]`
+* Inspecting a Network `docker network inspect [NETWORK_NAME]`
+* Listing all Networks `docker network ls`
+* Removing a Network `docker network rm [NETWORK_NAME]`
+
+
