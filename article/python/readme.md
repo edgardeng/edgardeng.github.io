@@ -1,9 +1,7 @@
 # Python 
 > Python是一种面向对象的动态类型语言,应用于广泛的领域：Web 和 Internet开发 科学计算和统计，教育，桌面界面开发，软件开发，后端开发
 
-## 1. Python基础知识
-
-### Python的语言基础
+## 1. [Python基础知识](./python_basic.md)
 
   * 操作符
   * 语句
@@ -25,8 +23,8 @@
     * 描述符
     * 迭代器
 
-### Python的进阶开发
-
+## 2. [Python的进阶开发](./python_advance.md)
+ * [内存管理](./memory.md)
 * 文件操作
 
 * 模块化
@@ -79,3 +77,11 @@
 * Book - [Python for Everybody](https://www.py4e.com/)
 
 * Blog - [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
+
+
+django-oscar  https://github.com/django-oscar/django-oscar#screenshots
+django-shop  https://github.com/awesto/django-shop
+cakeshop  https://github.com/myoula/cakeshop
+satchmo  https://bitbucket.org/chris1610/satchmo/wiki/Home
+django-lfs https://github.com/diefenbach/django-lfs
+CollectorCity-Market-Place  https://github.com/StephenPower/CollectorCity-Market-Place

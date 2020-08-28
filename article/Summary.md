@@ -42,6 +42,8 @@
     
     * [Advance](./python/python_advance.md)
     
+        * [Memory](./python/memory.md)
+    
     * [Flask](./python/flask.md)
     
     * [Flask-Login](./python/ext_flask_login.md)
