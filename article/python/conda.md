@@ -15,7 +15,7 @@ conda list -e > requirements.txt
 
 conda 本地环境常用操作
 #获取版本号
-conda --version 或 conda -V
+conda --version / conda -V
 
 #检查更新当前conda
 conda update conda
@@ -103,7 +103,3 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 conda env export > environment.yml
 #小伙伴拿到environment.yml文件后，将该文件放在工作目录下，可以通过以下命令从该文件创建环境
 conda env create -f environment.yml
-————————————————
-版权声明：本文为CSDN博主「hejp_123」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/hejp_123/java/article/details/92151293
-

@@ -1,5 +1,23 @@
 [
   {
+    "name": "[数据分析]Matplotlib",
+    "page": "python/data_analysis/matplotlib",
+    "datetime": "2020-09-20 09:00",
+    "about": "matplotlib 最流行的python底层绘图库。可以绘制折线图、条形图、饼图、散点图等多种图表,\n"
+  },
+  {
+    "name": "[数据分析]Pandas",
+    "page": "python/data_analysis/pandas",
+    "datetime": "2020-09-20 09:00",
+    "about": "Pandas是基于numpy实现的python的第三方库，提供高性能，易用数据类型和分析工具"
+  },
+  {
+    "name": "[数据分析]NumPy",
+    "page": "python/data_analysis/numpy",
+    "datetime": "2020-09-20 08:00",
+    "about": "NumPy (*Numerical Python*) python数据分析中数值计算的基础。NumPy提供任意同构项的数组对象，对数组的快速数学运算，提供线性代数，傅里叶变换，随机数生成等"
+  },
+  {
     "name": "Python扩展-PyMongo",
     "page": "python/ext_pymongo",
     "datetime": "2018-12-11 20:00",

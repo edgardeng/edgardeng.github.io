@@ -1,5 +1,4 @@
 # Python中的集合类型
-
 > Python中的集合类型数据包括: List（列表）,Tuple（元组）, Set（集合）,Dictionary（字典）
 
 ### 集合 Set
@@ -218,4 +217,3 @@ __内置方法__：
 * dict.values() 返回一个迭代器，可以使用 list() 来转换为列表
 * pop(key[,default]) 删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值。
 * popitem() 随机返回并删除字典中的一对键和值(一般删除末尾对)。
-  

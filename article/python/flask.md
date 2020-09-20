@@ -11,6 +11,7 @@
 虚拟环境是 Python 解释器的一个私有副本，在该环境中你可以安装私有包，而且不会影响系统中安装的全局 Python 解释器
 
 Linux下安装虚拟环境
+
 ```
 $ sudo apt-get install python-virtualenv
 $ virtualenv --version // 查看版本
