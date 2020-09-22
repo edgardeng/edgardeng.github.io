@@ -1,82 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="author" content="edgardeng">
-    <meta name="keyword" content="blog, html5, css3, bootstrap4, vue">
-    <meta name="description" content="Edgar Deng Personal Blog in github.io">
-    <meta charset="utf-8">
-    <title> Edgar Deng Blog</title>
-    <link type="favicon" rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="assets/css/load.css" />
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/home.css" />
+  <meta charset="UTF-8">
+  <title> Edgar Deng Blog</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="author" content="edgardeng">
+  <meta name="keyword" content="blog, html5, css3, bootstrap4, vue">
+  <meta name="description" content="Edgar Deng Personal Blog in github.io">
+  <link type="favicon" rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/load.css"/>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/home_v3.css"/>
 </head>
 
-<body  class="is-preload">
+<body class="is-preload">
 
-<div id="app" >
-    <!-- Wrapper -->
-    <div id="wrapper">
-        <!-- Header -->
-        <header id="header">
-            <div class="logo" style="background-image: url('./assets/image/favicon.jpg')"> </div>
-            <div class="content">
-                <div class="inner">
-                    <h1>Edgar Deng</h1>
-                    <p>A FE Developer in Web, Android, iOS</p>
+<div class="background">
+  <img :src="bannerImg" id="bg_img"/>
+</div>
+
+<div id='full-wrap'>
+  <section class="section" data-anchor="main">
+    <div id="main-wrapper" class="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="logo" style="background-image: url('./assets/image/favicon.jpg')"></div>
+        <div class="content">
+          <div class="inner" id="inner">
+            <h1>Edgar Deng</h1>
+            <p>A FE Developer in Web, Android, iOS</p>
+          </div>
+        </div>
+        <div class="action">
+          <a class="btn btn-primary btn-round mb-2" target="_blank" href="article/list.html" role="button">Article</a>
+          <a class="btn btn-primary btn-round ml-2 mb-2" target="_blank" href="project/list.html" role="button">Project</a>
+          <a class="btn btn-primary btn-round ml-2 mb-2" target="_blank" href="about.html" role="button">About</a>
+        </div>
+      </header>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">&copy; Designed By <a href="https://www.github.com/edgardeng" target="_blank">Edgar
+          Deng</a>. 2020</p>
+      </footer>
+    </div>
+  </section>
+
+  <section class="section" data-anchor="article">
+    <div class="wrapper">
+      <div class="article-grid container">
+        <div class="row">
+          <div class="col-12 col-md-8 ">
+            <a href="article/list.html">
+              <div class="article-link">
+                <div class="zoom-container">
+                  <!--                  <img class="example-image" src="a.png" alt="">-->
                 </div>
-            </div>
-            <div class="">
-                <a class="btn btn-primary btn-round" target="_blank" href="article/list.html" role="button">Article</a>
-                <a class="btn btn-primary btn-round ml-2" target="_blank" href="project/list.html" role="button">Project</a>
-                <a class="btn btn-primary btn-round ml-2" target="_blank" href="about.html" role="button">About</a>
-            </div>
-        </header>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Designed By <a href="https://www.github.com/edgardeng" target="_blank">Edgar Deng</a>. 2020</p>
-        </footer>
-
+                <div class="text">
+                  <div class="title"> Web</div>
+                  <div class="desc text-muted"> Html，JavaSript，Css, Vue</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-4">
+            <a href="article/list.html?cate=android">
+              <div class="article-link" style="transition-delay: 0.2s">
+                <div class="zoom-container">
+                  <img class="example-image"
+                       src="https://developer.android.google.cn/images/home/android-11-preview-hero.svg" alt="">
+                </div>
+                <div class="text">
+                  <div class="title"> Android</div>
+                  <div class="desc text-muted"> Kotlin、Flutter</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <a href="article/list.html?cate=ios">
+              <div class="article-link" style="transition-delay: 0.4s">
+                <div class="zoom-container">
+<!--                  <img class="example-image"-->
+<!--                       src="https://developer.android.google.cn/images/home/android-11-preview-hero.svg" alt="">-->
+                </div>
+                <div class="text">
+                  <div class="title"> iOS</div>
+                  <div class="desc text-muted"> swift</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-8 ">
+            <a href="article/list.html?cate=python">
+              <div class="article-link" style="transition-delay: 0.6s">
+                <div class="zoom-container">
+                  <!--                  <img class="example-image" src="a.png" alt="">-->
+                </div>
+                <div class="text">
+                  <div class="title"> Python</div>
+                  <div class="desc text-muted">Crawler、Data Analysis、Machine Learning</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <a href="article/list.html?cate=java">
+              <div class="article-link" style="transition-delay: 0.7s">
+                <div class="zoom-container">
+<!--                  <img class="example-image" src="https://developer.android.google.cn/images/home/android-11-preview-hero.svg" alt="">-->
+                </div>
+                <div class="text">
+                  <div class="title"> Java</div>
+                  <div class="desc text-muted"> Spring Boot, Spring Cloud</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-4 ">
+            <a href="article/list.html?cate=server">
+              <div class="article-link" style="transition-delay: 0.8s">
+                <div class="zoom-container">
+                  <!--                  <img class="example-image" src="a.png" alt="">-->
+                </div>
+                <div class="text">
+                  <div class="title"> Server</div>
+                  <div class="desc text-muted">MySQL, Mongo, Redis, Docker...</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-4 ">
+            <a href="article/list.html?cate=program">
+              <div class="article-link" style="transition-delay: 0.9s">
+                <div class="zoom-container">
+                  <!--                  <img class="example-image" src="a.png" alt="">-->
+                </div>
+                <div class="text">
+                  <div class="title"> Programmer</div>
+                  <div class="desc text-muted">Git, AI, Algorithm ...</div>
+                  <button class="btn btn-primary" role="button">Check More</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- BG -->
-    <div id="bg">
-        <img :src="bannerImg" id="bg_image"/>
-        <div class="bg-hover"> </div>
-    </div>
-
-<!--    <div style="position: absolute;top: 0;width: 100%;z-index: 99">-->
-<!--        <img src="resource/image/chunjie2.png" style="position: fixed;right: 0;width: 320px;"/>-->
-<!--    </div>-->
-
+  </section>
 </div>
 
 <div class="load-container" id="loading">
-    <div class="loader">Loading...</div>
+  <div class="loader">Loading...</div>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src=" https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
+<!--<script src="assets/js/breakpoints.min.js"></script>-->
+<!--<script src="assets/js/util.js"></script>-->
 </body>
+
 <script lang="javascript">
+  $(function () {
+    $('#full-wrap').fullpage({
+      'verticalCentered': false,
+      'fitToSection': false,
+      'navigation': true,
+      'navigationPosition': 'right',
+      'resize': true,
+      'fadingEffect': false,
+      'onLeave': function (before, next) {
+        // if (next.index === 1) {
+        //   $('div.returntop').hide();
+        // } else {
+        //   $('div.returntop').show();
+        // }
+      },
+      'afterLoad': function () {
+      }
+    });
+    setTimeout(function () {
+      $('body').removeClass('is-preload');
+    }, 100);
+    setTimeout(function () {
+      document.body.removeChild(document.getElementById('loading'))
+    }, 2000) // loading 3s and remove
 
-  // loading 3s
-  setTimeout(function () {
-    document.body.removeChild(document.getElementById('loading'))
-  },3000)
-
-  // get 每日图片
+  });
   $.get('https://www.toolnb.com/Tools/Api/bingimages.html', function (data) {
     console.log(data)
     if (data.data) {
-      $("#bg_image").attr("src",data.data.img);
+      $("#bg_img").attr("src", data.data.img);
     } else {
     }
   })
@@ -85,7 +211,9 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151584790-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() {
+    dataLayer.push(arguments);
+  }
   gtag('js', new Date());
   gtag('config', 'UA-151584790-1');
 </script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="author" content="edgardeng">
+    <meta name="keyword" content="blog, html5, css3, bootstrap4, vue">
+    <meta name="description" content="Edgar Deng Personal Blog in github.io">
+    <meta charset="utf-8">
+    <title> Edgar Deng Blog</title>
+    <link type="favicon" rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/load.css" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+
+<body  class="is-preload">
+
+<div id="app" >
+    <div id="main-wrapper">
+        <!-- Header -->
+        <header id="header">
+            <div class="logo" style="background-image: url('./assets/image/favicon.jpg')"> </div>
+            <div class="content">
+                <div class="inner">
+                    <h1>Edgar Deng</h1>
+                    <p>A FE Developer in Web, Android, iOS</p>
+                </div>
+            </div>
+            <div class="">
+                <a class="btn btn-primary btn-round" target="_blank" href="article/list.html" role="button">Article</a>
+                <a class="btn btn-primary btn-round ml-2" target="_blank" href="project/list.html" role="button">Project</a>
+                <a class="btn btn-primary btn-round ml-2" target="_blank" href="about.html" role="button">About</a>
+            </div>
+        </header>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Designed By <a href="https://www.github.com/edgardeng" target="_blank">Edgar Deng</a>. 2020</p>
+        </footer>
+
+    </div>
+    <div id="bg">
+        <img :src="bannerImg" id="bg_image"/>
+        <div class="bg-hover"> </div>
+    </div>
+
+</div>
+
+<div class="load-container" id="loading">
+    <div class="loader">Loading...</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+<script lang="javascript">
+
+  // loading 3s
+  setTimeout(function () {
+    document.body.removeChild(document.getElementById('loading'))
+  },3000)
+
+  // get 每日图片
+  $.get('https://www.toolnb.com/Tools/Api/bingimages.html', function (data) {
+    console.log(data)
+    if (data.data) {
+      $("#bg_image").attr("src",data.data.img);
+    } else {
+    }
+  })
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151584790-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-151584790-1');
+</script>
+
+</html>
