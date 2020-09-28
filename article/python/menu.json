@@ -79,6 +79,12 @@
     "about": "Python中的内存管理机制主要包括：引用计数，标志清除，分代回收，部分缓存"
   },
   {
+    "name": "Python中的正则表达式",
+    "page": "python/regular_expression",
+    "datetime": "2020-09-28 14:00",
+    "about": "正则表达式是一个特殊的字符序列，它能帮助你方便的检查一个字符串是否与某种模式匹配"
+  },
+  {
     "name": "Python中的集合类型",
     "page": "python/collection_data",
     "datetime": "2018-05-09 20:00",

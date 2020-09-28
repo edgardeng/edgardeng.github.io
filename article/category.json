@@ -28,13 +28,6 @@
     "bg": "../resource/image/a4.svg"
   },
   {
-    "name": "PHP",
-    "page": "php",
-    "ic": "fab fa-php",
-    "sty": "color:purple",
-    "bg": "../resource/image/a5.svg"
-  },
-  {
     "name": "Java",
     "page": "java",
     "ic": "fab fa-java",
