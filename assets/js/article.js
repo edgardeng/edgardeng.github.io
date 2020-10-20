@@ -31,7 +31,7 @@ let app = new Vue({
       window.location.href= "./index.html?article=" + encodeURI(item.page)
     },
     handleCateClick: function (item) {
-      window.location.href= "./category.html?cate=" + item.page
+      window.location.href= "./list.html?cate=" + item.page
     },
     getUrlParam: function (name) {
       let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象

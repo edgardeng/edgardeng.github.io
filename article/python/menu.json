@@ -61,9 +61,15 @@
     "about": "Faker(伪装者) 用于创建假数据, 可以轻易地伪造姓名、地址、手机号等等信息"
   },
   {
+    "name": "Python进阶之生成器",
+    "page": "python/python_generator",
+    "datetime": "2018-09-26 22:00",
+    "about": "生成器也是一种迭代器，但只能对其迭代一次.因为它们并没有把所有的值存在内存中，而是在运行时生成值。我们可以通过遍历来使用它们，要么用一个“for”循环，要么将它们传递给任意可以进行迭代的函数和结构"
+  },
+  {
     "name": "Gunicorn",
     "page": "python/gunicorn",
-    "datetime": "2020-09-25 21:00",
+    "datetime": "2018-09-25 21:00",
     "about": "Gunicorn `Green Unicorn` 是一个 UNIX 下的 WSGI HTTP 服务器, 是一个 移植自 Ruby 的 Unicorn 项目的 pre-fork worker 模型. 其高并发性能极大提升服务器请求负载。python自带的有个web服务器，叫做wsgiref"
   },
   {

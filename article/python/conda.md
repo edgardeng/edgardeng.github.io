@@ -1,4 +1,4 @@
-conda的使用
+# conda的使用
 
 conda info
 
@@ -26,7 +26,7 @@ conda env list 或 conda info -e
 #查看--安装--更新--删除包
 
 conda list：
-conda search package_name# 查询包
+conda search package_name# 查询包
 conda install package_name
 conda install package_name=1.5.0
 conda update package_name

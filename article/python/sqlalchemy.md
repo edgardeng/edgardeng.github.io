@@ -1,8 +1,8 @@
-# Sqlalchemy
+# SQLAlchemy
 
-> SQLAlchemy是Python编程语言下的一款ORM框架，该框架建立在数据库API之上，使用关系对象映射进行数据库操作，简言之便是：将对象转换成SQL，然后使用数据API执行SQL并获取执行结果。
-￼
-SQLAlchemy本身无法操作数据库，其必须以来pymsql等第三方插件，Dialect用于和数据API进行交流，根据配置文件的不同调用不同的数据库API，从而实现对数据库的操作
+> SQLAlchemy 是Python编程语言下的一款ORM框架，该框架建立在数据库API之上，使用关系对象映射进行数据库操作，简言之便是：将对象转换成SQL，然后使用数据API执行SQL并获取执行结果。
+
+> SQLAlchemy本身无法操作数据库，其必须以来pymysql等第三方插件，Dialect用于和数据API进行交流，根据配置文件的不同调用不同的数据库API，从而实现对数据库的操作
 
 ```
 MySQL-Python
@@ -31,7 +31,7 @@ pip install sqlalchemy
 ```python
 from sqlalchemy import create_engine
 
-engine = create_engine("mysql+pymysql://fuzj:123123@127.0.0.1:3306/fuzj", max_overflow=5)
+engine = create_engine("mysql+pymysql://test:123456@127.0.0.1:3306/test", max_overflow=5)
 engine.execute("INSERT INTO user (name) VALUES ('my_name')") #执行sql语句
 result = engine.execute('select * from user')
 res = result.fetchall()
@@ -50,7 +50,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, UniqueConstraint, In
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy import create_engine
 
-engine = create_engine("mysql+pymysql://fuzj:123123@127.0.0.1:3306/123", max_overflow=5)
+engine = create_engine("mysql+pymysql://test:123456@127.0.0.1:3306/test", max_overflow=5)
 
 Base = declarative_base()
 

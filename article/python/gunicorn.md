@@ -1,4 +1,4 @@
-<!-- 2020-09-25 21:00 -->
+<!-- 2018-09-25 21:00 -->
 ## Gunicorn
 > Gunicorn `Green Unicorn` 是一个 UNIX 下的 WSGI HTTP 服务器, 是一个 移植自 Ruby 的 Unicorn 项目的 pre-fork worker 模型. 其高并发性能极大提升服务器请求负载。python自带的有个web服务器，叫做wsgiref
 
