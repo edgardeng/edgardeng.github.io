@@ -66,6 +66,19 @@
     "about": "Redis是一个开源的使用ANSI C语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。"
   },
   {
+    "name": "Redis的监控",
+    "page": "server/redis_monitor",
+    "datetime": "2021-01-31 10:00",
+    "about": "Redis 是一种内存数据库，将数据保存在内存中，读写效率要比传统的将数据保存在磁盘上的数据库要快很多，对Redis的内存监控尤为重要。"
+  },
+  {
+    "name": "Redis的技巧",
+    "page": "server/redis_tips",
+    "datetime": "2020-02-01 22:00",
+    "about": "常见的Redis建议：数据分离、分业务、压缩数据、失效时间。"
+  },
+
+  {
     "name": "Docker Compose的使用",
     "page": "server/docker_compose",
     "datetime": "2018-12-20 22:00",
