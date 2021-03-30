@@ -1,5 +1,10 @@
 [
-
+  {
+    "name": "[机器视觉]NVR的RTSP",
+    "page": "python/cv/nvr",
+    "datetime": "2021-03-30 11:30",
+    "about": "NVR的RTSP的几种格式说明"
+  },
   {
     "name": "[数据分析]Seaborn",
     "page": "python/data_analysis/seaborn",
@@ -77,6 +82,12 @@
     "page": "python/flask",
     "datetime": "2018-08-22 21:00",
     "about": "Flask是Python语言下的一个非常轻量级的Web开发框架，提供了搭建 Web 服务的必要组件，同时具有良好的扩展性"
+  },
+  {
+    "name": "Conda的使用",
+    "page": "python/conda",
+    "datetime": "2018-09-25 21:00",
+    "about": "在Anaconda中conda可以理解为一个工具，也是一个可执行命令，其核心功能是包管理与环境管理。所以对虚拟环境进行创建、删除等操作需要使用conda命令"
   },
   {
     "name": "Python中的内存管理",
