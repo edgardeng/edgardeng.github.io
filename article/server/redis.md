@@ -182,11 +182,11 @@ pipe.execute()
 
 |常用操作|说明|
 |:----|:----|
-|LPUSH key value [v ...]        |   将多个值 插入key列表的表头|
-|RPUSH key  value [v ...]       |   将多个值 插入key列表的表尾|
-|LPOP key                       |   移除并返回key列表的头元素|
-|RPOP key                       |   移除并返回key列表的尾元素|  
-|LRANGE key start stop          |   返回制定区间的元素 双闭合区间|
+|LPUSH key value [v ...]        |  将多个值 插入key列表的表头|
+|RPUSH key  value [v ...]       |  将多个值 插入key列表的表尾|
+|LPOP key                       |  移除并返回key列表的头元素|
+|RPOP key                       |  移除并返回key列表的尾元素|  
+|LRANGE key start stop          |  返回制定区间的元素 双闭合区间|
 |BLPOP key [k ...] timeout      |  从key列表表头弹出一个元素， 若没有则阻塞等待timeout秒，若timeout=0，一直阻塞|
 |BRPOP key [k ...] timeout      |  从key列表末尾弹出一个元素， 若没有则阻塞等待timeout秒，若timeout=0，一直阻塞|
 
@@ -208,16 +208,16 @@ pipe.execute()
 |常用操作|说明|
 |:----|:----|
 |SADD key member [m ...]        |   往集合key中，添加元素（若存在，则忽略）|
-|SREM key  value [v ...]       |   从集合key中，删除元素|
+|SREM key value [v ...]       |   从集合key中，删除元素|
 |SMEMBERS key |   从集合key中，获取所有元素|
 |SCARD key |   获取集合key中，元素个数|
 |SISMENMBER key member|   集合key中，是否存在元素member|
 |SRANDMEMBER key [count]|   从集合key中，随机选出count个元素， 不删除|
 |SPOP key [count]|   从集合key中，随机选出count个元素， 并删除|
-|SINTER key [key ...]                      |   求交集|
-|SINTERSTORE destination key [key ...]     |   求交集， 结果存入新集合destination|  
-|SUNION key [key ...]                      |   求并集|
-|SUNIONSTORE destination key [key ...]     |   求并集， 结果存入新集合destination|  
+|SINTER key [key ...]                     |   求交集|
+|SINTERSTORE destination key [key ...]    |   求交集， 结果存入新集合destination|  
+|SUNION key [key ...]                     |   求并集|
+|SUNIONSTORE destination key [key ...]    |   求并集， 结果存入新集合destination|  
 |SDIFF key [key ...]                      |   求差集 第1个减去后面所有的|
 |SDIFFSTORE destination key [key ...]     |   求差集， 结果存入新集合destination|  
 
@@ -232,7 +232,7 @@ pipe.execute()
     * `SCARD like:1  `          点赞数
  * 微博关注模型
     * A关注的人： aSet -> {b,c,d}
-    * B关注的人： bSet -> {a,e,d, f}
+    * B关注的人： bSet -> {a, e, d, f}
     * C关注的人： cSet -> {b, d, f, g}
     * A和B共同关注的人: SINET aSet bSet -> { d }
     * 我关注的人也关注了TA

@@ -26,10 +26,17 @@ Redis从2.8版本开始支持scan命令，SCAN命令的基本用法如下：
 
 > 因为KEYS命令的时间复杂度为O(n)，而SCAN命令会将遍历操作分解成m次，然后每次去执行，从而时间复杂度为O(1)
 
+* scan：对所有数据类型的key生效；
+* sscan：针对Set数据类型的key；
+* hscan：针对Hash的key；
+* zscan：针对有序Set的key。
+
+
 ## 那些尽量避免的命令
 
  monitor, keys *, flushall, drop table, update table set a=1; 这种也是防不胜防的
- 
+
+
 
 ## Redis开发的建议
 1、 数据分离
