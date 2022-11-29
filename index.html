@@ -5,7 +5,6 @@
     <title> Edgar Deng Blog</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
-    <meta name="format-detection" content="telephone=no">
     <meta name="author" content="edgardeng">
     <meta name="keyword" content="blog, html5, css3, bootstrap4, vue">
     <meta name="description" content="Edgar Deng Personal Blog in github.io">
@@ -17,7 +16,7 @@
 <body class="is-preload">
 
 <div class="background">
-    <img :src="bannerImg" id="bg_img"/>
+    <img src="https://bing.ioliu.cn/v1" id="bg_img"/>
 </div>
 
 <div id='full-wrap'>
@@ -63,7 +62,7 @@
                                 <div class="text">
                                     <div class="title"> Web</div>
                                     <div class="desc text-muted"> Html，JavaSript，Css, Vue</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -79,7 +78,7 @@
                                 <div class="text">
                                     <div class="title"> Android</div>
                                     <div class="desc text-muted"> Kotlin、Flutter</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -96,7 +95,7 @@
                                 <div class="text">
                                     <div class="title"> iOS</div>
                                     <div class="desc text-muted"> swift</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -108,7 +107,7 @@
                                 <div class="text">
                                     <div class="title"> Python</div>
                                     <div class="desc text-muted">Crawler、Data Analysis、Machine Learning</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -122,7 +121,7 @@
                                 <div class="text">
                                     <div class="title"> Java</div>
                                     <div class="desc text-muted"> Spring Boot, Spring Cloud</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -134,7 +133,7 @@
                                 <div class="text">
                                     <div class="title"> Server</div>
                                     <div class="desc text-muted">MySQL, Mongo, Redis, Docker...</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -146,7 +145,7 @@
                                 <div class="text">
                                     <div class="title"> Programmer</div>
                                     <div class="desc text-muted">Git, AI, Algorithm ...</div>
-                                    <button class="btn btn-primary" role="button">Check More</button>
+                                    
                                 </div>
                             </div>
                         </a>
@@ -163,8 +162,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src=" https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.2/fullpage.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
-<!--<script src="assets/js/breakpoints.min.js"></script>-->
-<!--<script src="assets/js/util.js"></script>-->
 </body>
 
 <script lang="javascript">
@@ -193,38 +190,25 @@
             document.body.removeChild(document.getElementById('loading'))
         }, 2000) // loading 3s and remove
 
-    });
-    $.get('https://www.toolnb.com/Tools/Api/bingimages.html', function (data) {
-        console.log(data)
-        if (data.data) {
-            $("#bg_img").attr("src", data.data.img);
-        } else {
-        }
     })
 </script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4FYX2DC6Y6"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
         dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
     gtag('config', 'G-4FYX2DC6Y6');
-
     function click(event) {
-        console.log('click', event)
         gtag('event', 'click', {
             'navigate': event.target.id
         });
     }
-
     $('#Home_Article').on('click', click);
     $('#Home_Project').on('click', click);
     $('#Home_About').on('click', click);
-
 </script>
 
 </html>

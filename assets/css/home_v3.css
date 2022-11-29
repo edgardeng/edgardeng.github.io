@@ -65,8 +65,7 @@ section:after {content: ".";display: block;height: 0;clear: both;visibility: hid
     object-fit: cover;
 }
 .wrapper {
-    padding: 2rem;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.3);
     width: 100%;
     z-index: 10;
     min-height: 100vh;
@@ -113,7 +112,7 @@ section:after {content: ".";display: block;height: 0;clear: both;visibility: hid
     -ms-transition: opacity 0.8s ease-in-out;
     transition: opacity 0.8s ease-in-out;
     position: relative;
-    margin-top: 3.5rem;
+    margin-top: 3rem;
 }
 
 #header > *:before {
@@ -140,10 +139,10 @@ section:after {content: ".";display: block;height: 0;clear: both;visibility: hid
 }
 
 #header .content:before {
-    top: calc(-3.5rem - 1px);
+    top: calc(-3rem - 1px);
     left: calc(50% - 1px);
     width: 1px;
-    height: calc(3.5rem + 1px);
+    height: calc(3rem + 1px);
     background: #ffffff;
 }
 
@@ -165,7 +164,7 @@ section:after {content: ".";display: block;height: 0;clear: both;visibility: hid
     -webkit-transition-delay: 0.25s;
     -ms-transition-delay: 0.25s;
     transition-delay: 0.8s;
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     max-height: 40rem;
     overflow: hidden;
 }
@@ -223,7 +222,8 @@ body.is-preload #header .content .inner {
     transition: transform 0.8s ease-in-out, filter 0.8s ease-in-out, opacity 0.8s ease-in-out;
     width: 100%;
     max-width: 100%;
-    margin-top: 2rem;
+    margin: 0;
+    padding: .5rem;
     text-align: center;
     color:white;
 }
@@ -243,7 +243,7 @@ body.is-preload #footer {
     padding-right: 2rem;
 }
 
-.article-grid{  position: relative; margin: 0 auto; padding: 0px;}
+.article-grid{  position: relative; margin: 0 auto; padding: 1rem;}
 .article-grid .col-8, .article-grid .col-4 {
     padding-top: 15px;
 }
