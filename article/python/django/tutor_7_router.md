@@ -143,3 +143,19 @@ Namespace的使用：
 3. 在 views.py 中使用名称空间，语法格式如下： `reverse("app名称：路由别名")` / `return redirect(reverse("app01:login")`
 
 4. 在 templates 模板的 HTML 文件中使用名称空间，语法格式如下： `{% url "app名称：路由别名" %}` / `<form action="{% url 'app01:login' %}" method="post">`
+
+
+## 静态文件管理
+
+### [配置静态文件](https://docs.djangoproject.com/en/4.1/howto/static-files/)
+ 1. 确保 INSTALLED_APPS 包含了 django.contrib.staticfiles。
+ 2. 在配置文件`settings.py`中，定义 STATIC_URL，例子: `STATIC_URL = 'static/'`
+ 3. 在模板中，用 static 模板标签基于配置 STATICFILES_STORAGE 位给定的相对路径构建 URL。
+    `{% load static %}
+    <img src="{% static 'my_app/example.jpg' %}" alt="My image">`
+ 4. 将你的静态文件保存至 static 目录中。例如 my_app/static/my_app/example.jpg。
+ 5. 除了使用 static/ 目录，可以在配置文件中定义一个目录列表 (STATICFILES_DIRS) ，Django 会从中寻找静态文件。
+   `STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    '/var/www/static/',
+    ]`
